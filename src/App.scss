@@ -1,0 +1,12 @@
+//base
+@import "@/styles/base/font";
+@import "@/styles/base/mixin";
+@import "@/styles/base/variable";
+
+body {
+    border: 1px solid red;
+    color: $ss;
+}
+
+// common
+.container {}
