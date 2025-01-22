@@ -1,17 +1,180 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 2 | @import "@/styles/base/font";
- *   |         ^^^^^^^^^^^^^^^^^^^^
- *   '
- *   App.scss 2:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 2 \2502  @import \"@/styles/base/font\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   App.scss 2:9  root stylesheet";
+@charset "UTF-8";
+/**
+* @license
+*
+* Font Family: Bebas Neue
+* Designed by: Ryoichi Tsunekawa, Dharma Type
+* URL: https://www.fontshare.com/fonts/bebas-neue
+* © 2025 Indian Type Foundry
+*
+* Bebas Neue Regular
+*/
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src: url("/src/assets/fonts/BebasNeue-Regular.woff2") format("woff2"), url("/src/assets/fonts/BebasNeue-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+/* Font */
+/* Base */
+/* Path */
+/* Grid */
+/* mediaQuery */
+/* Font Size */
+/* Ellipsis */
+/* PX TO VW (to vw) */
+/* Flex */
+/* Background */
+/* wordBreak */
+/* Grid */
+@media (min-width: 1025px) {
+  .col-1 {
+    flex: 0 0 auto;
+    flex-basis: 8.3333333333%;
+    width: 8.3333333333%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-1 {
+    margin-left: 8.3333333333%;
+    position: relative;
+  }
+  .col-2 {
+    flex: 0 0 auto;
+    flex-basis: 16.6666666667%;
+    width: 16.6666666667%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-2 {
+    margin-left: 16.6666666667%;
+    position: relative;
+  }
+  .col-3 {
+    flex: 0 0 auto;
+    flex-basis: 25%;
+    width: 25%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-3 {
+    margin-left: 25%;
+    position: relative;
+  }
+  .col-4 {
+    flex: 0 0 auto;
+    flex-basis: 33.3333333333%;
+    width: 33.3333333333%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-4 {
+    margin-left: 33.3333333333%;
+    position: relative;
+  }
+  .col-5 {
+    flex: 0 0 auto;
+    flex-basis: 41.6666666667%;
+    width: 41.6666666667%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-5 {
+    margin-left: 41.6666666667%;
+    position: relative;
+  }
+  .col-6 {
+    flex: 0 0 auto;
+    flex-basis: 50%;
+    width: 50%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-6 {
+    margin-left: 50%;
+    position: relative;
+  }
+  .col-7 {
+    flex: 0 0 auto;
+    flex-basis: 58.3333333333%;
+    width: 58.3333333333%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-7 {
+    margin-left: 58.3333333333%;
+    position: relative;
+  }
+  .col-8 {
+    flex: 0 0 auto;
+    flex-basis: 66.6666666667%;
+    width: 66.6666666667%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-8 {
+    margin-left: 66.6666666667%;
+    position: relative;
+  }
+  .col-9 {
+    flex: 0 0 auto;
+    flex-basis: 75%;
+    width: 75%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-9 {
+    margin-left: 75%;
+    position: relative;
+  }
+  .col-10 {
+    flex: 0 0 auto;
+    flex-basis: 83.3333333333%;
+    width: 83.3333333333%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-10 {
+    margin-left: 83.3333333333%;
+    position: relative;
+  }
+  .col-11 {
+    flex: 0 0 auto;
+    flex-basis: 91.6666666667%;
+    width: 91.6666666667%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-11 {
+    margin-left: 91.6666666667%;
+    position: relative;
+  }
+  .col-12 {
+    flex: 0 0 auto;
+    flex-basis: 100%;
+    width: 100%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-12 {
+    margin-left: 100%;
+    position: relative;
+  }
+}
+body {
+  font-family: "BebasNeue-Regular", sans-serif !important;
+  padding: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
 }

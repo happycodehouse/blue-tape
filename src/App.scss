@@ -1,11 +1,11 @@
 //base
-@import "@/styles/base/font";
-@import "@/styles/base/mixin";
-@import "@/styles/base/variable";
+@import "styles/base/font";
+@import "styles/base/variable";
+@import "styles/base/mixin";
 
 body {
-    border: 1px solid red;
-    color: $ss;
+    font-family: $BebasNeue !important;
+    padding: to_vw(20);
 }
 
 // common
