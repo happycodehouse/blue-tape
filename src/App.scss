@@ -2,11 +2,4 @@
 @import "styles/base/font";
 @import "styles/base/variable";
 @import "styles/base/mixin";
-
-body {
-    font-family: $BebasNeue !important;
-    padding: to_vw(20);
-}
-
-// common
-.container {}
+@import "styles/layout/container";

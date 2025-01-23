@@ -16,6 +16,49 @@
   font-display: swap;
   font-style: normal;
 }
+/**
+* @license
+*
+* Font Family: Familjen Grotesk
+* Designed by: Familjen STHLM AB
+* URL: https://www.fontshare.com/fonts/familjen-grotesk
+* © 2025 Indian Type Foundry
+*
+* Familjen Grotesk Regular
+* Familjen Grotesk Medium
+* Familjen Grotesk SemiBold
+* Familjen Grotesk Bold
+
+*
+*/
+@font-face {
+  font-family: "FamiljenGrotesk";
+  src: url("/src/assets/fonts/FamiljenGrotesk-Regular.woff2") format("woff2"), url("/src/assets/fonts/FamiljenGrotesk-Regular.woff") format("woff"), url("/src/assets/fonts/FamiljenGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FamiljenGrotesk";
+  src: url("/src/assets/fonts/FamiljenGrotesk-Medium.woff2") format("woff2"), url("/src/assets/fonts/FamiljenGrotesk-Medium.woff") format("woff"), url("/src/assets/fonts/FamiljenGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FamiljenGrotesk";
+  src: url("/src/assets/fonts/FamiljenGrotesk-SemiBold.woff2") format("woff2"), url("/src/assets/fonts/FamiljenGrotesk-SemiBold.woff") format("woff"), url("/src/assets/fonts/FamiljenGrotesk-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FamiljenGrotesk";
+  src: url("/src/assets/fonts/FamiljenGrotesk-Bold.woff2") format("woff2"), url("/src/assets/fonts/FamiljenGrotesk-Bold.woff") format("woff"), url("/src/assets/fonts/FamiljenGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
 /* Font */
 /* Base */
 /* Path */
@@ -174,7 +217,20 @@
     position: relative;
   }
 }
-body {
-  font-family: "BebasNeue-Regular", sans-serif !important;
-  padding: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+html {
+  --window-w: 100vw;
+  --window-h: 100vh;
+}
+
+:root {
+  --base-ratio: 0.75;
+  --base-size: 1536;
+  --base-percent: 100vw;
+}
+@media (max-width: 1024px) {
+  :root {
+    --base-ratio: 1;
+    --base-size: 1;
+    --base-percent: 1px;
+  }
 }
