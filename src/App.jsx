@@ -1,16 +1,21 @@
+import { ReactLenis, useLenis } from 'lenis/react'
 import './App.scss'
 
 import Header from "@/layout/Header.jsx";
 import Footer from "./layout/Footer.jsx";
 
 function App() {
-  return (
-    <>
-        <Header />
-        <div className='container'>aaaa</div>
-        <Footer />
-    </>
-  )
+    const lenis = useLenis(({ scroll }) => {
+        // called every scroll
+    })
+
+    return (
+        <ReactLenis root>
+            <Header />
+            <div className='container'>aaaa</div>
+            <Footer />
+        </ReactLenis>
+    )
 }
 
 export default App
