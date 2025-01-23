@@ -1,9 +1,9 @@
 # BLUE TAPE
 
-##Introduction
+## Introduction
 BLUE TAPE is my portfolio website built with React, showcasing my career as a frontend developer.
 
-##Used Libraries
+## Used Libraries
 - Lenis
 - GSAP
 - Swiper
