@@ -1,5 +1,8 @@
-//base
-@import "styles/base/font";
+/* base */
 @import "styles/base/variable";
 @import "styles/base/mixin";
+@import "styles/base/reset";
+@import "styles/base/font";
+
+/* layout */
 @import "styles/layout/container";
