@@ -1,6 +1,4 @@
 import { ReactLenis, useLenis } from 'lenis/react'
-import './App.min.scss'
-
 import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
 
