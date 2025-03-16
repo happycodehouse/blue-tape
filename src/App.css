@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* base */
 /* Font */
 /* Base */
 /* Path */
@@ -487,7 +486,6 @@ input::-webkit-search-results-decoration {
   font-display: swap;
   font-style: normal;
 }
-/* layout */
 html {
   --window-w: 100vw;
   --window-h: 100vh;

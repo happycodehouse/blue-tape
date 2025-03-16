@@ -1,7 +1,7 @@
 import { ReactLenis, useLenis } from 'lenis/react'
-import './App.scss'
+import './App.min.scss'
 
-import Header from "@/layout/Header.jsx";
+import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
 
 function App() {

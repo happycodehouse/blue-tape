@@ -1,8 +1,14 @@
-/* base */
+// base
 @import "styles/base/variable";
 @import "styles/base/mixin";
 @import "styles/base/reset";
 @import "styles/base/font";
 
-/* layout */
-@import "styles/layout/container";
+// layout
+@import "styles/layout/header.module";
+@import "styles/layout/footer.module";
+@import "styles/layout/container.module";
+
+// pages
+@import "styles/pages/about";
+@import "styles/pages/works";
