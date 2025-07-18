@@ -163,10 +163,10 @@ $breakpoints: (
 /* Background */
 @mixin background($img, $bgp: null, $bgr: null, $bgz: null) {
     /// ❗ 필수값
-    /// $img : 이미지 경로 및 파일명 => 'kr/common/logo.png'
+    /// $img : 이미지 경로 및 파일명 => "kr/common/logo.png"
 
     /// ❓ 선택값
-    /// 하나씩 쓸 경우엔 지시자 지정 필수 => @include background('kr/common/logo.png', $bgr: no-repeat); 👈 "$bgr"
+    /// 하나씩 쓸 경우엔 지시자 지정 필수 => @include background("kr/common/logo.png", $bgr: no-repeat); 👈 "$bgr"
     /// $bgp : position, $bgr : repeat, $bgz : size
 
     @if $bgp == null {

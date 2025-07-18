@@ -12,8 +12,8 @@
 */
 
 @font-face {
-    font-family: 'BebasNeue-Regular';
-    src: url('/src/assets/fonts/BebasNeue-Regular.woff2') format('woff2'), url('/src/assets/fonts/BebasNeue-Regular.woff') format('woff');
+    font-family: "BebasNeue-Regular";
+    src: url("/src/assets/fonts/BebasNeue-Regular.woff2") format("woff2"), url("/src/assets/fonts/BebasNeue-Regular.woff") format("woff");
     font-weight: 400;
     font-display: swap;
     font-style: normal;
@@ -36,41 +36,123 @@
 */
 
 @font-face {
-    font-family: 'FamiljenGrotesk';
-    src: url('/src/assets/fonts/FamiljenGrotesk-Regular.woff2') format('woff2'),
-    url('/src/assets/fonts/FamiljenGrotesk-Regular.woff') format('woff'),
-    url('/src/assets/fonts/FamiljenGrotesk-Regular.ttf') format('truetype');
+    font-family: "FamiljenGrotesk";
+    src: url("/src/assets/fonts/FamiljenGrotesk-Regular.woff2") format("woff2"),
+    url("/src/assets/fonts/FamiljenGrotesk-Regular.woff") format("woff"),
+    url("/src/assets/fonts/FamiljenGrotesk-Regular.ttf") format("truetype");
     font-weight: 400;
     font-display: swap;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'FamiljenGrotesk';
-    src: url('/src/assets/fonts/FamiljenGrotesk-Medium.woff2') format('woff2'),
-    url('/src/assets/fonts/FamiljenGrotesk-Medium.woff') format('woff'),
-    url('/src/assets/fonts/FamiljenGrotesk-Medium.ttf') format('truetype');
+    font-family: "FamiljenGrotesk";
+    src: url("/src/assets/fonts/FamiljenGrotesk-Medium.woff2") format("woff2"),
+    url("/src/assets/fonts/FamiljenGrotesk-Medium.woff") format("woff"),
+    url("/src/assets/fonts/FamiljenGrotesk-Medium.ttf") format("truetype");
     font-weight: 500;
     font-display: swap;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'FamiljenGrotesk';
-    src: url('/src/assets/fonts/FamiljenGrotesk-SemiBold.woff2') format('woff2'),
-    url('/src/assets/fonts/FamiljenGrotesk-SemiBold.woff') format('woff'),
-    url('/src/assets/fonts/FamiljenGrotesk-SemiBold.ttf') format('truetype');
+    font-family: "FamiljenGrotesk";
+    src: url("/src/assets/fonts/FamiljenGrotesk-SemiBold.woff2") format("woff2"),
+    url("/src/assets/fonts/FamiljenGrotesk-SemiBold.woff") format("woff"),
+    url("/src/assets/fonts/FamiljenGrotesk-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-display: swap;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'FamiljenGrotesk';
-    src: url('/src/assets/fonts/FamiljenGrotesk-Bold.woff2') format('woff2'),
-    url('/src/assets/fonts/FamiljenGrotesk-Bold.woff') format('woff'),
-    url('/src/assets/fonts/FamiljenGrotesk-Bold.ttf') format('truetype');
+    font-family: "FamiljenGrotesk";
+    src: url("/src/assets/fonts/FamiljenGrotesk-Bold.woff2") format("woff2"),
+    url("/src/assets/fonts/FamiljenGrotesk-Bold.woff") format("woff"),
+    url("/src/assets/fonts/FamiljenGrotesk-Bold.ttf") format("truetype");
     font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+/**
+* @license
+*
+* Font Family: JetBrains Mono
+* Designed by: JetBrains
+* URL: https://www.jetbrains.com/lp/mono/
+* © 2025 JetBrains
+*
+* JetBrains Mono Thin
+* JetBrains Mono ExtraLight
+* JetBrains Mono Light
+* JetBrains Mono Regular
+* JetBrains Mono Medium
+* JetBrains Mono SemiBold
+* JetBrains Mono Bold
+* JetBrains Mono ExtraBold
+*/
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("/src/assets/fonts/JetBrainsMono-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("/src/assets/fonts/JetBrainsMono-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("/src/assets/fonts/JetBrainsMono-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("/src/assets/fonts/JetBrainsMono-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("/src/assets/fonts/JetBrainsMono-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("/src/assets/fonts/JetBrainsMono-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("/src/assets/fonts/JetBrainsMono-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("/src/assets/fonts/JetBrainsMono-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
     font-display: swap;
     font-style: normal;
 }

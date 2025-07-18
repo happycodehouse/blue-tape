@@ -1,19 +1,44 @@
-import { ReactLenis, useLenis } from 'lenis/react'
-import Header from "./components/layout/Header.jsx";
-import Footer from "./components/layout/Footer.jsx";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {Link} from "react-router-dom";
+import {ReactLenis, useLenis} from "lenis/react"
+import DefaultLayout from "./components/layout/DefaultLayout.jsx";
+import Main from "./pages/Main.jsx";
+import About from "./pages/About.jsx";
+
+import "./App.scss"
 
 function App() {
-    const lenis = useLenis(({ scroll }) => {
-        // called every scroll
-    })
+  const lenis = useLenis(({scroll}) => {
+    // called every scroll
+  });
 
-    return (
-        <ReactLenis root>
-            <Header />
-            <div className='container'>aaaa</div>
-            <Footer />
-        </ReactLenis>
-    )
-}
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <ReactLenis root>
+              <DefaultLayout>
+                <Main />
+              </DefaultLayout>
+            </ReactLenis>
+          }
+        />
 
-export default App
+        <Route
+          path="/about"
+          element={
+            <ReactLenis root>
+              <DefaultLayout>
+                <About/>
+              </DefaultLayout>
+            </ReactLenis>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
