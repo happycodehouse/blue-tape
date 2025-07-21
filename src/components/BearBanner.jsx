@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import styles from "./bearBanner.module.scss";
+import style from "./bearBanner.module.scss";
 
 import figure from "/src/assets/images/main/bear-motorcycle.svg";
 import mass01 from "/src/assets/images/main/mass-01.svg";
@@ -25,7 +25,6 @@ const BearBanner = () => {
     animateIndices.forEach((idx) => {
       const element = massesRef.current[idx];
       if (element) {
-        // 현재 위치에서 시작해서 대각선으로 이동
         const animation = gsap.to(element, {
           x: "-=25",
           y: "+=50",
@@ -36,31 +35,29 @@ const BearBanner = () => {
           delay: idx * 0.3,
         });
         
-        // 애니메이션 참조 저장
         animationsRef.current[idx] = animation;
       }
     });
     
-    // 컴포넌트 언마운트 시 애니메이션 정리
     return () => {
       animationsRef.current.forEach(animation => {
         if (animation) animation.kill();
       });
     };
-  }, []); // 의존성 배열 추가
+  }, []);
   
   return (
-    <div className={styles.wrap}>
-      <div className={styles.figure}>
+    <div className={style.wrap}>
+      <div className={style.figure}>
         <img src={figure} alt=""/>
       </div>
-      <div className={styles.mass_wrap}>
+      <div className={style.mass_wrap}>
         {images.map((img, index) => (
           <img
             key={index}
             src={img}
             alt=""
-            className={styles[`mass_item${String(index + 1).padStart(2, '0')}`]}
+            className={style[`mass_item${String(index + 1).padStart(2, '0')}`]}
             ref={el => massesRef.current[index] = el}
           />
         ))}

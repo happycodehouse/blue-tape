@@ -9,10 +9,10 @@ header {
 
   .inner {
     .logo {
-      font-size: 32px;
+      font-size: 6rem;
       font-family: $font-system;
-      font-weight: 500;
       color: $color-black;
+      letter-spacing: -0.4rem;
     }
 
     .gnb {

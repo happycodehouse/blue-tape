@@ -17,7 +17,14 @@ html {
   }
 }
 
-#defaultLayout {
-  //width: 664px;
-  margin: 0 auto;
+.container {
+  padding: 0 to_vw($space-200);
+}
+
+.flex {
+  display: flex;
+}
+
+.border_bottom {
+  border-bottom: 1px solid $color-black;
 }
