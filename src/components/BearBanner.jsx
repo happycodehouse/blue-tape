@@ -1,30 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import styles from "./bearBanner.module.scss";
+
 import figure from "/src/assets/images/main/bear-motorcycle.svg";
+import mass01 from "/src/assets/images/main/mass-01.svg";
+import mass02 from "/src/assets/images/main/mass-02.svg";
+import mass03 from "/src/assets/images/main/mass-03.svg";
+import mass04 from "/src/assets/images/main/mass-04.svg";
+import mass05 from "/src/assets/images/main/mass-05.svg";
+import mass06 from "/src/assets/images/main/mass-06.svg";
+import mass07 from "/src/assets/images/main/mass-07.svg";
+import mass08 from "/src/assets/images/main/mass-08.svg";
+import mass09 from "/src/assets/images/main/mass-09.svg";
+import mass10 from "/src/assets/images/main/mass-10.svg";
 
 const BearBanner = () => {
-  const [images, setImages] = useState([]);
+  const images = [mass01, mass02, mass03, mass04, mass05, mass06, mass07, mass08, mass09, mass10];
   const massesRef = useRef([]);
-  
-  useEffect(() => {
-    const loadImages = async () => {
-      const imagePromises = Array.from({ length: 10 }, async (_, i) => {
-        try {
-          const module = await import(`/src/assets/images/main/mass-${String(i + 1).padStart(2, '0')}.svg`);
-          return module.default;
-        } catch (error) {
-          console.error(`Failed to load image mass-${String(i + 1).padStart(2, '0')}.svg:`, error);
-          return null; // 로딩 실패시 null 반환
-        }
-      });
-      
-      const loadedImages = await Promise.all(imagePromises);
-      setImages(loadedImages.filter(img => img !== null)); // null 제거
-    };
-    
-    loadImages();
-  }, []);
   
   useEffect(() => {
     if (images.length === 10) {
@@ -39,7 +31,6 @@ const BearBanner = () => {
       <div className={styles.figure}>
         <img src={figure} alt=""/>
       </div>
-      
       <div className={styles.mass_wrap}>
         {images.map((img, index) => (
           <img
