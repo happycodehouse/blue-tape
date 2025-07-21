@@ -12,14 +12,14 @@ const Header = () => {
       case "/feed":
         return "Feed";
       default:
-        return "B-Tape";
+        return "BLUE-Tape";
     }
   };
   
   const navItems = [
-    {path: "/", label: "Home"},
     {path: "/resume", label: "Resume"},
-    {path: "/feed", label: "Feed"}
+    {path: "/feed", label: "Feed"},
+    {path: "/", label: "Home"}
   ];
   
   return (
@@ -34,7 +34,7 @@ const Header = () => {
               return (
                 <li key={item.path}>
                   <Link to={item.path}>
-                    {currentPath === "/" ? "" : "/"}{item.label}
+                    {currentPath === "/" ? "" : "/ "}{item.label}
                   </Link>
                 </li>
               )

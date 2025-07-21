@@ -17,14 +17,37 @@ import mass10 from "/src/assets/images/main/mass-10.svg";
 const BearBanner = () => {
   const images = [mass01, mass02, mass03, mass04, mass05, mass06, mass07, mass08, mass09, mass10];
   const massesRef = useRef([]);
+  const animationsRef = useRef([]);
   
   useEffect(() => {
-    if (images.length === 10) {
-      gsap.from(massesRef.current, {
-        // 애니메이션 설정
+    const animateIndices = [1, 2, 4, 5, 6, 7, 8, 9];
+    
+    animateIndices.forEach((idx) => {
+      const element = massesRef.current[idx];
+      if (element) {
+        // 현재 위치에서 시작해서 대각선으로 이동
+        const animation = gsap.to(element, {
+          x: "-=25",
+          y: "+=50",
+          duration: 4 + Math.random() * 2,
+          ease: "power1.inOut",
+          repeat: -1,
+          yoyo: true,
+          delay: idx * 0.3,
+        });
+        
+        // 애니메이션 참조 저장
+        animationsRef.current[idx] = animation;
+      }
+    });
+    
+    // 컴포넌트 언마운트 시 애니메이션 정리
+    return () => {
+      animationsRef.current.forEach(animation => {
+        if (animation) animation.kill();
       });
-    }
-  }, [images]);
+    };
+  }, []); // 의존성 배열 추가
   
   return (
     <div className={styles.wrap}>
