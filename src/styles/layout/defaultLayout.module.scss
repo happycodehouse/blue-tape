@@ -28,3 +28,12 @@ html {
 .border_bottom {
   border-bottom: 1px solid $color-black;
 }
+
+a {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+strong {
+  font-weight: 700;
+}
