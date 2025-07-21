@@ -5,11 +5,4 @@
 @import "styles/base/font";
 
 // layout
-@import "styles/layout/header.module";
-@import "styles/layout/footer.module";
-@import "styles/layout/container.module";
-
-// pages
-@import "styles/pages/main";
-@import "styles/pages/about";
-@import "styles/pages/works";
+@import "./styles/layout/defaultLayout.module";

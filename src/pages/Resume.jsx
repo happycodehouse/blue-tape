@@ -1,7 +1,7 @@
-const About = () => {
+const Resume = () => {
   return (
     <>///////////////////////////About Page/////////////////////////////</>
   )
 }
 
-export default About;
+export default Resume;

@@ -1,6 +1,6 @@
 import BearBanner from "./../components/BearBanner.jsx"
 
-const Main = () => {
+const Welcome = () => {
   return (
     <div className="container">
       <BearBanner />
@@ -8,4 +8,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Welcome;
