@@ -5,14 +5,14 @@
 
 header {
   margin-bottom: to_vw(12);
-  padding: to_vw($space-400) to_vw($space-200);
+  padding: to_vw($space-400) to_vw($space-400);
 
   .inner {
     .logo {
-      font-size: 6rem;
-      font-family: $font-system;
+      font-size: to_vw(64);
+      font-family: $font-system !important;
       color: $color-black;
-      letter-spacing: -0.4rem;
+      letter-spacing: -0.2rem;
     }
 
     .gnb {
