@@ -80,7 +80,7 @@ const ProjectsSection = ({isKorean}) => {
         ))
       }
     </>
-  );
-};
+  )
+}
 
 export default ProjectsSection;

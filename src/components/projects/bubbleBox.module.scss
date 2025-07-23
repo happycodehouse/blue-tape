@@ -43,4 +43,16 @@
       }
     }
   }
+
+  @include media(false, tablet) {
+    &_content {
+      top: unset;
+      right: to_vw($space-200);
+      bottom: to_vw($space-200);
+      left: unset;
+      position: fixed;
+      transform: unset;
+      transform-origin: right bottom;
+    }
+  }
 }

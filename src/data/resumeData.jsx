@@ -24,7 +24,7 @@ export const projectsData = [
         details: {
           ko: [
             {
-              text: "SEM PS/CL 기능 개선",
+              text: "SEM PS/CL Technical Resources Release",
               url: [
                 "https://product.samsungsem.com/index.do",
                 "https://weblib.samsungsem.com/index.do"
@@ -53,7 +53,7 @@ export const projectsData = [
           ],
           en: [
             {
-              text: "SEM PS/CL Feature Enhancement",
+              text: "SEM PS/CL Technical Resources Release",
               url: [
                 "https://product.samsungsem.com/index.do",
                 "https://weblib.samsungsem.com/index.do"
@@ -80,15 +80,16 @@ export const projectsData = [
               url: "https://samsungsem.com/kr/bepuco/contest.do"
             }
           ]
-        }
+        },
+        tags: ["#HTML", "#SCSS", "#Javascript", "#jQuery", "#A11y", "#AdaptiveDesign"]
       },
       {
         title: {
           ko: "DB HiTek 웹사이트 리뉴얼",
           en: "DB HiTek Website Development",
           url: {
-            ko: "http://dbhitek.com/kr",
-            en: "http://dbhitek.kr/en"
+            ko: "https://dbhitek.com/kr",
+            en: "https://dbhitek.kr/en"
           }
         },
         period: "2025.03 - 2025.06",
@@ -148,11 +149,11 @@ export const projectsData = [
           ],
           en: [
             {
-              text: "Complete redesign and development of official Korean and English presidential websites",
+              text: "Redesigned bilingual presidential websites",
               url: null
             },
             {
-              text: "Implemented responsive design and achieved web accessibility certification (WCAG compliance)",
+              text: "Delivered responsive design + WCAG compliance",
               url: null
             }
           ]
