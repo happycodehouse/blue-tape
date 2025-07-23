@@ -1,29 +1,31 @@
 import {projectsData} from "../../data/resumeData.jsx";
 import style from "../../pages/resume.module.scss";
 
+import BubbleBox from "./BubbleBox.jsx";
+
 const ProjectsSection = ({isKorean}) => {
   return (
     <>
       {
-        projectsData.map((project, index) => (
+        projectsData.map((company, index) => (
           <div key={index} className={style.grid_1_3}>
             <div className={style.team_area}>
-              <a href={project.company.url} target="_blank" rel="noopener noreferrer">
-                {project.company.name}
+              <a href={company.company.url} target="_blank" rel="noopener noreferrer">
+                {company.company.name}
               </a>
               <ul>
-                <li>{project.company.team}</li>
-                <li>{project.company.period}</li>
+                <li>{company.company.team}</li>
+                <li>{company.company.period}</li>
               </ul>
             </div>
-        
+            
             <div className={style.desc_area}>
               <div>
                 <p className={style.brief}>
-                  {isKorean ? project.brief.ko : project.brief.en}
+                  {isKorean ? company.brief.ko : company.brief.en}
                 </p>
               </div>
-              {project.projects.map((project, projectIndex) => (
+              {company.projects.map((project, projectIndex) => (
                 <div key={projectIndex} className={style.grid_1_2}>
                   <dl>
                     <dt>
@@ -46,13 +48,17 @@ const ProjectsSection = ({isKorean}) => {
                       {(isKorean ? project.details.ko : project.details.en).map((detail, detailIndex) => (
                         <li key={detailIndex}>
                           {detail.url ? (
-                            <a
-                              href={detail.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {detail.text}
-                            </a>
+                            Array.isArray(detail.url) && detail.url.length > 1 ? (
+                              <BubbleBox urls={detail.url} text={detail.text} />
+                            ) : (
+                              <a
+                                href={Array.isArray(detail.url) ? detail.url[0] : detail.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {detail.text}
+                              </a>
+                            )
                           ) : (
                             detail.text
                           )}

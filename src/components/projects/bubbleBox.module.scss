@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import "../../styles/base/font";
+@import "../../styles/base/variable";
+@import "../../styles/base/mixin";
+
+.bubble {
+  &_wrap {
+    position: relative;
+  }
+
+  &_content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% + to_vw($space-100));
+    white-space: nowrap;
+    padding: to_vw($space-100) to_vw($space-200);
+    border-radius: to_vw(8);
+    background-color: $color-black;
+    box-shadow: 0 3px 8px 0 rgba(10, 10, 10, 0.2);
+    scale: 0;
+    transition: scale .5s ease-in-out;
+    transform-origin: left top;
+
+    &.on {
+      scale: 1;
+    }
+
+    .inner {
+      display: flex;
+      flex-direction: column;
+      gap: to_vw(4);
+    }
+
+    a {
+      color: $color-white;
+      font-size: 12px;
+      font-weight: 400;
+      transition: opacity .2s ease-in-out;
+
+      &:hover {
+        opacity: .9;
+      }
+    }
+  }
+}

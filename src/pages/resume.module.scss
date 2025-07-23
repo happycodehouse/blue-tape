@@ -138,10 +138,11 @@
 
     li {
       position: relative;
+      width: fit-content;
+      padding-left: 12px;
       margin-bottom: to_vw($space-100);
       font-size: 14px;
       line-height: 1.3;
-      padding-left: 12px;
 
       &:last-child {
         margin-bottom: 0;

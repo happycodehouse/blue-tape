@@ -1,7 +1,7 @@
 export const projectsData = [
   {
     company: {
-      name: "The Uber Creative.",
+      name: "The Uber Creative",
       url: "https://theuber.co.kr/",
       team: "UI Development Team",
       period: "2023.09 - Present"
@@ -25,11 +25,14 @@ export const projectsData = [
           ko: [
             {
               text: "SEM PS/CL 기능 개선",
-              url: null
+              url: [
+                "https://product.samsungsem.com/index.do",
+                "https://weblib.samsungsem.com/index.do"
+              ]
             },
             {
               text: "제품정보 카테고리 개편",
-              url: null
+              url: "https://www.samsungsem.com/kr/product/module/camera-module/automotive-camera-modules.do"
             },
             {
               text: "웹 접근성 인증 마크 연간 갱신",
@@ -40,6 +43,10 @@ export const projectsData = [
               url: null
             },
             {
+              text: "지속가능경영 카테고리 개편",
+              url: "https://www.samsungsem.com/kr/sustainability/sustainability.do"
+            },
+            {
               text: "푸른코끼리 갤러리 AJAX 업데이트 (23-24년 데이터 분리)",
               url: "https://samsungsem.com/kr/bepuco/contest.do"
             }
@@ -47,11 +54,14 @@ export const projectsData = [
           en: [
             {
               text: "SEM PS/CL Feature Enhancement",
-              url: null
+              url: [
+                "https://product.samsungsem.com/index.do",
+                "https://weblib.samsungsem.com/index.do"
+              ]
             },
             {
-              text: "Product Information Category Restructuring",
-              url: null
+              "text": "Product Category Development",
+              url: "https://www.samsungsem.com/kr/product/module/camera-module/automotive-camera-modules.do"
             },
             {
               text: "Annual Web Accessibility Certification Mark Renewal",
@@ -60,6 +70,10 @@ export const projectsData = [
             {
               text: "Annual Newsletter Redesign (Multi-platform Compatibility Improvement)",
               url: null
+            },
+            {
+              "text": "Sustainability Category Development",
+              url: "https://www.samsungsem.com/global/sustainability/sustainability.do"
             },
             {
               text: "Blue Elephant Gallery AJAX Update (2023-2024 Data Separation)",
@@ -71,7 +85,11 @@ export const projectsData = [
       {
         title: {
           ko: "DB HiTek 웹사이트 리뉴얼",
-          en: "DB HiTek Website Development"
+          en: "DB HiTek Website Development",
+          url: {
+            ko: "http://dbhitek.com/kr",
+            en: "http://dbhitek.kr/en"
+          }
         },
         period: "2025.03 - 2025.06",
         details: {

@@ -37,3 +37,26 @@ a {
 strong {
   font-weight: 700;
 }
+
+.gradient_animation {
+  animation: gradientAnimation 6s linear infinite;
+  background: #1D2B64;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F8CDDA, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-clip: text;
+  background-size: 200% auto;
+  font-weight: 900;
+  color: transparent;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
