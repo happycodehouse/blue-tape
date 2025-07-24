@@ -1,4 +1,5 @@
 import samickthkGif from "../assets/images/resume/samickthk.gif";
+import samickthkGif_En from "../assets/images/resume/en/samickthk.gif";
 
 export const projectsData = [
   {
@@ -124,7 +125,7 @@ export const projectsData = [
         details: {
           ko: [
             {
-              text: "연혁 페이지 GSAP ScrollTrigger 애니메이션 구현",
+              text: "GSAP ScrollTrigger를 활용한 타임라인 인터랙션 애니메이션",
               url: null,
               gif: samickthkGif
             },
@@ -135,9 +136,9 @@ export const projectsData = [
           ],
           en: [
             {
-              text: "Corporate Timeline Page Animation with GSAP ScrollTrigger",
+              text: "Timeline interaction animation with GSAP ScrollTrigger",
               url: null,
-              gif: samickthkGif
+              gif: samickthkGif_En
             },
             {
               text: "Real work content 2",
