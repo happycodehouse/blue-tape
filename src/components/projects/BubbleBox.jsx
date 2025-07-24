@@ -1,19 +1,20 @@
 import { useState } from 'react';
 import style from "./bubbleBox.module.scss"
 
-const BubbleBox = ({ urls, text }) => {
+const BubbleBox = ({ urls, text, className, gif }) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
     <div
-      className={style.bubble_wrap}
+      className={`${style.bubble_wrap} ${gif ? style.gif : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <span className="gradient_animation">{text}</span>
       <div className={`${style.bubble_content} ${isHovered ? style.on : ''}`}>
         <div className={style.inner}>
-          {urls.map((url, index) => (
+          {/* URLs가 있을 때만 렌더링 */}
+          {urls && urls.map((url, index) => (
             <a
               key={index}
               href={url}
@@ -23,6 +24,11 @@ const BubbleBox = ({ urls, text }) => {
               {url}
             </a>
           ))}
+          
+          {/* GIF가 있을 때만 렌더링 */}
+          {gif && (
+            <img src={gif} alt="Project demonstration" />
+          )}
         </div>
       </div>
     </div>

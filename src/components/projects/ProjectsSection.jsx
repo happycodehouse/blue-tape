@@ -1,6 +1,5 @@
 import {projectsData} from "../../data/resumeData.jsx";
 import style from "../../pages/resume.module.scss";
-
 import BubbleBox from "./BubbleBox.jsx";
 
 const ProjectsSection = ({isKorean}) => {
@@ -47,7 +46,11 @@ const ProjectsSection = ({isKorean}) => {
                     <ul>
                       {(isKorean ? project.details.ko : project.details.en).map((detail, detailIndex) => (
                         <li key={detailIndex}>
-                          {detail.url ? (
+                          {/* GIF가 있는 경우 */}
+                          {detail.gif ? (
+                            <BubbleBox gif={detail.gif} text={detail.text} />
+                          ) : detail.url ? (
+                            /* URL이 있는 경우 */
                             Array.isArray(detail.url) && detail.url.length > 1 ? (
                               <BubbleBox urls={detail.url} text={detail.text} />
                             ) : (
@@ -60,6 +63,7 @@ const ProjectsSection = ({isKorean}) => {
                               </a>
                             )
                           ) : (
+                            /* 일반 텍스트 */
                             detail.text
                           )}
                         </li>

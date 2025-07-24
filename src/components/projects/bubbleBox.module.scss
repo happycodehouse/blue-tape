@@ -6,6 +6,18 @@
 .bubble {
   &_wrap {
     position: relative;
+
+    &.gif {
+      .bubble_content {
+        top: unset;
+        right: to_vw($space-200);
+        bottom: to_vw($space-200);
+        left: unset;
+        position: fixed;
+        transform: unset;
+        transform-origin: right bottom;
+      }
+    }
   }
 
   &_content {

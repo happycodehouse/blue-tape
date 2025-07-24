@@ -1,3 +1,5 @@
+import BubbleBox from "../components/projects/BubbleBox.jsx";
+
 export const projectsData = [
   {
     company: {
@@ -24,11 +26,8 @@ export const projectsData = [
         details: {
           ko: [
             {
-              text: "SEM PS/CL Technical Resources Release",
-              url: [
-                "https://product.samsungsem.com/index.do",
-                "https://weblib.samsungsem.com/index.do"
-              ]
+              text: <>SEM <a href="https://product.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">PS</a>/<a href="https://weblib.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">CL</a> Technical Resources Release</>,
+              url: null
             },
             {
               text: "제품정보 카테고리 개편",
@@ -53,15 +52,11 @@ export const projectsData = [
           ],
           en: [
             {
-              text: "SEM PS/CL Technical Resources Release",
-              url: [
-                "https://product.samsungsem.com/index.do",
-                "https://weblib.samsungsem.com/index.do"
-              ]
+              text: <>SEM <a href="https://product.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">PS</a>/<a href="https://weblib.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">CL</a> Technical Resources Release</>,
             },
             {
               "text": "Product Category Development",
-              url: "https://www.samsungsem.com/kr/product/module/camera-module/automotive-camera-modules.do"
+              url: "https://www.samsungsem.com/global/product/module/camera-module/automotive-camera-modules.do"
             },
             {
               text: "Annual Web Accessibility Certification Mark Renewal",
@@ -115,7 +110,41 @@ export const projectsData = [
             }
           ]
         }
-      }
+      },
+      {
+        title: {
+          ko: "삼익THK 통합 사이트 리뉴얼",
+          en: "Samik THK Integrated Website Renewal",
+          url: {
+            ko: "https://www.samickthk.co.kr/kr/",
+            en: "https://www.samickthk.co.kr/en/"
+          }
+        },
+        period: "2023.12 - 2024.05",
+        details: {
+          ko: [
+            {
+              text: "실제 업무 내용 1",
+              url: null,
+              gif: "/src/assets/images/resume/samickthk.gif"
+            },
+            {
+              text: "실제 업무 내용 2",
+              url: null
+            }
+          ],
+          en: [
+            {
+              text: "Real work content 1",
+              url: null
+            },
+            {
+              text: "Real work content 2",
+              url: null
+            }
+          ]
+        }
+      },
     ]
   },
   {
@@ -179,11 +208,11 @@ export const projectsData = [
           ],
           en: [
             {
-              text: "Built interactive data visualization for 100+ government policy initiatives using API integration",
+              text: "Built interactive data visualization for 100+ policy initiatives via API",
               url: null
             },
             {
-              text: "Delivered responsive web solution with full accessibility compliance",
+              text: "Built responsive, WCAG-compliant web solution",
               url: null
             }
           ]
@@ -209,7 +238,7 @@ export const projectsData = [
           ],
           en: [
             {
-              text: "Developed and maintained websites for Daedong (leading agricultural machinery company) and ITcen Group subsidiaries (5 corporate sites)",
+              text: <>Developed and maintained websites for <a href="https://daedong-kioti.com/" target="_blank" rel="noopener noreferrer">Daedong</a> and ITcen Group subsidiaries (5 corporate sites)</>,
               url: null
             },
             {
