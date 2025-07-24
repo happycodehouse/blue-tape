@@ -13,6 +13,7 @@ export default defineConfig({
     // 로컬호스트 변경
     host: "localhost",
     port: 3000,
+    historyApiFallback: true,
   },
   build: {
     rollupOptions: {
