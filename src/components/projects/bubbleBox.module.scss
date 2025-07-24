@@ -25,6 +25,7 @@
     top: 50%;
     transform: translateY(-50%);
     left: calc(100% + to_vw($space-100));
+    z-index: 1;
     white-space: nowrap;
     padding: to_vw($space-100) to_vw($space-200);
     border-radius: to_vw(8);

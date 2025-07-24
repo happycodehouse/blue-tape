@@ -1,4 +1,4 @@
-import BubbleBox from "../components/projects/BubbleBox.jsx";
+import samickthkGif from "../assets/images/resume/samickthk.gif";
 
 export const projectsData = [
   {
@@ -124,9 +124,9 @@ export const projectsData = [
         details: {
           ko: [
             {
-              text: "실제 업무 내용 1",
+              text: "연혁 페이지 GSAP ScrollTrigger 애니메이션 구현",
               url: null,
-              gif: "/src/assets/images/resume/samickthk.gif"
+              gif: samickthkGif
             },
             {
               text: "실제 업무 내용 2",
@@ -135,8 +135,9 @@ export const projectsData = [
           ],
           en: [
             {
-              text: "Real work content 1",
-              url: null
+              text: "Corporate Timeline Page Animation with GSAP ScrollTrigger",
+              url: null,
+              gif: samickthkGif
             },
             {
               text: "Real work content 2",
