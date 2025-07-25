@@ -23,9 +23,9 @@ const Resume = () => {
         </div>
         <div className={style.grid_4}>
           <p>
-            <strong>{isKorean ? personalInfo.name.ko : personalInfo.name.en}</strong>
+            <strong>{isKorean ? personalInfo.name.kr : personalInfo.name.en}</strong>
             {" "}
-            {isKorean ? personalInfo.name.en : personalInfo.name.ko}
+            {isKorean ? personalInfo.name.en : personalInfo.name.kr}
           </p>
           <p>{personalInfo.position}</p>
           <p>{personalInfo.description}</p>

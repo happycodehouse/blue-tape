@@ -92,7 +92,7 @@
   flex-direction: column;
   gap: to_vw($space-200);
 
-  a {
+  a, span {
     width: fit-content;
     font-weight: 700;
     font-size: 16px;
