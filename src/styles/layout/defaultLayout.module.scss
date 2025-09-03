@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@use "../base/variable" as *;
+@use "../base/mixin" as *;
 
 html {
   --window-w: 100vw;

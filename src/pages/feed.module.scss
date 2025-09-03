@@ -1,0 +1,40 @@
+@charset "UTF-8";
+@use "../styles/base/font" as *;
+@use "../styles/base/variable" as *;
+@use "../styles/base/mixin" as *;
+
+.container {
+  display: flex;
+  gap: to_vw($space-600);
+}
+
+.section {
+  &.left {
+    flex: 1;
+
+    .section_title {
+      justify-content: space-between;
+    }
+  }
+
+  &.right {
+    flex: 3;
+
+    .section_title {
+      gap: to_vw($space-2000);
+    }
+  }
+
+  &_title {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 to_vw($space-100) 0;
+    border-bottom: 1px solid $color-black;
+
+    span, button {
+      font-size: 12px;
+      line-height: 1;
+    }
+
+  }
+}

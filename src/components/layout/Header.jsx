@@ -1,4 +1,5 @@
 import {Link, useLocation} from "react-router-dom";
+import classNames from "classnames";
 import headerStyle from "./header.module.scss";
 
 const Header = () => {
@@ -8,22 +9,22 @@ const Header = () => {
   const getPageTitle = () => {
     switch (currentPath) {
       case "/resume":
-        return "Resume";
+        return "RESUME";
       case "/feed":
-        return "Feed";
+        return "FEED";
       default:
         return "BLUE-Tape";
     }
   };
   
   const navItems = [
-    {path: "/resume", label: "Resume"},
-    {path: "/feed", label: "Feed"},
-    {path: "/", label: "Home"}
+    {path: "/resume", label: "RESUME"},
+    {path: "/feed", label: "FEED"},
+    {path: "/", label: "HOME"}
   ];
   
   return (
-    <header className={headerStyle.header}>
+    <header className={classNames(headerStyle.header, currentPath === "/" && headerStyle.home_style)}>
       <div className={headerStyle.inner}>
         <div className={headerStyle.logo}>
           {getPageTitle()}

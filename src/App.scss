@@ -1,8 +1,8 @@
 // base
-@import "styles/base/variable";
-@import "styles/base/mixin";
-@import "styles/base/reset";
-@import "styles/base/font";
+@use "styles/base/variable" as *;
+@use "styles/base/mixin" as *;
+@use "styles/base/reset" as *;
+@use "styles/base/font" as *;
 
 // layout
-@import "./styles/layout/defaultLayout.module";
+@use "./styles/layout/defaultLayout.module" as *;

@@ -1,15 +1,35 @@
 @charset "UTF-8";
-@import "../../styles/base/font";
-@import "../../styles/base/variable";
-@import "../../styles/base/mixin";
+@use "../../styles/base/font" as *;
+@use "../../styles/base/variable" as *;
+@use "../../styles/base/mixin" as *;
 
-header {
+.header {
   margin-bottom: to_vw(12);
   padding: to_vw($space-400) to_vw($space-400);
 
+  @include media($from: laptop) {
+    &.home_style {
+      .inner {
+        .gnb {
+          align-items: flex-start;
+          gap: to_vw($space-200);
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
   .inner {
+    display: flex;
+    align-items: flex-end;
+
+    > * {
+      flex: 1;
+    }
+
     .logo {
-      font-size: to_vw(64);
+      @include fontSize(64);
       font-family: $font-system !important;
       color: $color-black;
       letter-spacing: -0.2rem;
@@ -20,9 +40,10 @@ header {
       flex-direction: column;
       align-items: flex-end;
       gap: to_vw($space-100);
+      text-decoration: underline;
       font-family: $font-jetbrains;
       font-size: 16px;
-      text-decoration: underline;
+      font-weight: 500;
     }
   }
 }

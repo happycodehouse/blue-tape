@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@use "variable" as *;
+@use "mixin" as *;
 
 /* reset */
 html,
