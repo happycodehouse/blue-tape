@@ -1,0 +1,10 @@
+@charset "UTF-8";
+@use "../styles/base/font" as *;
+@use "../styles/base/variable" as *;
+@use "../styles/base/mixin" as *;
+
+.view {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: to_vw($space-600) to_vw($space-300);
+}
