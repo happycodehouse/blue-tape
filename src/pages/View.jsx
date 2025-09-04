@@ -13,12 +13,15 @@ const View = () => {
   
   return (
     <div className="container">
-      <div className={style.viewWrap}>
+      <div className={style.viewWrapper}>
         <div className={style.titleArea}>
           <div className={style.date}>
             <span>/</span>
             <Link to="/feed">FEED</Link>
             <span>/{post.date}</span>
+          </div>
+          <div>
+            <button type="button"></button>
           </div>
           <h1>{post.title}</h1>
         </div>

@@ -18,8 +18,8 @@ const Header = () => {
   };
   
   const navItems = [
-    {path: "/resume", label: "RESUME"},
     {path: "/feed", label: "FEED"},
+    {path: "/resume", label: "RESUME"},
     {path: "/", label: "HOME"}
   ];
   
