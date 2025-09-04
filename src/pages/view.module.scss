@@ -3,13 +3,34 @@
 @use "../styles/base/variable" as *;
 @use "../styles/base/mixin" as *;
 
-.view {
+.viewWrap {
   max-width: 800px;
   margin: 0 auto;
-  padding: to_vw($space-600) to_vw($space-300);
+  padding: 0 to_vw($space-300);
 }
 
-.title {
+.titleArea {
+  padding: to_vw($space-600) 0 to_vw($space-200);
+  border-bottom: 1px solid $color-black;
+
+  .date {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: to_vw($space-100);
+
+    a {
+      font-size: 16px;
+      font-weight: 900;
+    }
+  }
+
+  h1 {
+    @include fontSize(18, 27);
+    font-weight: 300;
+  }
+}
+
+.contentArea {
 
 }
 

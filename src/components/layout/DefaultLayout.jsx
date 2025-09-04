@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 
 const DefaultLayout = ({ children }) => {
   const location = useLocation();
-  const isViewPage = location.pathname.includes('/feed/view');
+  const isViewPage = location.pathname.startsWith('/feed') && location.pathname !== '/feed';
   
   return (
     <div id="defaultLayout">

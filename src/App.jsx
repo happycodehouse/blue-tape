@@ -16,7 +16,7 @@ function App() {
             <Route path="/" element={<Welcome/>}/>
             <Route path="/resume" element={<Resume/>}/>
             <Route path="/feed" element={<Feed/>}/>
-            <Route path="/feed/view/:id" element={<View/>}/>
+            <Route path="/feed/:id" element={<View/>}/>
           </Routes>
         </DefaultLayout>
       </BrowserRouter>

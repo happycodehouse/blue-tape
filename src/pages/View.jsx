@@ -5,7 +5,7 @@ import style from "./view.module.scss";
 
 const View = () => {
   const {id} = useParams();
-  const post = feedData.find(item => item.id === parseInt(id));
+  const post = feedData.find(item => item.id === id);
   
   if (!post) {
     return <div>Post not found.</div>;
@@ -13,14 +13,16 @@ const View = () => {
   
   return (
     <div className="container">
-      <div className={style.view}>
-        <div className={style.title}>
-          <div>
-            /<Link to="/feed/"><span>FEED</span></Link><span>/{post.date}</span>
+      <div className={style.viewWrap}>
+        <div className={style.titleArea}>
+          <div className={style.date}>
+            <span>/</span>
+            <Link to="/feed">FEED</Link>
+            <span>/{post.date}</span>
           </div>
           <h1>{post.title}</h1>
         </div>
-        <div className={style.content}>
+        <div className={style.contentArea}>
           {post.content}
         </div>
       </div>

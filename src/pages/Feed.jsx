@@ -74,7 +74,7 @@ const Feed = () => {
           <ul className={style.feedList}>
             {filteredData.map((item) => (
               <li key={item.id}>
-                <Link to={`/feed/view/${item.id}`}>
+                <Link to={`/feed/${item.id}`}>
                   <span className={style.date}>{item.date}</span>
                   <span className={style.title}>{item.title}</span>
                 </Link>
