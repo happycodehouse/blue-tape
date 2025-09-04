@@ -1,61 +1,87 @@
-import {useState} from "react";
+import {useState, useCallback, useMemo} from "react";
 import {Link} from "react-router-dom";
 import {feedData} from "../data/feedData.jsx";
-import classNames from "classnames";
 import style from "./feed.module.scss";
+
+const FILTER_OPTIONS = ["CAREER", "DEV", "LIFE"];
 
 const Feed = () => {
   const [selectedFilter, setSelectedFilter] = useState(null);
   
-  const filterOptions = ["CAREER", "DEV", "LIFE"];
+  const handleFilterClick = useCallback((filter) => {
+    setSelectedFilter(prev => prev === filter ? null : filter);
+  }, []);
   
-  const handleFilterClick = (filter) => {
-    setSelectedFilter(selectedFilter === filter ? null : filter);
-  };
-  
-  const handleClearFilter = () => {
+  const handleClearFilter = useCallback(() => {
     setSelectedFilter(null);
-  };
+  }, []);
   
-  const filteredData = selectedFilter
-    ? feedData.filter(item => item.category === selectedFilter)
-    : feedData;
+  const filteredData = useMemo(() => {
+    return selectedFilter
+      ? feedData.filter(item => item.category === selectedFilter)
+      : feedData;
+  }, [selectedFilter]);
+  
+  // 데이터가 없을 때 처리
+  if (!feedData?.length) {
+    return <div className="container">No feed data available</div>;
+  }
+  
+  const noResults = filteredData.length === 0;
   
   return (
-    <div className={classNames("container", style.container)}>
-      <div className={classNames(style.section, style.left)}>
-        <div className={style.section_title}>
+    <div className={`container ${style.container}`}>
+      <div className={`${style.section} ${style.left}`}>
+        <div className={style.sectionTitle}>
           <span>/ FILTER</span>
-          <button type="button" onClick={handleClearFilter}>CLEAR FILTER</button>
+          <button
+            type="button"
+            onClick={handleClearFilter}
+            disabled={!selectedFilter}
+            aria-label="Clear all filters"
+          >
+            CLEAR FILTER
+          </button>
         </div>
-        <ul className={style.filter_list}>
-          {filterOptions.map((filter) => (
+        <ul className={style.filterList}>
+          {FILTER_OPTIONS.map((filter) => (
             <li
               key={filter}
-              className={classNames({[style.selected]: selectedFilter === filter})}
+              className={selectedFilter === filter ? style.selected : ''}
             >
-              <button type="button" onClick={() => handleFilterClick(filter)}>
+              <button
+                type="button"
+                onClick={() => handleFilterClick(filter)}
+                aria-pressed={selectedFilter === filter}
+                aria-label={`Filter by ${filter}`}
+              >
                 {filter}
               </button>
             </li>
           ))}
         </ul>
       </div>
-      <div className={classNames(style.section, style.right)}>
-        <div className={style.section_title}>
+      <div className={`${style.section} ${style.right}`}>
+        <div className={style.sectionTitle}>
           <span className={style.date}>/ DATE</span>
           <span className={style.title}>/ TITLE</span>
         </div>
-        <ul className={style.feed_list}>
-          {filteredData.map((item) => (
-            <li key={item.id}>
-              <Link to={`/feed/view/${item.id}`}>
-                <span className={style.date}>{item.date}</span>
-                <span className={style.title}>{item.title}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {noResults ? (
+          <div className={style.noResults}>
+            No posts found for the selected filter.
+          </div>
+        ) : (
+          <ul className={style.feedList}>
+            {filteredData.map((item) => (
+              <li key={item.id}>
+                <Link to={`/feed/view/${item.id}`}>
+                  <span className={style.date}>{item.date}</span>
+                  <span className={style.title}>{item.title}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

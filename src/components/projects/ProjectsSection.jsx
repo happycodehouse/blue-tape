@@ -7,8 +7,8 @@ const ProjectsSection = ({isKorean}) => {
     <>
       {
         projectsData.map((company, index) => (
-          <div key={index} className={style.grid_1_3}>
-            <div className={style.team_area}>
+          <div key={index} className={style.gridOneThree}>
+            <div className={style.teamArea}>
               {company.company.url ?
                 <a href={company.company.url} target="_blank" rel="noopener noreferrer">
                   {company.company.name}
@@ -16,21 +16,21 @@ const ProjectsSection = ({isKorean}) => {
                 :
                 <span>{company.company.name}</span>
               }
-
+              
               <ul>
                 <li>{company.company.team}</li>
                 <li>{company.company.period}</li>
               </ul>
             </div>
             
-            <div className={style.desc_area}>
+            <div className={style.descArea}>
               <div>
                 <p className={style.brief}>
                   {isKorean ? company.brief.kr : company.brief.en}
                 </p>
               </div>
               {company.projects.map((project, projectIndex) => (
-                <div key={projectIndex} className={style.grid_1_2}>
+                <div key={projectIndex} className={style.gridOneTwo}>
                   <dl>
                     <dt>
                       {project.title.url ? (
@@ -75,7 +75,7 @@ const ProjectsSection = ({isKorean}) => {
                       ))}
                     </ul>
                     {project.tags && (
-                      <div className={style.tag_wrap}>
+                      <div className={style.tagWrap}>
                         {project.tags.map((tag, tagIndex) => (
                           <span key={tagIndex}>{tag}</span>
                         ))}
@@ -89,7 +89,7 @@ const ProjectsSection = ({isKorean}) => {
         ))
       }
     </>
-  )
-}
+  );
+};
 
 export default ProjectsSection;

@@ -11,7 +11,7 @@
   margin-bottom: to_vw($space-1000);
 }
 
-.language_btn_wrap {
+.languageBtnWrap {
   display: flex;
   justify-content: flex-end;
   gap: to_vw(6);
@@ -23,15 +23,25 @@
     text-decoration: underline;
     color: $color-black;
     opacity: 0.5;
+    transition: opacity 0.2s ease;
 
     &.on {
       font-weight: 700;
       opacity: 1;
     }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus {
+      outline: 2px solid $color-black;
+      outline-offset: 2px;
+    }
   }
 }
 
-.grid_4 {
+.gridFour {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: to_vw($space-100);
@@ -56,13 +66,13 @@
   }
 }
 
-.grid_1_3 {
+.gridOneThree {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: to_vw($space-100);
   padding: to_vw($space-300) 0;
 
-  & + .grid_1_3 {
+  & + .gridOneThree {
     border-top: 1px solid $color-black;
   }
 
@@ -72,12 +82,12 @@
   }
 }
 
-.grid_1_2 {
+.gridOneTwo {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: to_vw($space-200) 0;
 
-  & + .grid_1_2 {
+  & + .gridOneTwo {
     border-top: 1px solid $color-black;
   }
 
@@ -87,7 +97,7 @@
   }
 }
 
-.team_area {
+.teamArea {
   display: flex;
   flex-direction: column;
   gap: to_vw($space-200);
@@ -108,7 +118,7 @@
   }
 }
 
-.desc_area {
+.descArea {
   .brief {
     @include wordBreak;
     font-size: 14px;
@@ -157,7 +167,7 @@
     }
   }
 
-  .tag_wrap {
+  .tagWrap {
     display: flex;
     align-items: center;
     gap: to_vw(4);

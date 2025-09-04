@@ -16,7 +16,7 @@
   &.left {
     flex: 1;
 
-    .section_title {
+    .sectionTitle {
       justify-content: space-between;
     }
   }
@@ -32,19 +32,19 @@
       width: calc(100% - #{to_vw(120)});
     }
   }
+}
 
-  &_title {
-    display: flex;
-    align-items: flex-end;
-    padding: 0 0 to_vw($space-100) 0;
-    margin: 0 0 to_vw($space-300) 0;
-    border-bottom: 1px solid $color-black;
+.sectionTitle {
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 to_vw($space-100) 0;
+  margin: 0 0 to_vw($space-300) 0;
+  border-bottom: 1px solid $color-black;
 
-    span, button {
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1;
-    }
+  span, button {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
   }
 
   @include media(false, tablet) {
@@ -52,7 +52,7 @@
   }
 }
 
-.filter_list {
+.filterList {
   li {
     position: relative;
     margin-bottom: to_vw($space-100);
@@ -99,7 +99,7 @@
   }
 }
 
-.feed_list {
+.feedList {
   li {
     border-bottom: 1px solid $color-black;
     padding-bottom: to_vw($space-300);
@@ -113,5 +113,22 @@
 
   .date {
     font-size: 14px;
+  }
+}
+
+.noResults {
+  padding: to_vw($space-400);
+  text-align: center;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+// Clear 버튼 비활성화 상태 스타일 추가
+.sectionTitle {
+  button {
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 }

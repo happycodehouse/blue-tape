@@ -51,13 +51,13 @@ const BearBanner = () => {
       <div className={style.figure}>
         <img src={figure} alt=""/>
       </div>
-      <div className={style.mass_wrap}>
+      <div className={style.massWrap}>
         {images.map((img, index) => (
           <img
             key={index}
             src={img}
             alt=""
-            className={style[`mass_item${String(index + 1).padStart(2, '0')}`]}
+            className={style[`massItem${String(index + 1).padStart(2, '0')}`]}
             ref={el => massesRef.current[index] = el}
           />
         ))}

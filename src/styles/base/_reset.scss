@@ -2,7 +2,9 @@
 @use "variable" as *;
 @use "mixin" as *;
 
-/* reset */
+// ========================================
+// CSS Reset
+// ========================================
 html,
 body,
 p,
@@ -38,7 +40,6 @@ body {
   color: #0a0a0a;
   font-weight: 400;
   line-height: 1;
-  // -webkit-text-size-adjust: none; // 테스트 - 기존 소스
   -webkit-text-size-adjust: 100%;
 }
 
@@ -47,6 +48,9 @@ body {
   font-size: 16px;
 }
 
+// ========================================
+// Typography Reset
+// ========================================
 h1,
 h2,
 h3,
@@ -75,6 +79,14 @@ pre {
   white-space: pre-wrap;
 }
 
+address,
+em {
+  font-style: normal;
+}
+
+// ========================================
+// Form & Input Reset
+// ========================================
 fieldset,
 img,
 button {
@@ -91,6 +103,24 @@ img {
   max-width: 100%;
 }
 
+button {
+  background: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+// ========================================
+// Table & List Reset
+// ========================================
 table {
   width: 100%;
   border-collapse: collapse;
@@ -99,29 +129,27 @@ table {
   word-wrap: break-word;
 }
 
-address,
-em {
-  font-style: normal;
-}
-
 ol,
 ul,
 li {
   list-style: none;
 }
 
-hr {
-  display: none;
-}
-
+// ========================================
+// Link & Hidden Elements
+// ========================================
 a {
   text-decoration: none;
   color: inherit;
 }
 
-a:hover,
-a:active {
-  //text-decoration: none;
+// a:hover,
+// a:active {
+//   text-decoration: none;
+// }
+
+hr {
+  display: none;
 }
 
 legend {
@@ -138,29 +166,9 @@ caption {
   line-height: 0;
 }
 
-button {
-  background: none;
-  cursor: pointer;
-  -webkit-apperance: none;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-textarea {
-  resize: none;
-}
-
-// :focus {
-//     outline: 0;
-// }
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
+// ========================================
+// Accessibility & Screen Reader
+// ========================================
 .blind {
   display: none;
   position: absolute;
@@ -176,7 +184,23 @@ textarea {
   overflow: hidden;
 }
 
-/* HTML5 display-role reset for older browsers */
+.hide {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+// ========================================
+// Box Model & Global Styles
+// ========================================
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: $font-jetbrains;
+}
+
+// ========================================
+// HTML5 Element Reset
+// ========================================
 article,
 aside,
 details,
@@ -191,7 +215,9 @@ section {
   display: block;
 }
 
-/* select arrow none */
+// ========================================
+// Input Appearance Reset
+// ========================================
 input[type="text"],
 input[type="password"],
 input[type="number"],
@@ -210,6 +236,9 @@ textarea {
   -moz-appearance: none;
 }
 
+// ========================================
+// Placeholder Styles
+// ========================================
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #999;
@@ -235,17 +264,20 @@ textarea::placeholder {
   color: #999;
 }
 
+// ========================================
+// Autofill & Search Input Reset
+// ========================================
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset;
 }
 
-/* input:[type=search] clear btn css 초기화 IE의 경우 */
+// IE input clear button reset
 input::-ms-clear,
 input::-ms-reveal {
   display: none;
 }
 
-/* input:[type=search] clear btn css 초기화 크롬의 경우 */
+// Chrome search input clear button reset
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
@@ -253,16 +285,19 @@ input::-webkit-search-results-decoration {
   display: none;
 }
 
-.hide {
-  display: none !important;
-  visibility: hidden !important;
-}
-
+// ========================================
+// Third-party Library Styles
+// ========================================
 .swiper-scrollbar-drag {
   cursor: pointer;
 }
 
-/* touch기능으로 mobile/tablet 판별하여 css에 root var 추가 <-- coarse 터치기기 : fine 웹 */
+// ========================================
+// Responsive & Touch Detection
+// ========================================
+// Touch device detection for mobile/tablet
+// coarse: touch device, fine: web/desktop
+
 @include media(tablet, false, $and: "pointer: fine") {
   :root {
     --pointer: fine;
@@ -270,9 +305,9 @@ input::-webkit-search-results-decoration {
 }
 
 // @include media(mobile, 1367px, $and: "pointer: coarse", $etc: ", (min-width: 768px) and (max-width: 1024px)") {
-//     :root {
-//         --pointer: tablet;
-//     }
+//   :root {
+//     --pointer: tablet;
+//   }
 // }
 
 @include media(false, tablet, $etc: ", (max-width: 1366px) and (pointer: coarse)") {
@@ -281,6 +316,9 @@ input::-webkit-search-results-decoration {
   }
 }
 
-* {
-  font-family: $font-jetbrains;
-}
+// ========================================
+// Focus Styles (Optional)
+// ========================================
+// :focus {
+//   outline: 0;
+// }

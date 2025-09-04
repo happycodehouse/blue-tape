@@ -4,7 +4,9 @@
 @use "sass:map";
 @use "sass:meta";
 
-/* mediaQuery */
+// ========================================
+// Media Query
+// ========================================
 $breakpoints: (
         mobile: 768px,
         tablet: 1025px,
@@ -13,12 +15,12 @@ $breakpoints: (
 );
 
 @mixin media($from: false, $until: false, $and: false, $or: false, $etc: false, $media-type: all) {
-  /// ❓ 선택값
-  /// $from, $until : $breakpoints or number
-  /// $and : 조건 연산자
-  /// 예) @include media($from: "sm", $until: 768px, $and:"orientation: landscape")
-  /// media(false, tablet, $etc:", (max-width: 1366px) and (pointer: coarse)")
-  ///
+  // 선택값
+  // $from, $until: $breakpoints or number
+  // $and: 조건 연산자
+  // 예) @include media($from: "sm", $until: 768px, $and: "orientation: landscape")
+  // media(false, tablet, $etc: ", (max-width: 1366px) and (pointer: coarse)")
+
   $min-width: 0;
   $max-width: 0;
   $query: "";
@@ -64,12 +66,14 @@ $breakpoints: (
   }
 }
 
-/* Font Size */
+// ========================================
+// Font Size
+// ========================================
 @mixin fontSize($font-size: null, $line-height: null, $letter-spacing: null) {
-  /// ❓ 선택값
-  /// $font-size, $letter-spacing, $line-height : photoshop value
-  /// $margin-bottom : marginBlock * value
-  //font-size: $font-size * 1px;
+  // 선택값
+  // $font-size, $letter-spacing, $line-height: photoshop value
+  // font-size: $font-size * 1px;
+
   @if $font-size == null {
     font-size: 1rem;
   } @else {
@@ -83,21 +87,21 @@ $breakpoints: (
   }
 
   @if $letter-spacing == null {
-    letter-spacing: -0.02em; // -2%;
+    letter-spacing: -0.02em; // -2%
   } @else {
     letter-spacing: math.div($letter-spacing, 1000) * 1em;
   }
 }
 
-/* Ellipsis */
+// ========================================
+// Ellipsis
+// ========================================
 @mixin ellipsis($lines: false, $font-size: null, $lh: null, $use: true) {
-  /// @ 값이 없을 경우
-  /// 기본적으로 1줄 말줄임
-
-  /// @ 값이 2이상 일 경우
-  /// $font-size : em 계산으로 해당 font-size 필요
-  /// $lh : line-height;
-  /// 해당하는 값만 큼 말줄임 => @include ellipsis(3); 👈 3줄 말줄임
+  // 값이 없을 경우: 기본적으로 1줄 말줄임
+  // 값이 2이상일 경우:
+  // $font-size: em 계산으로 해당 font-size 필요
+  // $lh: line-height
+  // 해당하는 값만큼 말줄임 => @include ellipsis(3); // 3줄 말줄임
 
   @if ($lines) {
     // 여러 줄 말줄임
@@ -121,14 +125,16 @@ $breakpoints: (
   }
 }
 
-/* PX TO VW (to vw) */
+// ========================================
+// PX TO VW (to vw)
+// ========================================
 @function to_vw($px-size) {
   $minus: 0;
   $size: 0;
   $resultVw: 0;
 
   @if $px-size < 0 {
-    //음수
+    // 음수
     $px-size: $px-size * -1;
     $minus: 1;
   }
@@ -144,7 +150,9 @@ $breakpoints: (
   }
 }
 
-/* Flex */
+// ========================================
+// Flex
+// ========================================
 @mixin flex($mode: flex, $justify-content: start, $align-items: normal, $wrap: wrap) {
   display: $mode;
   flex-wrap: $wrap;
@@ -152,7 +160,9 @@ $breakpoints: (
   align-items: $align-items;
 }
 
-/* wordBreak */
+// ========================================
+// Word Break
+// ========================================
 @mixin wordBreak {
   word-break: keep-all;
   word-wrap: break-word;

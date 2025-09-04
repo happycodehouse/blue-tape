@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useCallback} from "react";
 import classNames from "classnames";
 import {languageData, personalInfo} from "../data/commonData.jsx";
 import style from "./resume.module.scss";
@@ -8,20 +8,20 @@ const Resume = () => {
   const [isKorean, setIsKorean] = useState(false);
   
   // 언어 변경 핸들러
-  const handleLanguageChange = (value) => {
+  const handleLanguageChange = useCallback((value) => {
     setIsKorean(value);
-  };
+  }, []);
   
   return (
     <div className="container">
       <div className={style.section}>
-        <div className={classNames(style.grid_4, "border_bottom")}>
+        <div className={classNames(style.gridFour, "borderBottom")}>
           <span>ID /</span>
           <span>POSITION /</span>
           <span>DESCRIPTION /</span>
           <span>CONTACT /</span>
         </div>
-        <div className={style.grid_4}>
+        <div className={style.gridFour}>
           <p>
             <strong>{isKorean ? personalInfo.name.kr : personalInfo.name.en}</strong>
             {" "}
@@ -37,12 +37,14 @@ const Resume = () => {
         </div>
       </div>
       
-      <div className={classNames(style.language_btn_wrap, "border_bottom")}>
+      <div className={classNames(style.languageBtnWrap, "borderBottom")}>
         {languageData.map((button) => (
           <button
             key={button.key}
             onClick={() => handleLanguageChange(button.value)}
             className={isKorean === button.value ? style.on : ""}
+            aria-pressed={isKorean === button.value}
+            aria-label={`Switch to ${button.label}`}
           >
             {button.label}
           </button>
@@ -50,11 +52,10 @@ const Resume = () => {
       </div>
       
       <div className={style.section}>
-        {/* 🔥 여기가 핵심! isKorean prop을 전달해야 함 */}
         <ProjectsSection isKorean={isKorean} />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Resume;

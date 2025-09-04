@@ -27,7 +27,7 @@ html {
   display: flex;
 }
 
-.border_bottom {
+.borderBottom {
   border-bottom: 1px solid $color-black;
 }
 
@@ -39,7 +39,7 @@ strong {
   font-weight: 700;
 }
 
-.gradient_animation {
+.gradientAnimation {
   animation: gradientAnimation 3s linear infinite;
   background: #1D2B64; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64); /* Chrome 10-25, Safari 5.1-6 */

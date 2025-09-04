@@ -27,7 +27,7 @@ $default-mass-img-size: 74;
   }
 }
 
-.mass_wrap {
+.massWrap {
   position: absolute;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@ $default-mass-img-size: 74;
   }
 }
 
-.mass_item {
+.massItem {
   &01 {
     display: none;
   }
@@ -109,7 +109,7 @@ $default-mass-img-size: 74;
     height: to_vw(200);
   }
 
-  .mass_item {
+  .massItem {
     &02 {
       display: none;
     }
