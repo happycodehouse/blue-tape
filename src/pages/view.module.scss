@@ -75,6 +75,26 @@ article {
   }
 }
 
+pre {
+  width: 100%;
+  margin: 0;
+  border: 1px solid #d1d5db;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: .5rem;
+  white-space: pre-wrap;
+
+  code {
+    padding: 0 0.25rem;
+    margin: 0 .1rem;
+    counter-reset: line;
+    background: transparent;
+    font-family: 'Fira Code', monospace;
+    font-size: small;
+    line-height: 2;
+  }
+}
+
 .titleArea {
   display: flex;
   flex-direction: column;

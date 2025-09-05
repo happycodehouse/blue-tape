@@ -8,10 +8,10 @@ const Header = () => {
   
   const getPageTitle = () => {
     switch (currentPath) {
-      case "/resume":
-        return "RESUME";
       case "/feed":
         return "FEED";
+      case "/resume":
+        return "RESUME";
       default:
         return "BLUE-Tape";
     }
