@@ -1,7 +1,130 @@
-//**category : CAREER, DEV, LIFE
+import { useEffect } from 'react';
+import classNames from "classnames";
 import style from "../pages/view.module.scss"
 
+// intellij-scss Images
+import intellij_scss_img_01 from "../assets/images/feed/intellij-scss/img-01.png"
+import intellij_scss_img_02 from "../assets/images/feed/intellij-scss/img-02.png"
+
+
+
+//**category : CAREER, DEV, LIFE
 export const feedData = [
+  {
+    id: "intellij-scss",
+    category: "DEV",
+    date: "08.09.25",
+    title: "IntelliJ IDEA SCSS Setup Guide",
+    content:
+      <>
+        <article>
+          <header>
+            <h2 className={style.sectionTitle}>When You Need This</h2>
+            <p>To optimize website loading speed, here's how to set up automatic compilation from SCSS to minified CSS in IntelliJ IDEA.</p>
+          </header>
+          
+          <section>
+            <h4 className={style.itemTitle}>This setup is useful for projects that don't have built-in CSS optimization, such as:</h4>
+            <ul className={style.itemList}>
+              <li>Pure HTML/CSS/JS projects</li>
+              <li>Legacy projects without modern build tools</li>
+              <li>Custom build tool configurations</li>
+              <li>WordPress theme development</li>
+              <li>Static websites</li>
+            </ul>
+            <p className={style.subText}>If you're using modern frameworks like React, Next.js, or Vue with their default build tools, this manual setup isn't necessary as they handle CSS minification automatically.</p>
+          </section>
+        </article>
+        
+        <article>
+          <header>
+            <h2 className={style.sectionTitle}>1. Prerequisites</h2>
+          </header>
+          
+          <section>
+            <h3 className={style.subTitle}>1-1. Install Sass Compiler</h3>
+            <pre>
+              <code>
+                npm install -g sass
+              </code>
+            </pre>
+          </section>
+          
+          <section>
+            <h3 className={style.subTitle}>1-2. Install IntelliJ Plugins</h3>
+            <p>Go to <strong>File</strong> > <strong>Settings</strong> > <strong>Plugins</strong> and install the following plugins:</p>
+            <ul className={style.itemList}>
+              <li><strong className={style.bk}>Sass</strong></li>
+              <li><strong className={style.bk}>File Watchers</strong></li>
+            </ul>
+          </section>
+        </article>
+        
+        <article>
+          <header>
+            <h2 className={style.sectionTitle}>2. Configure SCSS File Watcher</h2>
+            <p>Navigate to <strong>File</strong> > <strong>Settings</strong> > <strong>Tools</strong> > <strong>File Watchers</strong> and create a new watcher.</p>
+            <div className={classNames(style.imgBox)} data-uk-lightbox="animation: slide">
+              <a href={intellij_scss_img_01}>
+                <img src={intellij_scss_img_01} alt="IntelliJ SCSS Setup 1"/>
+              </a>
+              <a href={intellij_scss_img_02}>
+                <img src={intellij_scss_img_02} alt="IntelliJ SCSS Setup 2"/>
+              </a>
+            </div>
+          </header>
+          
+          <section>
+            <h3 className={style.subTitle}>2-1. Regular CSS Compilation Settings</h3>
+            <p><strong>1) Arguments:</strong></p>
+            <pre>
+              <code>
+$FileName$:$FileNameWithoutExtension$.css --no-source-map
+              </code>
+            </pre>
+            <p><strong>2) Output paths to refresh:</strong></p>
+            <pre>
+              <code>
+$ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$FileNameWithoutExtension$.css.map
+              </code>
+            </pre>
+          </section>
+          
+          <section>
+            <h3 className={style.subTitle}>2-2. Minified CSS Compilation Settings</h3>
+            <p><strong>1) Arguments:</strong></p>
+            <pre>
+              <code>
+$FileName$:$FileNameWithoutExtension$.min.css  --style compressed --no-source-map
+              </code>
+            </pre>
+            <p><strong>2) Output paths to refresh:</strong></p>
+            <pre>
+              <code>
+$ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$FileNameWithoutExtension$.min.css.map
+              </code>
+            </pre>
+          </section>
+        </article>
+        
+        <article>
+          <header>
+            <h2 className={style.sectionTitle}>3. Additional Settings</h2>
+          </header>
+          
+          <section>
+            <h4 className={style.itemTitle}>Check Track only root files option</h4>
+            <ul className={style.itemList}>
+              <li>Check <strong>Track only root files</strong> option to ensure compilation only triggers when root SCSS files are modified, not imported partials.</li>
+            </ul>
+          </section>
+          
+          <section>
+            <p>Now your SCSS files will automatically compile to minified CSS whenever you save them.</p>
+          </section>
+        </article>
+      </>
+  },
   {
     id: "circular-heritage",
     category: "DEV",

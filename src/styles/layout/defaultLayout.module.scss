@@ -12,6 +12,8 @@ html {
   --base-size: 1536;
   --base-percent: 100vw;
 
+  --lightbox-icon-color: #000;
+
   @include media(false, tablet) {
     --base-ratio: 1;
     --base-size: 1;
@@ -60,4 +62,18 @@ strong {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.uk-lightbox {
+  background: transparent;
+  backdrop-filter:blur(10px);
+}
+
+.uk-lightbox-toolbar .uk-lightbox-toolbar-icon,
+.uk-lightbox-button {
+  color: var(--lightbox-icon-color) !important;
+}
+
+.uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) {
+  stroke: var(--lightbox-icon-color) !important;
 }

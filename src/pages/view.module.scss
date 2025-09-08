@@ -8,12 +8,15 @@
   --section-gap: 3rem;
   --content-gap: 1.5rem;
   --text-gap: 1rem;
+  --sub-text-gap: 2rem;
+  --img-gap: 2rem;
 
   // Typography
   --page-title-size: 2.25rem;
   --title-size: 1.75rem;
-  --subtitle-size: 1.25rem;
+  --sub-title-size: 1.25rem;
   --item-title-size: 1.125rem;
+  --sub-text-size: 0.75rem;
   --body-size: 1rem;
 
   // Line height
@@ -24,6 +27,7 @@
   // Colors
   --text-primary: #1a1a1a;
   --text-secondary: #666;
+  --text-strong: #E9007F;
   --border-light: #e5e5e5;
 }
 
@@ -32,7 +36,7 @@
     --section-gap: 2rem;
     --content-gap: 1rem;
     --title-size: 1.5rem;
-    --subtitle-size: 1.125rem;
+    --sub-title-size: 1.125rem;
   }
 
   .viewWrapper {
@@ -64,6 +68,21 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    &.subText {
+      position: relative;
+      padding-left: 1rem;
+      margin: var(--sub-text-gap) 0;
+      font-style: italic;
+      font-size: var(--sub-text-size);
+
+      &::before {
+        content: '*';
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
   }
 }
 
@@ -92,6 +111,15 @@ pre {
     font-family: 'Fira Code', monospace;
     font-size: small;
     line-height: 2;
+  }
+}
+
+strong {
+  font-weight: 900;
+  color: var(--text-strong);
+
+  &.bk {
+    color: $color-black;
   }
 }
 
@@ -151,7 +179,7 @@ pre {
 .subTitle {
   margin-bottom: var(--text-gap);
   margin-top: var(--content-gap);
-  font-size: var(--subtitle-size);
+  font-size: var(--sub-title-size);
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -161,11 +189,11 @@ pre {
   margin-top: var(--content-gap);
   font-size: var(--item-title-size);
   font-weight: 600;
+  line-height: var(--title-lh);
   color: var(--text-primary);
 }
 
 .itemList {
-
   li {
     position: relative;
     padding-left: 1rem;
@@ -191,10 +219,28 @@ pre {
 
 .contentArea {
   padding: to_vw($space-1000) 0;
+}
 
-  //p {
-  //  font-size: 16px;
-  //  line-height: 1.5;
-  //}
+.imgBox {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--img-gap);
+  width: 100%;
+
+  a {
+    cursor: zoom-in;
+  }
+
+  img {
+    height: fit-content;
+    object-fit: cover;
+  }
+
+  &.half {
+    a {
+      cursor: zoom-in;
+      width: calc((100% - var(--img-gap)) / 2);
+    }
+  }
 }
 
