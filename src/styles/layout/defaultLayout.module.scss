@@ -12,6 +12,7 @@ html {
   --base-size: 1536;
   --base-percent: 100vw;
 
+  // UIkit
   --lightbox-icon-color: #000;
 
   @include media(false, tablet) {
@@ -69,11 +70,12 @@ strong {
   backdrop-filter:blur(10px);
 }
 
-.uk-lightbox-toolbar .uk-lightbox-toolbar-icon,
-.uk-lightbox-button {
-  color: var(--lightbox-icon-color) !important;
-}
-
 .uk-icon:not(.uk-preserve) [stroke*="#"]:not(.uk-preserve) {
   stroke: var(--lightbox-icon-color) !important;
+}
+
+.uk-lightbox-items>* {
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
 }

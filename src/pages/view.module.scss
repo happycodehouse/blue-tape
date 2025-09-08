@@ -160,7 +160,6 @@ strong {
       margin: calc(var(--text-gap) * 0.5) 0 var(--text-gap) 0;
       font-size: 1.5rem;
     }
-
   }
 }
 
@@ -241,6 +240,14 @@ strong {
       cursor: zoom-in;
       width: calc((100% - var(--img-gap)) / 2);
     }
+  }
+}
+
+.demoBox {
+  .linkGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--text-gap);
   }
 }
 

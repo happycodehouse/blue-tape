@@ -7,18 +7,56 @@ import style from "./view.module.scss";
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import 'uikit/dist/css/uikit.min.css';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { useLenis } from 'lenis/react';
 
 UIkit.use(Icons);
+
+// 전역 상태로 중복 실행 방지
+let lightboxState = false;
+let debounceTimer = null;
 
 const View = () => {
   const {id} = useParams();
   const post = feedData.find(item => item.id === id);
+  const lenis = useLenis();
   
-  // UIkit 초기화
   useEffect(() => {
     UIkit.update();
-  }, [post]); // post가 변경될 때마다 UIkit 업데이트
+    
+    const handleBeforeShow = () => {
+      if (debounceTimer) clearTimeout(debounceTimer);
+      
+      debounceTimer = setTimeout(() => {
+        if (!lightboxState) {
+          lightboxState = true;
+          lenis?.stop();
+          console.log('Lightbox opened - Lenis stopped');
+        }
+      }, 100);
+    };
+    
+    const handleHide = () => {
+      if (debounceTimer) clearTimeout(debounceTimer);
+      
+      debounceTimer = setTimeout(() => {
+        if (lightboxState) {
+          lightboxState = false;
+          lenis?.start();
+          console.log('Lightbox closed - Lenis started');
+        }
+      }, 100);
+    };
+    
+    UIkit.util.on(document, 'beforeshow', '.uk-lightbox', handleBeforeShow);
+    UIkit.util.on(document, 'hide', '.uk-lightbox', handleHide);
+    
+    return () => {
+      UIkit.util.off(document, 'beforeshow', '.uk-lightbox', handleBeforeShow);
+      UIkit.util.off(document, 'hide', '.uk-lightbox', handleHide);
+      if (debounceTimer) clearTimeout(debounceTimer);
+    };
+  }, [post, lenis]);
   
   if (!post) {
     return <div>Post not found.</div>;

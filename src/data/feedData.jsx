@@ -64,7 +64,7 @@ export const feedData = [
           <header>
             <h2 className={style.sectionTitle}>2. Configure SCSS File Watcher</h2>
             <p>Navigate to <strong>File</strong> > <strong>Settings</strong> > <strong>Tools</strong> > <strong>File Watchers</strong> and create a new watcher.</p>
-            <div className={classNames(style.imgBox)} data-uk-lightbox="animation: slide">
+            <div className={classNames(style.imgBox)} data-uk-lightbox="animation: fade">
               <a href={intellij_scss_img_01}>
                 <img src={intellij_scss_img_01} alt="IntelliJ SCSS Setup 1"/>
               </a>
@@ -223,37 +223,36 @@ function activeTimeline(idx) {
             <h3 className={style.subTitle}>3. 애니메이션 시스템 개선</h3>
             <pre>
               <code>
-{`
-// 기존: 수동 플래그 관리로 애니메이션 중복 실행 방지
-let chapterMotionFlag_0 = true,
-    chapterMotionFlag_1 = true,
-    chapterMotionFlag_2 = true,
-    chapterMotionFlag_3 = true;
-
-if (progress >= 0 && progress < 24) {
-  if(chapterMotionFlag_0){
-    chapterMotion(0);
-    chapterMotionFlag_0 = false;
-  }
-  chapterMotionFlag_1 = true;
-} else if (progress >= 24 && progress < 49) {
-  if (chapterMotionFlag_1) {
-    chapterMotion(1);
-    chapterMotionFlag_1 = false;
-  }
-}
+  {`// 기존: 수동 플래그 관리로 애니메이션 중복 실행 방지
+    let chapterMotionFlag_0 = true,
+        chapterMotionFlag_1 = true,
+        chapterMotionFlag_2 = true,
+        chapterMotionFlag_3 = true;
+    
+    if (progress >= 0 && progress < 24) {
+      if(chapterMotionFlag_0){
+        chapterMotion(0);
+        chapterMotionFlag_0 = false;
+      }
+      chapterMotionFlag_1 = true;
+    } else if (progress >= 24 && progress < 49) {
+      if (chapterMotionFlag_1) {
+        chapterMotion(1);
+        chapterMotionFlag_1 = false;
+      }
+    }
 
 // 개선: ScrollTrigger 내장 상태 관리 활용
-ScrollTrigger.matchMedia({
-  "(min-width: 1025px)": function() {
-    $timelineItem.each(function(idx) {
-      pcSecHeritageTl.to({}, {
-        onStart: () => activeTimeline(idx),
-        onReverseComplete: () => activeTimeline(idx - 1)
-      });
+    ScrollTrigger.matchMedia({
+      "(min-width: 1025px)": function() {
+        $timelineItem.each(function(idx) {
+          pcSecHeritageTl.to({}, {
+            onStart: () => activeTimeline(idx),
+            onReverseComplete: () => activeTimeline(idx - 1)
+          });
+        });
+      }
     });
-  }
-});
 `}
               </code>
             </pre>
@@ -264,6 +263,27 @@ ScrollTrigger.matchMedia({
           <header>
             <h2 className={style.sectionTitle}>마치는 글</h2>
           </header>
+          
+          <section>
+            <div className={style.demoBox}>
+              <div className={style.linkGroup}>
+                <a
+                  href="https://circular-heritage.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  🌐 라이브 데모 보기
+                </a>
+                <a
+                  href="https://github.com/happycodehouse/circular-heritage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  📂 소스 코드 보기
+                </a>
+              </div>
+            </div>
+          </section>
           
           <section>
             <p>
