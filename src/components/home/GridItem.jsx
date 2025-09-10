@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 // Third-party libraries
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
+import { Link } from "react-router-dom";
 
 // Local imports - Assets
 import bear_hug from '../../assets/images/main/bear-hug.jpg';
@@ -19,27 +20,39 @@ import style from './gridItem.module.scss';
 // Third-party styles
 import 'uikit/dist/css/uikit.min.css';
 
-const GridItem = ({ type }) => {
-  // 커스텀 훅 사용
+const GridItem = ({ type, linkTo, image, title, subtitle, year }) => {
   useLightboxLenis();
+  
+  if (type === "link") {
+    if (!linkTo) return null;
+    
+    return (
+        <div className={style.gridItem}>
+          <Link to={linkTo}>
+            <div className={style.overlay}></div>
+            <span>{title}</span>
+          </Link>
+        </div>
+    );
+  }
   
   return (
     <div className={style.gridItem} data-uk-lightbox="animation: fade">
-      <a href={bear_ice}>
+      <a href={image}>
         <div className={style.overlay}></div>
         <div className={style.content}>
           <div className={style.desc}>
-            <em>2018</em>
+            <em>{year}</em>
             <div className={style.title}>
-              <span>한숨 돌리기</span>
-              <span>Take a Breath</span>
+              <span>{title}</span>
+              <span>{subtitle}</span>
             </div>
           </div>
-          <img src={bear_ice} alt=""/>
+          <img src={image} alt=""/>
         </div>
       </a>
     </div>
-  )
-}
+  );
+};
 
 export default GridItem;

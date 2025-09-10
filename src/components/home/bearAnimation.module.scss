@@ -8,8 +8,9 @@ $default-mass-img-size: 74;
 .wrap {
   overflow: hidden;
   position: relative;
+  width: 100%;
   width: to_vw(530);
-  height: to_vw(220);
+  height: to_vw(200);
   pointer-events: none;
 }
 

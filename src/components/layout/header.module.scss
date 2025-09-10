@@ -5,7 +5,7 @@
 
 .header {
   margin-bottom: to_vw(12);
-  padding: to_vw($space-400) to_vw($space-400);
+  padding: to_vw($space-400) to_vw($space-200);
 
   @include media($from: laptop) {
     &.home_style {

@@ -3,22 +3,26 @@
 @use "../../styles/base/variable" as *;
 @use "../../styles/base/mixin" as *;
 
-.container {}
+$gridCnt: 4;
 
 .gridWrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: minmax(to_vw(100), auto);
+  grid-template-columns: repeat($gridCnt, 1fr);
+  grid-template-rows: auto;
+
+  * {
+    font-family: $font-suit;
+  }
 
   > div {
-    border-bottom: 1px solid $color-black;
     border-right: 1px solid $color-black;
+    border-bottom: 1px solid $color-black;
 
-    &:nth-child(4n) {
+    &:nth-child(#{$gridCnt}n) {
       border-right: 0;
     }
 
-    &:nth-last-child(-n+4) {
+    &:nth-last-child(-n+#{$gridCnt}) {
       border-bottom: 0;
     }
   }

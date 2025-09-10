@@ -2,6 +2,11 @@
 @use "../../styles/base/font" as *;
 @use "../../styles/base/variable" as *;
 @use "../../styles/base/mixin" as *;
+
+.resumeWrapper {
+  padding: 0 to_vw($space-200);
+}
+
 .section {
   margin-bottom: to_vw($space-1000);
 }
