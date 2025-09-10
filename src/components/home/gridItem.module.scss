@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@use "../../styles/base/font" as *;
+@use "../../styles/base/variable" as *;
+@use "../../styles/base/mixin" as *;
+
+.gridItem {
+  overflow: hidden;
+  position: relative;
+  background: $color-white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: $color-black;
+  z-index: 1;
+  opacity: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  .desc {
+    em {
+
+    }
+    .title {
+      span {}
+    }
+  }
+
+  img {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

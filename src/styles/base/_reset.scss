@@ -36,7 +36,6 @@ select {
 }
 
 body {
-  background-color: #fafafa;
   color: #0a0a0a;
   font-weight: 400;
   line-height: 1;
@@ -82,6 +81,7 @@ pre {
 address,
 em {
   font-style: normal;
+  color: inherit;
 }
 
 // ========================================
@@ -143,10 +143,11 @@ a {
   color: inherit;
 }
 
-// a:hover,
-// a:active {
-//   text-decoration: none;
-// }
+a:hover,
+a:active {
+  //text-decoration: none;
+  color: inherit;
+}
 
 hr {
   display: none;
@@ -187,15 +188,6 @@ caption {
 .hide {
   display: none !important;
   visibility: hidden !important;
-}
-
-// ========================================
-// Box Model & Global Styles
-// ========================================
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: $font-jetbrains;
 }
 
 // ========================================

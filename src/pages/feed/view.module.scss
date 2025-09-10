@@ -1,7 +1,7 @@
 @charset "UTF-8";
-@use "../styles/base/font" as *;
-@use "../styles/base/variable" as *;
-@use "../styles/base/mixin" as *;
+@use "../../styles/base/font" as *;
+@use "../../styles/base/variable" as *;
+@use "../../styles/base/mixin" as *;
 
 :root {
   // Spacing
@@ -84,42 +84,42 @@
       }
     }
   }
-}
 
-article {
-  margin-bottom: var(--section-gap);
+  article {
+    margin-bottom: var(--section-gap);
 
-  header {
-    margin-bottom: var(--content-gap);
+    header {
+      margin-bottom: var(--content-gap);
+    }
   }
-}
 
-pre {
-  width: 100%;
-  margin: 0;
-  border: 1px solid #d1d5db;
-  padding: 1rem;
-  overflow-x: auto;
-  border-radius: .5rem;
-  white-space: pre-wrap;
+  pre {
+    width: 100%;
+    margin: 0 0 var(--text-gap);
+    border: 1px solid #d1d5db;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: .5rem;
+    white-space: pre-wrap;
 
-  code {
-    padding: 0 0.25rem;
-    margin: 0 .1rem;
-    counter-reset: line;
-    background: transparent;
-    font-family: 'Fira Code', monospace;
-    font-size: small;
-    line-height: 2;
+    code {
+      padding: 0 0.25rem;
+      margin: 0 .1rem;
+      counter-reset: line;
+      background: transparent;
+      font-family: 'Fira Code', monospace;
+      font-size: small;
+      line-height: 2;
+    }
   }
-}
 
-strong {
-  font-weight: 900;
-  color: var(--text-strong);
+  strong {
+    font-weight: 900;
+    color: var(--text-strong);
 
-  &.bk {
-    color: $color-black;
+    &.bk {
+      color: $color-black;
+    }
   }
 }
 
@@ -250,4 +250,3 @@ strong {
     gap: var(--text-gap);
   }
 }
-

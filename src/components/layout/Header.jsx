@@ -13,7 +13,7 @@ const Header = () => {
       case "/resume":
         return "RESUME";
       default:
-        return "BLUE-Tape";
+        return "";
     }
   };
   
@@ -26,9 +26,11 @@ const Header = () => {
   return (
     <header className={classNames(headerStyle.header, currentPath === "/" && headerStyle.home_style)}>
       <div className={headerStyle.inner}>
-        <div className={headerStyle.logo}>
-          {getPageTitle()}
-        </div>
+        {currentPath !== "/" && (
+          <div className={headerStyle.logo}>
+            {getPageTitle()}
+          </div>
+        )}
         <ul className={headerStyle.gnb}>
           {navItems.map((item) => {
             if (currentPath !== item.path) {

@@ -1,7 +1,7 @@
 @charset "UTF-8";
-@use "../styles/base/font" as *;
-@use "../styles/base/variable" as *;
-@use "../styles/base/mixin" as *;
+@use "../../styles/base/font" as *;
+@use "../../styles/base/variable" as *;
+@use "../../styles/base/mixin" as *;
 
 $default-mass-img-size: 74;
 
@@ -10,6 +10,7 @@ $default-mass-img-size: 74;
   position: relative;
   width: to_vw(530);
   height: to_vw(220);
+  pointer-events: none;
 }
 
 .figure {

@@ -15,5 +15,5 @@ export const personalInfo = {
   name: {kr: "장하담", en: "HADAM JANG"},
   position: "Web Frontend Developer",
   description: "-",
-  email: "hadamjang.dev@gmail.com"
+  email: "hadamjangHOME@gmail.com"
 };

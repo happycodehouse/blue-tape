@@ -1,12 +1,7 @@
 @charset "UTF-8";
-@use "../styles/base/font" as *;
-@use "../styles/base/variable" as *;
-@use "../styles/base/mixin" as *;
-
-* {
-  font-family: $font-jetbrains !important;
-}
-
+@use "../../styles/base/font" as *;
+@use "../../styles/base/variable" as *;
+@use "../../styles/base/mixin" as *;
 .section {
   margin-bottom: to_vw($space-1000);
 }

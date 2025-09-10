@@ -1,8 +1,8 @@
 import {useState, useCallback} from "react";
 import classNames from "classnames";
-import {languageData, personalInfo} from "../data/commonData.jsx";
+import {languageData, personalInfo} from "../../data/commonData.jsx";
 import style from "./resume.module.scss";
-import ProjectsSection from "../components/projects/ProjectsSection";
+import ProjectsSection from "../../components/resume/ProjectsSection.jsx";
 
 const Resume = () => {
   const [isKorean, setIsKorean] = useState(false);

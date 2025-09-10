@@ -1,14 +1,11 @@
 import { useEffect } from 'react';
 import classNames from "classnames";
-import style from "../pages/view.module.scss"
-
+import style from "../pages/feed/view.module.scss"
 // intellij-scss Images
 import intellij_scss_img_01 from "../assets/images/feed/intellij-scss/img-01.png"
 import intellij_scss_img_02 from "../assets/images/feed/intellij-scss/img-02.png"
 
-
-
-//**category : CAREER, DEV, LIFE
+//**category : LAB, DEV, LIFE
 export const feedData = [
   {
     id: "intellij-scss",

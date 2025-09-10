@@ -2,17 +2,18 @@ import {useLocation} from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 
-const DefaultLayout = ({ children }) => {
+const Layout = ({ children }) => {
   const location = useLocation();
   const isViewPage = location.pathname.startsWith('/feed') && location.pathname !== '/feed';
+  const isHomePage = location.pathname === '/';
   
   return (
-    <div id="defaultLayout">
-      {!isViewPage && <Header />}
+    <div id="wrap">
+      {!isViewPage && !isHomePage && <Header />}
       {children}
-      {!isViewPage && <Footer />}
+      {!isViewPage && !isHomePage && <Footer />}
     </div>
   );
 };
 
-export default DefaultLayout;
+export default Layout;

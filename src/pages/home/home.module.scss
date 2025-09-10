@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@use "../../styles/base/font" as *;
+@use "../../styles/base/variable" as *;
+@use "../../styles/base/mixin" as *;
+
+.container {}
+
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(to_vw(100), auto);
+
+  > div {
+    border-bottom: 1px solid $color-black;
+    border-right: 1px solid $color-black;
+
+    &:nth-child(4n) {
+      border-right: 0;
+    }
+
+    &:nth-last-child(-n+4) {
+      border-bottom: 0;
+    }
+  }
+}

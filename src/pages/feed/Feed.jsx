@@ -1,9 +1,9 @@
 import {useState, useCallback, useMemo} from "react";
 import {Link} from "react-router-dom";
-import {feedData} from "../data/feedData.jsx";
+import {feedData} from "../../data/feedData.jsx";
 import style from "./feed.module.scss";
 
-const FILTER_OPTIONS = ["CAREER", "DEV", "LIFE"];
+const FILTER_OPTIONS = ["LAB", "DEV", "LIFE"];
 
 const Feed = () => {
   const [selectedFilter, setSelectedFilter] = useState(null);

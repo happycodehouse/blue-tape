@@ -1,10 +1,20 @@
 @charset "UTF-8";
-@use "../base/variable" as *;
-@use "../base/mixin" as *;
+@use "base/variable" as *;
+@use "base/mixin" as *;
+
+// ========================================
+// Box Model & Global Styles
+// ========================================
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: $font-suit;
+}
 
 html {
   --window-w: 100vw;
   --window-h: 100vh;
+  background-color: #fafafa;
 }
 
 :root {
@@ -22,10 +32,6 @@ html {
   }
 }
 
-.container {
-  padding: 0 to_vw($space-400);
-}
-
 .flex {
   display: flex;
 }
@@ -35,7 +41,7 @@ html {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: unset;
 }
 
 strong {
@@ -77,5 +83,5 @@ strong {
 .uk-lightbox-items>* {
   transform: none !important;
   animation: none !important;
-  transition: none !important;
+  //transition: none !important;
 }

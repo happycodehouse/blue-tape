@@ -1,24 +1,24 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {ReactLenis} from "lenis/react"
-import DefaultLayout from "./components/layout/DefaultLayout.jsx";
-import Welcome from "./pages/Welcome.jsx";
-import Resume from "./pages/Resume.jsx";
-import Feed from "./pages/Feed.jsx";
-import View from "./pages/View.jsx";
+import Layout from "./components/layout/Layout.jsx";
+import Welcome from "./pages/home/Home.jsx";
+import Resume from "./pages/resume/Resume.jsx";
+import Feed from "./pages/feed/Feed.jsx";
+import View from "./pages/feed/View.jsx";
 import "./App.scss"
 
 function App() {
   return (
     <ReactLenis root>
       <BrowserRouter>
-        <DefaultLayout>
+        <Layout>
           <Routes>
             <Route path="/" element={<Welcome/>}/>
             <Route path="/resume" element={<Resume/>}/>
             <Route path="/feed" element={<Feed/>}/>
             <Route path="/feed/:id" element={<View/>}/>
           </Routes>
-        </DefaultLayout>
+        </Layout>
       </BrowserRouter>
     </ReactLenis>
   );
