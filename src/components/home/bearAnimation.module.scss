@@ -14,23 +14,6 @@ $default-mass-img-size: 74;
   pointer-events: none;
 }
 
-.figure,
-.massWrap {
-  > img {
-    // 사파리 SVG 렌더링 최적화
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    will-change: transform;
-
-    // 추가적인 최적화
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-}
-
 .figure {
   position: absolute;
   top: 0;
