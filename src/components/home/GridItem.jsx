@@ -1,11 +1,12 @@
 import { useCallback, useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useLightboxLenis } from '../../hooks/useLightboxLenis';
+import { useLightboxLenis } from "../../hooks/useLightboxLenis";
+import { useResponsive } from "../../hooks/useResponsive";
 import style from "./gridItem.module.scss";
 
 const GridItem = ({ type, linkTo, image, title, subtitle, year }) => {
   useLightboxLenis();
-  
+  const { isDesktop } = useResponsive();
   const [overlayStyle, setOverlayStyle] = useState({});
   const itemRef = useRef(null);
   const timeoutRef = useRef(null);
@@ -24,10 +25,10 @@ const GridItem = ({ type, linkTo, image, title, subtitle, year }) => {
     
     const minDistance = Math.min(distanceToLeft, distanceToRight, distanceToTop, distanceToBottom);
     
-    if (minDistance === distanceToLeft) return 'left';
-    if (minDistance === distanceToRight) return 'right';
-    if (minDistance === distanceToTop) return 'top';
-    if (minDistance === distanceToBottom) return 'bottom';
+    if (minDistance === distanceToLeft) return "left";
+    if (minDistance === distanceToRight) return "right";
+    if (minDistance === distanceToTop) return "top";
+    if (minDistance === distanceToBottom) return "bottom";
   }, []);
   
   // 마우스 엔터 핸들러
@@ -40,24 +41,24 @@ const GridItem = ({ type, linkTo, image, title, subtitle, year }) => {
     
     // 초기 위치 설정 (트랜지션 없이)
     const initialTransform = {
-      left: 'translateX(-100%)',
-      right: 'translateX(100%)',
-      top: 'translateY(-100%)',
-      bottom: 'translateY(100%)'
+      left: "translateX(-100%)",
+      right: "translateX(100%)",
+      top: "translateY(-100%)",
+      bottom: "translateY(100%)"
     };
     
     setOverlayStyle({
-      opacity: '0.9',
+      opacity: "0.9",
       transform: initialTransform[direction],
-      transition: 'none'
+      transition: "none"
     });
     
     // 애니메이션 시작 (원본과 동일한 10ms)
     timeoutRef.current = setTimeout(() => {
       setOverlayStyle(prev => ({
         ...prev,
-        transform: 'translate(0, 0)',
-        transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        transform: "translate(0, 0)",
+        transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
       }));
     }, 10);
   }, [getDirection]);
@@ -72,10 +73,10 @@ const GridItem = ({ type, linkTo, image, title, subtitle, year }) => {
     const direction = getDirection(e, itemRef.current);
     
     const exitTransform = {
-      left: 'translateX(-100%)',
-      right: 'translateX(100%)',
-      top: 'translateY(-100%)',
-      bottom: 'translateY(100%)'
+      left: "translateX(-100%)",
+      right: "translateX(100%)",
+      top: "translateY(-100%)",
+      bottom: "translateY(100%)"
     };
     
     setOverlayStyle(prev => ({
@@ -86,7 +87,7 @@ const GridItem = ({ type, linkTo, image, title, subtitle, year }) => {
     // 400ms 후 opacity 0으로 변경 (원본과 동일)
     timeoutRef.current = setTimeout(() => {
       setOverlayStyle({
-        opacity: '0',
+        opacity: "0",
         transform: exitTransform[direction],
       });
     }, 400);
@@ -103,8 +104,10 @@ const GridItem = ({ type, linkTo, image, title, subtitle, year }) => {
   const commonProps = {
     className: style.gridItem,
     ref: itemRef,
-    onMouseEnter: handleMouseEnter,
-    onMouseLeave: handleMouseLeave
+    ...(isDesktop && {
+      onMouseEnter: handleMouseEnter,
+      onMouseLeave: handleMouseLeave
+    })
   };
   
   // 링크 타입

@@ -77,7 +77,7 @@
       font-size: var(--sub-text-size);
 
       &::before {
-        content: '*';
+        content: "*";
         position: absolute;
         top: 0;
         left: 0;
@@ -107,7 +107,7 @@
       margin: 0 .1rem;
       counter-reset: line;
       background: transparent;
-      font-family: 'Fira Code', monospace;
+      font-family: "Fira Code", monospace;
       font-size: small;
       line-height: 2;
     }
@@ -207,7 +207,7 @@
     }
 
     &::before {
-      content: '·';
+      content: "·";
       position: absolute;
       top: 0;
       left: 0;

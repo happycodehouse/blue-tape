@@ -14,7 +14,7 @@ const Home = () => {useEffect(() => {
     UIkit.use(Icons);
   }, []);
   
-  const { isMobile, isTablet, isDesktop } = useResponsive();
+  const { isDesktop } = useResponsive();
   
   const baseGridItems = [
     null,
@@ -57,9 +57,22 @@ const Home = () => {useEffect(() => {
     null
   ];
   
-  const gridItems = isDesktop
-    ? baseGridItems
-    : baseGridItems.filter(item => item !== null);
+  const getGridItems = () => {
+    if (isDesktop) {
+      return baseGridItems;
+    } else {
+      // 모바일: null 제거 후 타입별로 정렬
+      const filtered = baseGridItems.filter(item => item !== null);
+      
+      const animations = filtered.filter(item => item.type === "animation");
+      const links = filtered.filter(item => item.type === "link");
+      const images = filtered.filter(item => item.type === "img");
+      
+      return [...animations, ...links, ...images];
+    }
+  };
+  
+  const gridItems = getGridItems();
   
   return (
     <div id="container">

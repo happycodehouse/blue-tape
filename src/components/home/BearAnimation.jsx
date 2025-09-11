@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {gsap} from 'gsap';
+import React, {useEffect, useRef, useState} from "react";
+import {gsap} from "gsap";
 import style from "./bearAnimation.module.scss";
 import figure from "/src/assets/images/main/bear-motorcycle.png";
 import mass01 from "/src/assets/images/main/mass-01.png";
@@ -56,7 +56,7 @@ const BearAnimation = () => {
             key={index}
             src={img}
             alt=""
-            className={style[`massItem${String(index + 1).padStart(2, '0')}`]}
+            className={style[`massItem${String(index + 1).padStart(2, "0")}`]}
             ref={el => massesRef.current[index] = el}
           />
         ))}

@@ -4,8 +4,8 @@ import Footer from "./Footer.jsx";
 
 const Layout = ({ children }) => {
   const location = useLocation();
-  const isViewPage = location.pathname.startsWith('/feed') && location.pathname !== '/feed';
-  const isHomePage = location.pathname === '/';
+  const isViewPage = location.pathname.startsWith("/feed") && location.pathname !== "/feed";
+  const isHomePage = location.pathname === "/";
   
   return (
     <div id="wrap">

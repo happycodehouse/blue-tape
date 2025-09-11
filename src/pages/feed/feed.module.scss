@@ -58,7 +58,7 @@
     padding: 0 0 to_vw($space-100) 0;
 
     &::before {
-      content: '◉';
+      content: "◉";
       position: absolute;
       top: to_vw(2);
       left: to_vw(12);
@@ -87,12 +87,12 @@
       }
 
       &::before {
-        content: '[';
+        content: "[";
         left: 0;
       }
 
       &::after {
-        content: ']';
+        content: "]";
         left: to_vw(24);
       }
     }

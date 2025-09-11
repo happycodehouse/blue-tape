@@ -1,15 +1,15 @@
 // Third-party libraries
-import { useParams, Link } from 'react-router-dom';
-import UIkit from 'uikit';
-import Icons from 'uikit/dist/js/uikit-icons';
+import { useParams, Link } from "react-router-dom";
+import UIkit from "uikit";
+import Icons from "uikit/dist/js/uikit-icons";
 
 // Local imports
-import { feedData } from '../../data/feedData';
-import { useLightboxLenis } from '../../hooks/useLightboxLenis';
-import style from './view.module.scss';
+import { feedData } from "../../data/feedData";
+import { useLightboxLenis } from "../../hooks/useLightboxLenis";
+import style from "./view.module.scss";
 
 // Styles
-import 'uikit/dist/css/uikit.min.css';
+import "uikit/dist/css/uikit.min.css";
 
 UIkit.use(Icons);
 

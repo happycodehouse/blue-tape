@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import style from "./bubbleBox.module.scss"
 
 const BubbleBox = ({ urls, text, className, gif }) => {
@@ -6,12 +6,12 @@ const BubbleBox = ({ urls, text, className, gif }) => {
   
   return (
     <div
-      className={`${style.bubble_wrap} ${gif ? style.gif : ''}`}
+      className={`${style.bubble_wrap} ${gif ? style.gif : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <span className="gradientAnimation">{text}</span>
-      <div className={`${style.bubbleContent} ${isHovered ? style.on : ''}`}>
+      <div className={`${style.bubbleContent} ${isHovered ? style.on : ""}`}>
         <div className={style.inner}>
           {/* URLs가 있을 때만 렌더링 */}
           {urls && urls.map((url, index) => (

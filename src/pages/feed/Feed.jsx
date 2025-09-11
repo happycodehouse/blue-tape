@@ -47,7 +47,7 @@ const Feed = () => {
           {FILTER_OPTIONS.map((filter) => (
             <li
               key={filter}
-              className={selectedFilter === filter ? style.selected : ''}
+              className={selectedFilter === filter ? style.selected : ""}
             >
               <button
                 type="button"

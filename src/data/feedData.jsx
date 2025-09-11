@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import classNames from "classnames";
 import style from "../pages/feed/view.module.scss"
 // intellij-scss Images
