@@ -14,7 +14,7 @@
 html {
   --window-w: 100vw;
   --window-h: 100vh;
-  background-color: #fafafa;
+  background-color: $color-neutral-50;
 }
 
 :root {
@@ -84,4 +84,20 @@ strong {
   transform: none !important;
   animation: none !important;
   //transition: none !important;
+}
+
+.uk-lightbox-items {
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &.uk-lightbox-items-fit {
+    img {
+      width: 50%;
+      height: 50%;
+      object-fit: contain;
+    }
+  }
 }

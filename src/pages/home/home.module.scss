@@ -6,6 +6,7 @@
 $gridCnt: 4;
 
 .gridWrapper {
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat($gridCnt, 1fr);
   grid-template-rows: auto;
@@ -15,8 +16,8 @@ $gridCnt: 4;
   }
 
   > div {
-    border-right: 1px solid $color-black;
-    border-bottom: 1px solid $color-black;
+    border-right: 1px solid $color-neutral-200;
+    border-bottom: 1px solid $color-neutral-200;
 
     &:nth-child(#{$gridCnt}n) {
       border-right: 0;
@@ -25,5 +26,9 @@ $gridCnt: 4;
     &:nth-last-child(-n+#{$gridCnt}) {
       border-bottom: 0;
     }
+  }
+
+  @include media(false, tablet) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

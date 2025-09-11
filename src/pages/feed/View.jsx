@@ -5,7 +5,7 @@ import Icons from 'uikit/dist/js/uikit-icons';
 
 // Local imports
 import { feedData } from '../../data/feedData';
-import { useLightboxLenis } from '../../hook/useLightboxLenis';
+import { useLightboxLenis } from '../../hooks/useLightboxLenis';
 import style from './view.module.scss';
 
 // Styles
