@@ -6,4 +6,4 @@ BLUE TAPE is my portfolio website built with React, showcasing my career as a fr
 ## Used Libraries
 - Lenis
 - GSAP
-- Swiper
+- Uikit
