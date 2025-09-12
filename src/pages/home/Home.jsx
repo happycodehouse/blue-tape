@@ -33,13 +33,13 @@ const Home = () => {
       id: "link-feed",
       type: "link",
       linkTo: "/feed",
-      title: "/FEED"
+      title: "/Feed"
     },
     {
       id: "link-resume",
       type: "link",
       linkTo: "/resume",
-      title: "/RESUME"
+      title: "/Resume"
     },
     {
       id: "image-thinking",

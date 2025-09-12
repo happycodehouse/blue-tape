@@ -22,7 +22,6 @@
       &:hover {
         > span {
           transition: color .4s cubic-bezier(.25, .46, .45, .94);
-          text-decoration: underline;
           color: $color-neutral-100;
         }
 

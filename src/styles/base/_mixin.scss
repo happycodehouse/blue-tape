@@ -167,3 +167,36 @@ $breakpoints: (
   word-break: keep-all;
   word-wrap: break-word;
 }
+
+// ========================================
+// View Component Mixins (Feed detail page)
+// ========================================
+@mixin view-responsive-font($desktop, $mobile: null) {
+  font-size: $desktop;
+
+  @if $mobile {
+    @include media($until: mobile) {
+      font-size: $mobile;
+    }
+  }
+}
+
+@mixin view-responsive-spacing($desktop, $mobile: null) {
+  margin-bottom: $desktop;
+
+  @if $mobile {
+    @include media($until: mobile) {
+      margin-bottom: $mobile;
+    }
+  }
+}
+
+@mixin view-responsive-margin($desktop, $mobile: null) {
+  margin-top: $desktop;
+
+  @if $mobile {
+    @include media($until: mobile) {
+      margin-top: $mobile;
+    }
+  }
+}

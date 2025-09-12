@@ -30,7 +30,7 @@ const View = () => {
         <div className={style.titleArea}>
           <div className={style.date}>
             <span>/</span>
-            <Link to="/feed">FEED</Link>
+            <Link to="/feed">Feed</Link>
             <span>/{post.date}</span>
           </div>
           <div>

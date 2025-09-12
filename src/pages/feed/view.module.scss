@@ -3,42 +3,7 @@
 @use "../../styles/base/variable" as *;
 @use "../../styles/base/mixin" as *;
 
-:root {
-  // Spacing
-  --section-gap: 3rem;
-  --content-gap: 1.5rem;
-  --text-gap: 1rem;
-  --sub-text-gap: 2rem;
-  --img-gap: 2rem;
-
-  // Typography
-  --page-title-size: 2.25rem;
-  --title-size: 1.75rem;
-  --sub-title-size: 1.25rem;
-  --item-title-size: 1.125rem;
-  --sub-text-size: 0.75rem;
-  --body-size: 1rem;
-
-  // Line height
-  --page-title-lh: 1.3;
-  --title-lh: 1.4;
-  --body-lh: 1.6;
-
-  // Colors
-  --text-primary: #1a1a1a;
-  --text-secondary: #666;
-  --text-strong: #715A5A;
-  --border-light: #e5e5e5;
-}
-
-@media (max-width: 768px) {
-  :root {
-    --section-gap: 2rem;
-    --content-gap: 1rem;
-    --title-size: 1.5rem;
-    --sub-title-size: 1.125rem;
-  }
-
+@include media($until: mobile) {
   .viewWrapper {
     padding: 1.5rem 1rem;
   }
@@ -53,23 +18,17 @@
   margin: 0 auto;
   padding: 2rem 1rem;
 
-  .uk-lightbox-items > * {
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-  }
-
   section {
     &:not(:first-child) {
-      margin-top: var(--section-gap);
+      @include view-responsive-margin($view-section-gap, $view-section-gap-mobile);
     }
   }
 
   p {
-    font-size: var(--body-size);
-    line-height: var(--body-lh);
-    color: var(--text-secondary);
-    margin-bottom: var(--text-gap);
+    @include view-responsive-font($view-font-size-body);
+    line-height: $view-body-lh;
+    color: $view-text-secondary;
+    margin-bottom: $view-text-gap;
 
     &:last-child {
       margin-bottom: 0;
@@ -78,9 +37,9 @@
     &.subText {
       position: relative;
       padding-left: 1rem;
-      margin: var(--sub-text-gap) 0;
+      margin: $view-sub-text-gap 0;
       font-style: italic;
-      font-size: var(--sub-text-size);
+      font-size: $view-font-size-sub-text;
 
       &::before {
         content: "*";
@@ -92,16 +51,16 @@
   }
 
   article {
-    margin-bottom: var(--section-gap);
+    @include view-responsive-spacing($view-section-gap, $view-section-gap-mobile);
 
     header {
-      margin-bottom: var(--content-gap);
+      @include view-responsive-spacing($view-content-gap, $view-content-gap-mobile);
     }
   }
 
   pre {
     width: 100%;
-    margin: 0 0 var(--text-gap);
+    margin: 0 0 $view-text-gap;
     border: 1px solid $color-neutral-200;
     padding: 1rem;
     overflow-x: auto;
@@ -113,15 +72,19 @@
       margin: 0 .1rem;
       counter-reset: line;
       background: transparent;
-      font-family: "Fira Code", monospace;
+      font-family: $font-google-sans-code;
       font-size: small;
+      font-weight: 600;
       line-height: 2;
+      letter-spacing: 0.04rem;
+      color: $color-neutral-400;
+      white-space: nowrap;
     }
   }
 
   strong {
     font-weight: 900;
-    color: var(--text-strong);
+    color: $view-text-strong;
 
     &.bk {
       color: $color-black;
@@ -148,54 +111,62 @@
   }
 
   h1 {
-    margin: var(--text-gap) 0 calc(var(--content-gap) + 0.5rem) 0;
-    font-size: var(--page-title-size);
+    margin: $view-text-gap 0 calc(#{$view-content-gap} + 0.5rem) 0;
+    @include view-responsive-font($view-font-size-page-title);
     font-weight: 700;
-    line-height: var(--page-title-lh);
-    color: var(--text-primary);
+    line-height: $view-page-title-lh;
+    color: $view-text-primary;
     letter-spacing: -0.02em;
     word-break: keep-all;
 
-    @media (max-width: 768px) {
-      margin: calc(var(--text-gap) * 0.75) 0 var(--content-gap) 0;
+    @include media($until: mobile) {
+      margin: calc(#{$view-text-gap} * 0.75) 0 $view-content-gap-mobile 0;
       font-size: 1.75rem;
       line-height: 1.4;
     }
 
-    @media (max-width: 480px) {
-      margin: calc(var(--text-gap) * 0.5) 0 var(--text-gap) 0;
+    @include media($until: 480px) {
+      margin: calc(#{$view-text-gap} * 0.5) 0 $view-text-gap 0;
       font-size: 1.5rem;
     }
   }
 }
 
 .sectionTitle {
-  margin-bottom: var(--content-gap);
-  font-size: var(--title-size);
+  @include view-responsive-font($view-font-size-title, $view-font-size-title-mobile);
+  @include view-responsive-spacing($view-content-gap, $view-content-gap-mobile);
   font-weight: 700;
-  line-height: var(--title-lh);
-  color: var(--text-primary);
+  line-height: $view-title-lh;
+  color: $view-text-primary;
 
   &:not(:first-child) {
-    margin-top: var(--section-gap);
+    @include view-responsive-margin($view-section-gap, $view-section-gap-mobile);
   }
 }
 
 .subTitle {
-  margin-bottom: var(--text-gap);
-  margin-top: var(--content-gap);
-  font-size: var(--sub-title-size);
+  @include view-responsive-font($view-font-size-sub-title, $view-font-size-sub-title-mobile);
+  margin-bottom: $view-text-gap;
+  margin-top: $view-content-gap;
   font-weight: 600;
-  color: var(--text-primary);
+  color: $view-text-primary;
+
+  @include media($until: mobile) {
+    margin-top: $view-content-gap-mobile;
+  }
 }
 
 .itemTitle {
-  margin-bottom: calc(var(--text-gap) * 0.75);
-  margin-top: var(--content-gap);
-  font-size: var(--item-title-size);
+  @include view-responsive-font($view-font-size-item-title);
+  margin-bottom: calc(#{$view-text-gap} * 0.75);
+  margin-top: $view-content-gap;
   font-weight: 600;
-  line-height: var(--title-lh);
-  color: var(--text-primary);
+  line-height: $view-title-lh;
+  color: $view-text-primary;
+
+  @include media($until: mobile) {
+    margin-top: $view-content-gap-mobile;
+  }
 }
 
 .itemList {
@@ -203,10 +174,10 @@
     position: relative;
     padding-left: 1rem;
     margin-bottom: 0.5rem;
-    font-size: var(--body-size);
+    @include view-responsive-font($view-font-size-body);
     font-weight: 500;
-    line-height: var(--body-lh);
-    color: var(--text-secondary);
+    line-height: $view-body-lh;
+    color: $view-text-secondary;
 
     &:last-child {
       margin-bottom: 0;
@@ -229,7 +200,7 @@
 .imgBox {
   display: flex;
   justify-content: space-between;
-  gap: var(--img-gap);
+  gap: $view-img-gap;
   width: 100%;
 
   a {
@@ -244,7 +215,7 @@
   &.half {
     a {
       cursor: zoom-in;
-      width: calc((100% - var(--img-gap)) / 2);
+      width: calc((100% - #{$view-img-gap}) / 2);
     }
   }
 }
@@ -253,6 +224,6 @@
   .linkGroup {
     display: flex;
     flex-direction: column;
-    gap: var(--text-gap);
+    gap: $view-text-gap;
   }
 }

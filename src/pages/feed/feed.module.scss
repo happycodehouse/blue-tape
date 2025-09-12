@@ -57,7 +57,7 @@
     &::before {
       content: "◉";
       position: absolute;
-      top: to_vw(2);
+      top: 3px;
       left: to_vw(12);
       opacity: 0;
       visibility: hidden;
@@ -72,10 +72,12 @@
 
     button {
       display: block;
+      width: 100%;
       position: relative;
       padding-left: to_vw(48);
       font-size: 16px;
       font-weight: 600;
+      text-align: right;
 
       &::before,
       &::after {
@@ -109,20 +111,22 @@
   }
 
   .date {
-    @include fontSize(12, 21);
+    @include fontSize(10, 30);
   }
 
   .title {
-    @include fontSize(14, 21);
+    font-family: $font-system;
+    @include fontSize(20, 30);
+    font-weight: 500;
   }
 
   @include media(false, tablet) {
     .date {
-      @include fontSize(14, 24);
+      @include fontSize(12, 24);
     }
 
     .title {
-      @include fontSize(16, 24);
+      @include fontSize(18, 24);
     }
   }
 }

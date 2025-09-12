@@ -3,9 +3,8 @@
 // Font
 $font-system: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 $font-suit: "SUIT Variable", sans-serif;
-$font-bebas: "BebasNeue-Regular", sans-serif;
-$font-familjen: "FamiljenGrotesk", sans-serif;
-$font-jetbrains: "JetBrainsMono", sans-serif;
+$font-jetbrains: "JetBrains Mono", sans-serif;
+$font-google-sans-code: "Google Sans Code", sans-serif;
 
 // Base
 $font-size: 0;
@@ -45,3 +44,38 @@ $space-800: 48;
 $space-900: 54;
 $space-1000: 60;
 $space-2000: 120;
+
+//View.jsx
+// View Component Line heights
+$view-page-title-lh: 1.3;
+$view-title-lh: 1.4;
+$view-body-lh: 1.6;
+
+// View Component Colors
+$view-text-primary: #1a1a1a;
+$view-text-secondary: #666;
+$view-text-strong: #715A5A;
+$view-border-light: #e5e5e5;
+
+// View Component Typography (Feed detail page)
+$view-font-size-page-title: 2.25rem;
+$view-font-size-title: 1.75rem;
+$view-font-size-sub-title: 1.25rem;
+$view-font-size-item-title: 1.125rem;
+$view-font-size-sub-text: 0.75rem;
+$view-font-size-body: 1rem;
+
+// View Component Typography - Mobile
+$view-font-size-title-mobile: 1.5rem;
+$view-font-size-sub-title-mobile: 1.125rem;
+
+// View Component Spacing
+$view-section-gap: 3rem;
+$view-content-gap: 1.5rem;
+$view-text-gap: 1rem;
+$view-sub-text-gap: 2rem;
+$view-img-gap: 2rem;
+
+// View Component Spacing - Mobile
+$view-section-gap-mobile: 2rem;
+$view-content-gap-mobile: 1rem;

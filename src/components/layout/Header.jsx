@@ -9,18 +9,18 @@ const Header = () => {
   const getPageTitle = () => {
     switch (currentPath) {
       case "/feed":
-        return "FEED";
+        return "Feed";
       case "/resume":
-        return "RESUME";
+        return "Resume";
       default:
         return "";
     }
   };
   
   const navItems = [
-    {path: "/feed", label: "FEED"},
-    {path: "/resume", label: "RESUME"},
-    {path: "/", label: "HOME"}
+    {path: "/feed", label: "Feed"},
+    {path: "/resume", label: "Resume"},
+    {path: "/", label: "Home"}
   ];
   
   return (
