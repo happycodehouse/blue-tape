@@ -20,11 +20,6 @@
 
     @include media($from: tablet) {
       &:hover {
-        > span {
-          transition: color .4s cubic-bezier(.25, .46, .45, .94);
-          color: $color-neutral-100;
-        }
-
         .desc {
           * {
             color: $color-neutral-400;

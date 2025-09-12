@@ -3,11 +3,7 @@
 @use "../../styles/base/variable" as *;
 @use "../../styles/base/mixin" as *;
 
-@include media($until: mobile) {
-  .viewWrapper {
-    padding: 1.5rem 1rem;
-  }
-
+@include media($from: tablet) {
   .itemList {
     padding-left: 1rem;
   }
@@ -17,7 +13,7 @@
   width: 100%;
   max-width: 718px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
 
   section {
     &:not(:first-child) {
@@ -154,6 +150,7 @@
   margin-bottom: $view-text-gap;
   margin-top: $view-content-gap;
   font-weight: 600;
+  line-height: $view-title-lh;
   color: $view-text-primary;
 
   @include media($until: mobile) {
@@ -229,6 +226,7 @@
 
     a {
       cursor: initial;
+      pointer-events: none;
     }
 
     &.half {
