@@ -14,7 +14,8 @@
 }
 
 .viewWrapper {
-  max-width: 800px;
+  width: 100%;
+  max-width: 718px;
   margin: 0 auto;
   padding: 2rem 1rem;
 
@@ -78,7 +79,6 @@
       line-height: 2;
       letter-spacing: 0.04rem;
       color: $color-neutral-400;
-      white-space: nowrap;
     }
   }
 
@@ -89,6 +89,10 @@
     &.bk {
       color: $color-black;
     }
+  }
+
+  @include media(false, tablet) {
+    max-width: unset;
   }
 }
 
@@ -106,7 +110,8 @@
     font-weight: 500;
 
     a {
-      font-weight: 900;
+      font-weight: 700;
+      text-decoration: underline;
     }
   }
 
@@ -134,7 +139,7 @@
 
 .sectionTitle {
   @include view-responsive-font($view-font-size-title, $view-font-size-title-mobile);
-  @include view-responsive-spacing($view-content-gap, $view-content-gap-mobile);
+  @include view-responsive-spacing($view-content-gap, $view-img-gap-mobile);
   font-weight: 700;
   line-height: $view-title-lh;
   color: $view-text-primary;
@@ -199,7 +204,6 @@
 
 .imgBox {
   display: flex;
-  justify-content: space-between;
   gap: $view-img-gap;
   width: 100%;
 
@@ -217,6 +221,11 @@
       cursor: zoom-in;
       width: calc((100% - #{$view-img-gap}) / 2);
     }
+  }
+
+  @include media(false, tablet) {
+    flex-direction: column;
+    gap: $view-img-gap-mobile;
   }
 }
 
