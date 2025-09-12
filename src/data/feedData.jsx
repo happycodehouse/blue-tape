@@ -124,7 +124,7 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
   },
   {
     id: "circular-heritage",
-    category: "DEV",
+    category: "LAB",
     date: "03.09.25",
     title: "From 200 to 80 Lines: Heritage Page Code Optimization",
     content:

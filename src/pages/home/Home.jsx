@@ -10,18 +10,19 @@ import bear_hug from "../../assets/images/main/bear-hug.jpg";
 import bear_ice from "../../assets/images/main/bear-ice-cream.jpg";
 import bear_thinking from "../../assets/images/main/bear-thinking.jpg";
 
-const Home = () => {useEffect(() => {
-    UIkit.use(Icons);
-  }, []);
-  
+const Home = () => {
   const { isDesktop } = useResponsive();
   
   const baseGridItems = [
     null,
     null,
-    { type: "animation" }, // BearAnimation
     {
-      type: "img",
+      id: "animation-bear",
+      type: "animation"
+    }, // BearAnimation
+    {
+      id: "image-hug",
+      type: "image",
       image: bear_hug,
       title: "포옹",
       subtitle: "Hug",
@@ -29,25 +30,29 @@ const Home = () => {useEffect(() => {
     },
     null,
     {
+      id: "link-feed",
       type: "link",
       linkTo: "/feed",
       title: "/FEED"
     },
     {
+      id: "link-resume",
       type: "link",
       linkTo: "/resume",
       title: "/RESUME"
     },
     {
-      type: "img",
+      id: "image-thinking",
+      type: "image",
       image: bear_thinking,
       title: "생각하는 곰",
       subtitle: "Thinking Bear",
-      year: "2020"
+      year: "2018"
     },
     null,
     {
-      type: "img",
+      id: "image-ice",
+      type: "image",
       image: bear_ice,
       title: "한숨 돌리기",
       subtitle: "Sweet Escape",
@@ -66,25 +71,37 @@ const Home = () => {useEffect(() => {
       
       const animations = filtered.filter(item => item.type === "animation");
       const links = filtered.filter(item => item.type === "link");
-      const images = filtered.filter(item => item.type === "img");
+      const images = filtered.filter(item => item.type === "image");
       
-      return [...animations, ...links, ...images];
+      return [...links, ...animations, ...images];
     }
   };
   
   const gridItems = getGridItems();
   
+  useEffect(() => {
+    UIkit.use(Icons);
+    
+    // DOM이 완전히 렌더링된 후 lightbox 재초기화
+    setTimeout(() => {
+      const lightboxElements = document.querySelectorAll('[data-uk-lightbox]');
+      lightboxElements.forEach(el => {
+        UIkit.lightbox(el);
+      });
+    }, 100);
+  }, [gridItems]);
+  
   return (
     <div id="container">
       <div className={style.gridWrapper}>
         {gridItems.map((item, index) => {
-          if (!item) return <div key={index}></div>;
-          
+          if (!item) return <div key={`empty-${index}`}></div>;
+  
           if (item.type === "animation") {
-            return <BearAnimation key={index} />;
+            return <BearAnimation key={item.id} />;
           }
-          
-          return <GridItem key={index} {...item} />;
+  
+          return <GridItem key={item.id} {...item} />;
         })}
       </div>
     </div>

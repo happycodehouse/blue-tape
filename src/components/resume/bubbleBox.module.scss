@@ -29,7 +29,7 @@
     white-space: nowrap;
     padding: to_vw($space-100) to_vw($space-200);
     border-radius: to_vw(8);
-    background-color: $color-black;
+    background: $color-black;
     box-shadow: 0 3px 8px 0 rgba(10, 10, 10, 0.2);
     scale: 0;
     transition: scale .5s ease-in-out;

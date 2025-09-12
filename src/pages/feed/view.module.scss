@@ -27,7 +27,7 @@
   // Colors
   --text-primary: #1a1a1a;
   --text-secondary: #666;
-  --text-strong: #E9007F;
+  --text-strong: #715A5A;
   --border-light: #e5e5e5;
 }
 
@@ -52,6 +52,12 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
+
+  .uk-lightbox-items > * {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
 
   section {
     &:not(:first-child) {
@@ -96,7 +102,7 @@
   pre {
     width: 100%;
     margin: 0 0 var(--text-gap);
-    border: 1px solid #d1d5db;
+    border: 1px solid $color-neutral-200;
     padding: 1rem;
     overflow-x: auto;
     border-radius: .5rem;

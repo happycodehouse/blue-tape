@@ -18,7 +18,7 @@ export const useLightboxLenis = () => {
         if (!lightboxState) {
           lightboxState = true;
           lenis?.stop();
-          console.log("Lightbox opened - Lenis stopped");
+          // console.log("Lightbox opened - Lenis stopped");
         }
       }, 100);
     };
@@ -30,7 +30,7 @@ export const useLightboxLenis = () => {
         if (lightboxState) {
           lightboxState = false;
           lenis?.start();
-          console.log("Lightbox closed - Lenis started");
+          // console.log("Lightbox closed - Lenis started");
         }
       }, 100);
     };

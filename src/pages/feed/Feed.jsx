@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 import {feedData} from "../../data/feedData.jsx";
 import style from "./feed.module.scss";
 
-const FILTER_OPTIONS = ["LAB", "DEV", "LIFE"];
 
 const Feed = () => {
+  const FILTER_OPTIONS = ["LAB", "DEV", "LIFE"];
   const [selectedFilter, setSelectedFilter] = useState(null);
   
   const handleFilterClick = useCallback((filter) => {
