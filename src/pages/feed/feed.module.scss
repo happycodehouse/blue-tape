@@ -3,9 +3,10 @@
 @use "../../styles/base/variable" as *;
 @use "../../styles/base/mixin" as *;
 
-.container {
+.feedWrapper {
   display: flex;
   gap: to_vw($space-600);
+  padding: 0 to_vw($space-200);
 
   @include media(false, tablet) {
     flex-direction: column;
@@ -45,10 +46,6 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
-  }
-
-  @include media(false, tablet) {
-
   }
 }
 
@@ -101,18 +98,32 @@
 
 .feedList {
   li {
-    padding: to_vw($space-300) 0;
+    padding: to_vw($space-200) 0;
     border-bottom: 1px solid $color-black;
 
     a {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       text-decoration: unset;
     }
   }
 
   .date {
-    font-size: 14px;
+    @include fontSize(12, 21);
+  }
+
+  .title {
+    @include fontSize(14, 21);
+  }
+
+  @include media(false, tablet) {
+    .date {
+      @include fontSize(14, 24);
+    }
+
+    .title {
+      @include fontSize(16, 24);
+    }
   }
 }
 
