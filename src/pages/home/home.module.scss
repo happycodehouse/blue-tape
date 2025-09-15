@@ -6,18 +6,23 @@
 $gridCnt: 4;
 
 .gridWrapper {
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat($gridCnt, 1fr);
   grid-template-rows: auto;
+  height: 100vh;
+  background: $color-neutral-50;
+
+  a:hover {
+    text-decoration: unset;
+  }
 
   * {
     font-family: $font-suit;
   }
 
   > div {
-    border-right: 1px solid $color-neutral-200;
-    border-bottom: 1px solid $color-neutral-200;
+    border-right: 1px solid $border-200;
+    border-bottom: 1px solid $border-200;
 
     @include media($from: tablet) {
       &:nth-child(#{$gridCnt}n) {

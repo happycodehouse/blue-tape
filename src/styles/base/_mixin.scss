@@ -81,7 +81,7 @@ $breakpoints: (
   }
 
   @if $line-height == null {
-    line-height: 1;
+    line-height: 1.2;
   } @else {
     line-height: math.div($line-height, $font-size);
   }

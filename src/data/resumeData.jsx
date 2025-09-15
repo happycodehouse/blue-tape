@@ -7,7 +7,7 @@ export const projectsData = [
       name: "Freelance Contract"
     },
     brief: {
-      kr: "삼성 VXT CMS 프로젝트 프리랜서 개발자로 참여하여 React 기반 UI/UX 검증용 웹페이지 개발 및 컴포넌트 라이브러리를 구축했습니다.",
+      kr: "삼성 VXT CMS 프로젝트 프리랜서 개발자로 참여하여 React 기반 UI/UX 테스트서버 웹페이지 개발 및 컴포넌트 라이브러리를 구축했습니다.",
       en: "Participated as freelance developer in Samsung VXT CMS project. Developed React-based UI/UX validation web pages and component libraries."
     },
     projects: [
@@ -20,7 +20,7 @@ export const projectsData = [
             en: "https://vxt.samsung.com"
           }
         },
-        period: <>2025.06 - 08 <br/> 2024.09 - 10 <br/> 2024.05 - 06 <br/> 2022.09 - 10 </>,
+        period: <>25.06 - 08 <br/> 24.10 - 11 <br/> 24.04 - 06</>,
         details: {
           kr: [
             {

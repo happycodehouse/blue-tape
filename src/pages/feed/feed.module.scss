@@ -3,15 +3,7 @@
 @use "../../styles/base/variable" as *;
 @use "../../styles/base/mixin" as *;
 
-.feedWrapper {
-  display: flex;
-  gap: to_vw($space-600);
-  padding: 0 to_vw($space-200);
-
-  @include media(false, tablet) {
-    flex-direction: column;
-  }
-}
+.feedWrapper {}
 
 .section {
   &.left {

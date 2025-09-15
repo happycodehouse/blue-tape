@@ -4,46 +4,52 @@
 @use "../../styles/base/mixin" as *;
 
 .header {
-  margin-bottom: to_vw(12);
-  padding: to_vw($space-400) to_vw($space-200);
-
-  @include media($from: laptop) {
-    &.home_style {
-      .inner {
-        .gnb {
-          align-items: flex-start;
-          gap: to_vw($space-200);
-          font-size: 24px;
-          font-weight: 600;
-        }
-      }
-    }
-  }
-
   .inner {
-    display: flex;
-    align-items: flex-end;
-
-    > * {
-      flex: 1;
-    }
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 20vh;
 
     .logo {
+      padding: 0 to_vw($space-100);
+      border-bottom: 1px solid $border-100;
+      font-family: $font-system;
       @include fontSize(64);
-      font-family: $font-system !important;
-      color: $color-black;
-      letter-spacing: -0.2rem;
+      line-height: .8;
     }
 
-    .gnb {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: to_vw($space-100);
-      text-decoration: underline;
+    .nav {
+      border-left: 1px solid $border-100;
       font-family: $font-jetbrains;
       font-size: 16px;
       font-weight: 500;
+
+      li {
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid $border-100;
+        text-align: right;
+
+        a {
+          position: relative;
+          z-index: 1;
+          display: block;
+          height: 100%;
+          padding: 0 to_vw($space-100);
+          text-decoration: underline;
+          font-family: $font-system;
+          @include fontSize(32);
+          font-weight: 400;
+          line-height: 1.5;
+          color: $color-neutral-100;
+          transition: color .4s cubic-bezier(.25, .46, .45, .94);
+
+          @include media($from: tablet) {
+            &:hover {
+              color: $color-black;
+            }
+          }
+        }
+      }
     }
   }
 }

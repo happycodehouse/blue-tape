@@ -10,7 +10,7 @@ const BubbleBox = ({ urls, text, className, gif }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span className="gradientAnimation">{text}</span>
+      <span className="gradient-animation">{text}</span>
       <div className={`${style.bubbleContent} ${isHovered ? style.on : ""}`}>
         <div className={style.inner}>
           {/* URLs가 있을 때만 렌더링 */}

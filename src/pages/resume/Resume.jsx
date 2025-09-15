@@ -1,8 +1,9 @@
-import {useState, useCallback} from "react";
+import { useState, useCallback } from "react";
 import classNames from "classnames";
-import {languageData, personalInfo} from "../../data/commonData.jsx";
-import style from "./resume.module.scss";
+import { languageData, personalInfo } from "../../data/commonData.jsx";
+import FilterButtonGroup from "../../components/common/FilterButtonGroup.jsx";
 import ProjectsSection from "../../components/resume/ProjectsSection.jsx";
+import style from "./resume.module.scss";
 
 const Resume = () => {
   const [isKorean, setIsKorean] = useState(false);
@@ -15,40 +16,38 @@ const Resume = () => {
   return (
     <div id="container">
       <div className={style.resumeWrapper}>
-        <div className={style.section}>
-          <div className={classNames(style.gridFour, "borderBottom")}>
-            <span>ID /</span>
-            <span>POSITION /</span>
-            <span>DESCRIPTION /</span>
-            <span>CONTACT /</span>
+        <div className="grid-box">
+          <div className="grid-box-left">
+            <FilterButtonGroup
+              buttons={languageData}
+              selectedValue={isKorean}
+              onButtonClick={handleLanguageChange}
+            />
           </div>
-          <div className={style.gridFour}>
-            <p>
-              <strong>{isKorean ? personalInfo.name.kr : personalInfo.name.en}</strong>
-              {" "}
-              {isKorean ? personalInfo.name.en : personalInfo.name.kr}
-            </p>
-            <p>{personalInfo.position}</p>
-            <p>{personalInfo.description}</p>
-            <p>
-              <a href={`mailto:${personalInfo.email}`}>
-                {personalInfo.email}
-              </a>
-            </p>
+          <div className="grid-box-right border-bottom">
+            <div className={style.section}>
+              <div className={classNames(style.gridFour, "border-bottom")}>
+                <span>ID /</span>
+                <span>POSITION /</span>
+                <span>DESCRIPTION /</span>
+                <span>CONTACT /</span>
+              </div>
+              <div className={style.gridFour}>
+                <p>
+                  <strong>{isKorean ? personalInfo.name.kr : personalInfo.name.en}</strong>
+                  {" "}
+                  {isKorean ? personalInfo.name.en : personalInfo.name.kr}
+                </p>
+                <p>{personalInfo.position}</p>
+                <p>{isKorean ? personalInfo.description.kr : personalInfo.description.en}</p>
+                <p>
+                  <a href={`mailto:${personalInfo.email}`}>
+                    {personalInfo.email}
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className={classNames(style.languageBtnWrap, "borderBottom")}>
-          {languageData.map((button) => (
-            <button
-              key={button.key}
-              onClick={() => handleLanguageChange(button.value)}
-              className={isKorean === button.value ? style.on : ""}
-              aria-pressed={isKorean === button.value}
-              aria-label={`Switch to ${button.label}`}
-            >
-              {button.label}
-            </button>
-          ))}
         </div>
         <div className={style.section}>
           <ProjectsSection isKorean={isKorean}/>

@@ -23,7 +23,7 @@
 
   p {
     @include view-responsive-font($view-font-size-body);
-    line-height: $view-body-lh;
+    line-height: $view-common-lh;
     color: $view-text-secondary;
     margin-bottom: $view-text-gap;
 
@@ -115,7 +115,7 @@
     margin: $view-text-gap 0 calc(#{$view-content-gap} + 0.5rem) 0;
     @include view-responsive-font($view-font-size-page-title);
     font-weight: 700;
-    line-height: $view-page-title-lh;
+    line-height: $view-common-lh;
     color: $view-text-primary;
     letter-spacing: -0.02em;
     word-break: keep-all;
@@ -137,7 +137,7 @@
   @include view-responsive-font($view-font-size-title, $view-font-size-title-mobile);
   @include view-responsive-spacing($view-content-gap, $view-img-gap-mobile);
   font-weight: 700;
-  line-height: $view-title-lh;
+  line-height: $view-common-lh;
   color: $view-text-primary;
 
   &:not(:first-child) {
@@ -150,7 +150,7 @@
   margin-bottom: $view-text-gap;
   margin-top: $view-content-gap;
   font-weight: 600;
-  line-height: $view-title-lh;
+  line-height: $view-common-lh;
   color: $view-text-primary;
 
   @include media($until: mobile) {
@@ -163,7 +163,7 @@
   margin-bottom: calc(#{$view-text-gap} * 0.75);
   margin-top: $view-content-gap;
   font-weight: 600;
-  line-height: $view-title-lh;
+  line-height: $view-common-lh;
   color: $view-text-primary;
 
   @include media($until: mobile) {
@@ -178,7 +178,7 @@
     margin-bottom: 0.5rem;
     @include view-responsive-font($view-font-size-body);
     font-weight: 500;
-    line-height: $view-body-lh;
+    line-height: $view-common-lh;
     color: $view-text-secondary;
 
     &:last-child {

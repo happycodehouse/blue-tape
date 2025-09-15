@@ -1,6 +1,23 @@
+
 import {Link, useLocation} from "react-router-dom";
 import classNames from "classnames";
 import headerStyle from "./header.module.scss";
+import {useDirectionalHover} from "../../hooks/useDirectionalHover.js";
+
+const NavItem = ({ item, currentPath }) => {
+  const { overlayStyle, getHoverProps } = useDirectionalHover({
+    background: "#f5f5f5"
+  });
+  
+  return (
+    <li {...getHoverProps()}>
+      <div className="overlay" style={overlayStyle} />
+      <Link to={item.path}>
+        {currentPath === "/" ? "" : "/ "}{item.label}
+      </Link>
+    </li>
+  );
+};
 
 const Header = () => {
   const location = useLocation();
@@ -24,24 +41,25 @@ const Header = () => {
   ];
   
   return (
-    <header className={classNames(headerStyle.header, currentPath === "/" && headerStyle.home_style)}>
+    <header className={headerStyle.header}>
       <div className={headerStyle.inner}>
         {currentPath !== "/" && (
           <div className={headerStyle.logo}>
             {getPageTitle()}
           </div>
         )}
-        <ul className={headerStyle.gnb}>
+        <ul className={headerStyle.nav}>
           {navItems.map((item) => {
             if (currentPath !== item.path) {
               return (
-                <li key={item.path}>
-                  <Link to={item.path}>
-                    {currentPath === "/" ? "" : "/ "}{item.label}
-                  </Link>
-                </li>
-              )
+                <NavItem
+                  key={item.path}
+                  item={item}
+                  currentPath={currentPath}
+                />
+              );
             }
+            return null;
           })}
         </ul>
       </div>
