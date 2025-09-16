@@ -25,8 +25,8 @@ const Resume = () => {
             />
           </div>
           <div className="grid-box-right border-bottom">
-            <div className={style.section}>
-              <div className={classNames(style.gridFour, "border-bottom")}>
+            <div className={style.idArea}>
+              <div className={style.gridFour}>
                 <span>ID /</span>
                 <span>POSITION /</span>
                 <span>DESCRIPTION /</span>

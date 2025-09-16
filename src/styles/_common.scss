@@ -15,8 +15,12 @@
 html {
   --window-w: 100vw;
   --window-h: 100vh;
-  background: $color-white;
+  background: $background-color-pc;
   font-size: 16px;
+
+  @include media(false, tablet) {
+    background: $background-color-mo;
+  }
 }
 
 :root {
@@ -49,10 +53,18 @@ h1, h2, h3, h4, h5, h6 {
   &-left {
     border-right: 1px solid $border-100;
   }
+
+  @include media(false, tablet) {
+    grid-template-columns: auto;
+  }
 }
 
 .border-bottom {
   border-bottom: 1px solid $border-100;
+
+  @include media(false, tablet) {
+    border-bottom: 1px solid $border-500;
+  }
 }
 
 strong {

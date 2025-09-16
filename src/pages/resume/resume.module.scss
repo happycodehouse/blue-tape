@@ -7,146 +7,199 @@
   a {
     text-decoration: underline;
   }
-}
 
-.section {
-  padding: 0 to_vw($space-200);
-  margin-bottom: to_vw($space-1000);
-}
+  .section {
+    padding: 0 to_vw($space-200);
+    margin-bottom: to_vw($space-1000);
 
-.sectionTitle {
-  border-bottom: $border-600;
-}
-
-.gridFour {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: to_vw($space-100);
-  padding: to_vw($space-100) 0;
-
-  span {
-    @include fontSize(12);
-    font-weight: 600;
-  }
-
-  p {
-    @include fontSize(14);
-
-    strong {
-      @include fontSize(15);
-    }
-  }
-
-  @include media(false, tablet) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.gridOneThree {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: to_vw($space-100);
-  padding: to_vw($space-300) 0;
-
-  & + .gridOneThree {
-    border-top: 1px solid $border-100;
-  }
-
-  @include media(false, tablet) {
-    grid-template-columns: unset;
-    grid-template-rows: 1fr;
-  }
-}
-
-.gridOneTwo {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding: to_vw($space-200) 0;
-
-  & + .gridOneTwo {
-    border-top: 1px solid $border-300;
-  }
-
-  @include media(false, tablet) {
-    grid-template-columns: unset;
-    grid-template-rows: 1fr;
-  }
-}
-
-.teamArea {
-  display: flex;
-  flex-direction: column;
-  gap: to_vw($space-200);
-
-  a, span {
-    width: fit-content;
-    @include fontSize(16);
-    font-weight: 700;
-  }
-
-  li {
-    margin-bottom: to_vw(4);
-    @include fontSize(12);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-.descArea {
-  .brief {
-    @include wordBreak;
-    @include fontSize(13);
-    padding-bottom: to_vw($space-200);
-    border-bottom: 1px solid $border-300;
-  }
-
-  dl {
-    dt {
-      margin-bottom: to_vw(4);
-      @include fontSize(16);
-      font-weight: 500;
+    @include media(false) {
+      padding: 0;
     }
 
-    dd {
+  }
+
+  .sectionTitle {
+    border-bottom: $border-500;
+  }
+
+  .gridFour {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: to_vw($space-400);
+    padding: to_vw($space-100) 0;
+
+    &:first-child {
+      border-bottom: 1px solid $border-100;
+    }
+
+    span {
       @include fontSize(12);
+      font-weight: 600;
+    }
+
+    p {
+      @include fontSize(14);
+
+      strong {
+        @include fontSize(15);
+      }
+    }
+
+    @include media(false, tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: to_vw($space-100) to_vw($space-400);
+      padding: to_vw($space-200) 0;
+
+      &:first-child {
+        border-bottom: 1px solid $border-300;
+      }
     }
   }
 
-  ul {
-    margin-bottom: to_vw($space-200);
+  .gridOneThree {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: to_vw($space-100);
+    padding: to_vw($space-300) 0;
+
+    & + .gridOneThree {
+      border-top: 1px solid $border-100;
+    }
+
+    @include media(false, tablet) {
+      grid-template-columns: unset;
+      grid-template-rows: 1fr;
+      padding: to_vw($space-300) to_vw($space-200);
+
+      & + .gridOneThree {
+        border-top: 1px solid $border-500;
+      }
+    }
+  }
+
+  .gridOneTwo {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: to_vw($space-200) 0;
+
+    & + .gridOneTwo {
+      border-top: 1px solid $border-300;
+    }
+
+    @include media(false, tablet) {
+      grid-template-columns: unset;
+      grid-template-rows: 1fr;
+      padding: to_vw($space-400) 0;
+    }
+  }
+
+  .idArea {
+    padding: to_vw($space-200);
+
+    @include media(false, tablet) {
+      padding: 0 to_vw($space-200);
+    }
+  }
+
+  .teamArea {
+    display: flex;
+    flex-direction: column;
+    gap: to_vw($space-200);
+
+    a, span {
+      width: fit-content;
+      @include fontSize(16);
+      font-weight: 700;
+    }
 
     li {
-      position: relative;
-      width: fit-content;
-      padding-left: 12px;
-      margin-bottom: to_vw($space-100);
-      @include fontSize(14);
+      margin-bottom: to_vw(4);
+      @include fontSize(12);
 
       &:last-child {
         margin-bottom: 0;
       }
+    }
 
-      &::before {
-        content: "-";
-        position: absolute;
-        top: 0;
-        left: 0;
+    @include media(false, tablet) {
+      ul {
+        margin-bottom: to_vw($space-400);
       }
     }
   }
 
-  .tagWrap {
-    display: flex;
-    align-items: center;
-    gap: to_vw(4);
+  .descArea {
+    .brief {
+      @include wordBreak;
+      @include fontSize(13);
+      padding-bottom: to_vw($space-200);
+      border-bottom: 1px solid $border-300;
+    }
 
-    span {
-      padding: to_vw(2) to_vw(4);
-      border: 1px solid $color-neutral-500;
-      @include fontSize(10);
-      font-weight: 700;
+    dl {
+      dt {
+        margin-bottom: to_vw(4);
+        @include fontSize(16);
+        font-weight: 500;
+      }
+
+      dd {
+        @include fontSize(12);
+      }
+    }
+
+    ul {
+      margin-bottom: to_vw($space-200);
+
+      li {
+        position: relative;
+        width: fit-content;
+        padding-left: to_vw($space-200);
+        margin-bottom: to_vw($space-100);
+        @include fontSize(14);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &::before {
+          content: "-";
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+
+    .tagWrap {
+      display: flex;
+      align-items: center;
+      gap: to_vw(4);
+
+      span {
+        padding: to_vw(2) to_vw(4);
+        border: 1px solid $color-neutral-500;
+        @include fontSize(10);
+        font-weight: 700;
+      }
+    }
+
+    @include media(false, tablet) {
+      .brief {
+        padding-bottom: to_vw($space-400);
+      }
+
+      dl {
+        margin-bottom: to_vw($space-400);
+
+        dt {
+          margin-bottom: to_vw($space-100);
+        }
+
+        dd {
+          line-height: 1.5;
+        }
+      }
     }
   }
 }

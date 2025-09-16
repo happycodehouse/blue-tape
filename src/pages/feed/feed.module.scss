@@ -3,139 +3,82 @@
 @use "../../styles/base/variable" as *;
 @use "../../styles/base/mixin" as *;
 
-.feedWrapper {}
+.feedWrapper {
+  .section {
+    &.left {
+      flex: 1;
 
-.section {
-  &.left {
-    flex: 1;
+      .sectionTitle {
+        justify-content: space-between;
+        margin: 0 0 to_vw($space-300) 0;
+      }
+    }
 
-    .sectionTitle {
-      justify-content: space-between;
-      margin: 0 0 to_vw($space-300) 0;
+    &.right {
+      flex: 4;
+
+      .date {
+        width: to_vw(120);
+      }
+
+      .title {
+        width: calc(100% - #{to_vw(120)});
+      }
     }
   }
 
-  &.right {
-    flex: 4;
-
-    .date {
-      width: to_vw(120);
-    }
-
-    .title {
-      width: calc(100% - #{to_vw(120)});
-    }
-  }
-}
-
-.sectionTitle {
-  display: flex;
-  align-items: flex-end;
-  padding: 0 0 to_vw($space-100) 0;
-  border-bottom: 1px solid $color-black;
-
-  span, button {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-  }
-}
-
-.filterList {
-  li {
-    position: relative;
+  .sectionTitle {
+    display: flex;
+    align-items: flex-end;
+    gap: to_vw($space-600);
     padding: 0 0 to_vw($space-100) 0;
-
-    &::before {
-      content: "◉";
-      position: absolute;
-      top: 3px;
-      left: 22px;
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    &.selected {
-      &::before {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
-    button {
-      display: block;
-      width: 100%;
-      position: relative;
-      padding-left: 48px;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: right;
-
-      &::before,
-      &::after {
-        position: absolute;
-        top: 0;
-      }
-
-      &::before {
-        content: "[";
-        left: 0;
-      }
-
-      &::after {
-        content: "]";
-        left: 48px;
-      }
-    }
-  }
-}
-
-.feedList {
-  li {
-    padding: to_vw($space-200) 0;
     border-bottom: 1px solid $color-black;
 
-    a {
-      display: flex;
-      align-items: flex-start;
-      text-decoration: unset;
+    span, button {
+      @include fontSize(12);
+      //font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
     }
   }
 
-  .date {
-    @include fontSize(10, 30);
-  }
+  .feedList {
+    li {
+      padding: to_vw($space-200) 0;
+      border-bottom: 1px solid $color-black;
 
-  .title {
-    font-family: $font-system;
-    @include fontSize(20, 30);
-    font-weight: 500;
-  }
+      a {
+        display: flex;
+        align-items: flex-start;
+        text-decoration: unset;
+      }
+    }
 
-  @include media(false, tablet) {
     .date {
-      @include fontSize(12, 24);
+      @include fontSize(10, 30);
     }
 
     .title {
-      @include fontSize(18, 24);
+      font-family: $font-system;
+      @include fontSize(20, 30);
+      font-weight: 500;
+    }
+
+    @include media(false, tablet) {
+      .date {
+        @include fontSize(12, 24);
+      }
+
+      .title {
+        @include fontSize(18, 24);
+      }
     }
   }
-}
 
-.noResults {
-  padding: to_vw($space-400);
-  text-align: center;
-  font-style: italic;
-  opacity: 0.7;
-}
-
-// Clear 버튼 비활성화 상태 스타일 추가
-.sectionTitle {
-  button {
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+  .noResults {
+    padding: to_vw($space-400);
+    text-align: center;
+    font-style: italic;
+    opacity: 0.7;
   }
 }

@@ -16,10 +16,6 @@ $gridCnt: 4;
     text-decoration: unset;
   }
 
-  * {
-    font-family: $font-suit;
-  }
-
   > div {
     border-right: 1px solid $border-200;
     border-bottom: 1px solid $border-200;
@@ -42,7 +38,7 @@ $gridCnt: 4;
 
     > div {
       border-right: 0;
-      border-bottom: 1px solid $color-black;
+      border-bottom: 1px solid $border-500;
     }
   }
 }
