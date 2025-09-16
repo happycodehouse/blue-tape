@@ -1,7 +1,7 @@
 import { useState, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { feedData } from "../../data/feedData.jsx";
-import FilterButtonGroup from "../../components/common/filterButtonGroup.jsx";
+import { feedData } from "../../data/feedData";
+import FilterButtonGroup from "../../components/common/FilterButtonGroup";
 import style from "./feed.module.scss";
 
 const Feed = () => {

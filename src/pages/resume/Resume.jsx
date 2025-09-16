@@ -1,8 +1,8 @@
 import { useState, useCallback } from "react";
 import classNames from "classnames";
-import { languageData, personalInfo } from "../../data/commonData.jsx";
-import FilterButtonGroup from "../../components/common/FilterButtonGroup.jsx";
-import ProjectsSection from "../../components/resume/ProjectsSection.jsx";
+import { languageData, personalInfo } from "../../data/commonData";
+import FilterButtonGroup from "../../components/common/FilterButtonGroup";
+import ProjectsSection from "../../components/resume/ProjectsSection";
 import style from "./resume.module.scss";
 
 const Resume = () => {

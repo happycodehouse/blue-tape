@@ -59,11 +59,12 @@
 
   @include media(false, tablet) {
     &Content {
+      position: fixed;
       top: unset;
       right: to_vw($space-200);
       bottom: to_vw($space-200);
       left: unset;
-      position: fixed;
+      width: calc(100% - #{to_vw($space-400)});
       transform: unset;
       transform-origin: right bottom;
     }

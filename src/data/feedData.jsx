@@ -49,7 +49,7 @@ export const feedData = [
           
           <section>
             <h3 className={style.subTitle}>1-2. Install IntelliJ Plugins</h3>
-            <p>Go to <strong>File</strong> > <strong>Settings</strong> > <strong>Plugins</strong> and install the following plugins:</p>
+            <p>Go to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Plugins</strong> and install the following plugins:</p>
             <ul className={style.itemList}>
               <li><strong className={style.bk}>Sass</strong></li>
               <li><strong className={style.bk}>File Watchers</strong></li>
@@ -60,7 +60,7 @@ export const feedData = [
         <article>
           <header>
             <h2 className={style.sectionTitle}>2. Configure SCSS File Watcher</h2>
-            <p>Navigate to <strong>File</strong> > <strong>Settings</strong> > <strong>Tools</strong> > <strong>File Watchers</strong> and create a new watcher.</p>
+            <p>Navigate to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Tools</strong> &gt; <strong>File Watchers</strong> and create a new watcher.</p>
             <div className={classNames(style.imgBox)} data-uk-lightbox="animation: fade">
               <a href={intellij_scss_img_01}>
                 <img src={intellij_scss_img_01} alt="IntelliJ SCSS Setup 1"/>

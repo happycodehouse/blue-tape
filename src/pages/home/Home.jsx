@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
 import { useResponsive } from "../../hooks/useResponsive";
-import BearAnimation from "../../components/home/BearAnimation.jsx";
-import GridItem from "../../components/home/GridItem.jsx";
+import BearAnimation from "../../components/home/BearAnimation";
+import GridItem from "../../components/home/GridItem";
 import style from "./home.module.scss";
 
 import bear_hug from "../../assets/images/main/bear-hug.jpg";
