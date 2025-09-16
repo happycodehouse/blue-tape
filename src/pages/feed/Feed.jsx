@@ -55,26 +55,28 @@ const Feed = () => {
             />
           </div>
           <div className="grid-box-right">
-            <div className={style.sectionTitle}>
-              <span className={style.date}>/ DATE</span>
-              <span className={style.title}>/ TITLE</span>
-            </div>
-            {noResults ? (
-              <div className={style.noResults}>
-                No posts found for the selected filter.
+            <div className={style.feedArea}>
+              <div className={style.sectionTitle}>
+                <span className={style.date}>/ DATE</span>
+                <span className={style.title}>/ TITLE</span>
               </div>
-            ) : (
-              <ul className={style.feedList}>
-                {filteredData.map((item) => (
-                  <li key={item.id}>
-                    <Link to={`/feed/${item.id}`}>
-                      <span className={style.date}>{item.date}</span>
-                      <span className={style.title}>{item.title}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
+              {noResults ? (
+                <div className={style.noResults}>
+                  No posts found for the selected filter.
+                </div>
+              ) : (
+                <ul className={style.feedList}>
+                  {filteredData.map((item) => (
+                    <li key={item.id}>
+                      <Link to={`/feed/${item.id}`}>
+                        <span className={style.date}>{item.date}</span>
+                        <span className={style.title}>{item.title}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
         </div>
       </div>

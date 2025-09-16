@@ -4,39 +4,19 @@
 @use "../../styles/base/mixin" as *;
 
 .feedWrapper {
-  .section {
-    &.left {
-      flex: 1;
-
-      .sectionTitle {
-        justify-content: space-between;
-        margin: 0 0 to_vw($space-300) 0;
-      }
-    }
-
-    &.right {
-      flex: 4;
-
-      .date {
-        width: to_vw(120);
-      }
-
-      .title {
-        width: calc(100% - #{to_vw(120)});
-      }
-    }
+  .feedArea {
+    padding: to_vw($space-200);
   }
 
   .sectionTitle {
     display: flex;
-    align-items: flex-end;
-    gap: to_vw($space-600);
-    padding: 0 0 to_vw($space-100) 0;
-    border-bottom: 1px solid $color-black;
+    justify-content: space-between;
+    gap: to_vw($space-200);
+    padding-bottom: to_vw($space-100);
+    border-bottom: 1px solid $border-300;
 
-    span, button {
-      @include fontSize(12);
-      //font-size: 14px;
+    span {
+      @include fontSize(10);
       font-weight: 600;
       line-height: 1;
     }
@@ -45,12 +25,14 @@
   .feedList {
     li {
       padding: to_vw($space-200) 0;
-      border-bottom: 1px solid $color-black;
+      border-bottom: 1px solid $border-300;
 
       a {
         display: flex;
-        align-items: flex-start;
+        justify-content: space-between;
+        gap: to_vw($space-200);
         text-decoration: unset;
+        text-align: right;
       }
     }
 
