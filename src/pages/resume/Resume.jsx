@@ -1,9 +1,9 @@
 import { useState, useCallback } from "react";
-import classNames from "classnames";
-import { languageData, personalInfo } from "../../data/commonData";
+
+import style from "./resume.module.scss";
 import FilterButtonGroup from "../../components/common/FilterButtonGroup";
 import ProjectsSection from "../../components/resume/ProjectsSection";
-import style from "./resume.module.scss";
+import { languageData, personalInfo } from "../../data/commonData";
 
 const Resume = () => {
   const [isKorean, setIsKorean] = useState(false);
@@ -29,7 +29,7 @@ const Resume = () => {
               <div className={style.gridFour}>
                 <span>ID /</span>
                 <span>POSITION /</span>
-                <span>DESCRIPTION /</span>
+                <span>MOTTO /</span>
                 <span>CONTACT /</span>
               </div>
               <div className={style.gridFour}>
@@ -39,7 +39,7 @@ const Resume = () => {
                   {isKorean ? personalInfo.name.en : personalInfo.name.kr}
                 </p>
                 <p>{personalInfo.position}</p>
-                <p>{isKorean ? personalInfo.description.kr : personalInfo.description.en}</p>
+                <p>{isKorean ? personalInfo.motto.kr : personalInfo.motto.en}</p>
                 <p>
                   <a href={`mailto:${personalInfo.email}`}>
                     {personalInfo.email}

@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+
+import style from "./gridItem.module.scss";
+import { useDirectionalHover } from "../../hooks/useDirectionalHover";
 import { useLightboxLenis } from "../../hooks/useLightboxLenis";
 import { useResponsive } from "../../hooks/useResponsive";
-import { useDirectionalHover } from "../../hooks/useDirectionalHover";
-import style from "./gridItem.module.scss";
 
 const GridItem = ({ type, linkTo, image, title, subtitle, year }) => {
   useLightboxLenis();

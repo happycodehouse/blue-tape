@@ -6,6 +6,10 @@
 .resumeWrapper {
   a {
     text-decoration: underline;
+
+    &:hover {
+      opacity: .5;
+    }
   }
 
   .section {

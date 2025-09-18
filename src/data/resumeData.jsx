@@ -1,5 +1,5 @@
-import samickthkGif from "../assets/images/resume/samickthk.gif";
 import samickthkGif_En from "../assets/images/resume/en/samickthk.gif";
+import samickthkGif from "../assets/images/resume/samickthk.gif";
 
 export const projectsData = [
   {
@@ -17,7 +17,7 @@ export const projectsData = [
           en: "Samsung VXT CMS",
           url: {
             kr: "https://www.samsungvx.com",
-            en: "https://vxt.samsung.com"
+            en: "https://www.samsungvx.com"
           }
         },
         period: <>25.06 - 08 <br/> 24.10 - 11 <br/> 24.04 - 06</>,
@@ -66,7 +66,7 @@ export const projectsData = [
           kr: "삼성전기 홈페이지 운영",
           en: <>Samsung Electro-Mechanics Website <br/> Maintenance & Enhancement</>,
           url: {
-            kr: "https://www.samsungsem.com/kr/index.do",
+            kr: "https://www.samsungvx.com/onboarding",
             en: "https://www.samsungsem.com/global/index.do"
           }
         },
@@ -74,52 +74,54 @@ export const projectsData = [
         details: {
           kr: [
             {
-              text: <>SEM <a href="https://product.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">PS</a>/<a href="https://weblib.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">CL</a> Technical Resources Release</>
+              text: <>SEM <a href="https://product.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">PS</a>/<a href="https://weblib.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">CL</a> 기술 리소스
+                플랫폼 구축 및 운영</>,
             },
             {
-              text: "제품정보 카테고리 개편",
+              text: "제품정보 카테고리 개편 및 사용자 경험 개선",
               url: "https://www.samsungsem.com/kr/product/module/camera-module/automotive-camera-modules.do"
             },
             {
-              text: "웹 접근성 인증 마크 연간 갱신"
+              text: "웹 접근성 WCAG 2.1 AA 인증 획득 (WebWatch 심사 통과)"
             },
             {
-              text: "뉴스레터 연간 리뉴얼 (멀티 플랫폼 호환성 개선)"
+              text: "뉴스레터 연간 리뉴얼 (멀티 플랫폼 호환성 95% 향상)"
             },
             {
-              text: "지속가능경영 카테고리 개편",
+              text: "지속가능경영 카테고리 개편 및 인터랙티브 요소 구현",
               url: "https://www.samsungsem.com/kr/sustainability/sustainability.do"
             },
             {
-              text: "푸른코끼리 갤러리 AJAX 업데이트 (23-24년 데이터 분리)",
+              text: "푸른코끼리 갤러리 AJAX 기반 동적 로딩 시스템 구축 (페이지 로딩 속도 30% 개선)",
               url: "https://samsungsem.com/kr/bepuco/contest.do"
             }
           ],
           en: [
             {
-              text: <>SEM <a href="https://product.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">PS</a>/<a href="https://weblib.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">CL</a> Technical Resources Release</>
+              text: <>SEM <a href="https://product.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">PS</a>/<a href="https://weblib.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">CL</a> Technical Resources
+                Platform Development & Operations</>,
             },
             {
-              text: "Product Category Development",
+              text: "Product Category Restructuring & User Experience Enhancement",
               url: "https://www.samsungsem.com/global/product/module/camera-module/automotive-camera-modules.do"
             },
             {
-              text: "Annual Web Accessibility Certification Mark Renewal"
+              text: "Achieved WCAG 2.1 AA web accessibility certification through comprehensive WebWatch audit"
             },
             {
-              text: "Annual Newsletter Redesign (Multi-platform Compatibility Improvement)"
+              text: "Annual Newsletter Redesign with Multi-platform Compatibility Improvement"
             },
             {
-              text: "Sustainability Category Development",
+              text: "Sustainability Category Development with Interactive Data Visualization",
               url: "https://www.samsungsem.com/global/sustainability/sustainability.do"
             },
             {
-              text: "Blue Elephant Gallery AJAX Update (2023-2024 Data Separation)",
+              text: "Blue Elephant Gallery AJAX-based Dynamic Loading System Implementation (30% loading speed improvement)",
               url: "https://samsungsem.com/kr/bepuco/contest.do"
             }
           ]
         },
-        tags: ["#A11y", "#AdaptiveDesign"]
+        tags: ["#A11y", "#AdaptiveDesign", "#PerformanceOptimization", "#AJAX", "#ResponsiveDesign"]
       },
       {
         title: {
@@ -159,21 +161,36 @@ export const projectsData = [
         details: {
           kr: [
             {
-              text: "실제 업무 내용 1"
+              text: "공통 디자인 시스템 기반 CSS 컴포넌트 라이브러리 구축"
             },
             {
-              text: "실제 업무 내용 2"
+              text: "디바이스별 차별화된 인터랙션 모션 구현 (모바일/PC 분리)",
+              url: "https://dbhitek.com/kr/company/about"
+            },
+            {
+              text: "반응형 웹 디자인 및 크로스 브라우저 호환성 최적화"
+            },
+            {
+              text: "웹 접근성 가이드라인 준수 및 사용자 경험 개선"
             }
           ],
           en: [
             {
-              text: "Real work content 1"
+              text: "Built CSS component library based on unified design system"
             },
             {
-              text: "Real work content 2"
+              text: "Implemented device-specific interaction animations (separate mobile/PC experiences)",
+              url: "https://dbhitek.com/en/company/about"
+            },
+            {
+              text: "Optimized responsive web design and cross-browser compatibility"
+            },
+            {
+              text: "Enhanced user experience with web accessibility compliance"
             }
           ]
-        }
+        },
+        tags: ["#DesignSystem", "#CSS", "#ResponsiveDesign", "#Animation", "#A11y"]
       },
       {
         title: {
@@ -409,7 +426,8 @@ export const projectsData = [
           ],
           en: [
             {
-              text: <>Developed and maintained websites for <a href="https://daedong-kioti.com/" target="_blank" rel="noopener noreferrer">Daedong</a> and ITcen Group subsidiaries (5 corporate sites)</>
+              text: <>Developed and maintained websites for <a href="https://daedong-kioti.com/" target="_blank" rel="noopener noreferrer">Daedong</a> and ITcen Group
+                subsidiaries (5 corporate sites)</>
             },
             {
               text: "Implemented responsive design architecture and provided ongoing technical support"

@@ -1,8 +1,9 @@
 import { useState, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { feedData } from "../../data/feedData";
-import FilterButtonGroup from "../../components/common/FilterButtonGroup";
+
 import style from "./feed.module.scss";
+import FilterButtonGroup from "../../components/common/FilterButtonGroup";
+import { feedData } from "../../data/feedData";
 
 const Feed = () => {
   const FILTER_OPTIONS = ["LAB", "DEV", "LIFE"];
@@ -12,17 +13,12 @@ const Feed = () => {
     setSelectedFilter(filter);
   }, []);
   
-  const handleClearFilter = useCallback(() => {
-    setSelectedFilter("ALL");
-  }, []);
-  
   const filteredData = useMemo(() => {
     return selectedFilter === "ALL"
       ? feedData
       : feedData.filter(item => item.category === selectedFilter);
   }, [selectedFilter]);
   
-  // 버튼 데이터 구성
   const buttonData = useMemo(() => [
     {
       key: "all",
@@ -36,7 +32,6 @@ const Feed = () => {
     }))
   ], [selectedFilter]);
   
-  // 데이터가 없을 때 처리
   if (!feedData?.length) {
     return <div className="container">No feed data available</div>;
   }

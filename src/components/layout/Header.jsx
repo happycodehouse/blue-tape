@@ -1,6 +1,5 @@
-
 import {Link, useLocation} from "react-router-dom";
-import classNames from "classnames";
+
 import headerStyle from "./header.module.scss";
 import {useDirectionalHover} from "../../hooks/useDirectionalHover.js";
 

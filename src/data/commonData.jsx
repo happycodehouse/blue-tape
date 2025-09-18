@@ -14,6 +14,6 @@ export const languageData = [
 export const personalInfo = {
   name: {kr: "장하담", en: "HADAM JANG"},
   position: "Web Frontend Developer",
-  description: {kr: "찾고 있던 바다가 지금 헤엄치고 있는 이곳일지도 모른다.", en: "Sometimes the ocean is the water you're already swimming in."},
+  motto: {kr: "뜻이 있는 곳에 길이 있다.", en: "Where there is a will, there is a way."},
   email: "hadamjang.dev@gmail.com"
 };

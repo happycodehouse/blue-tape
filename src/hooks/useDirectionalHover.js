@@ -122,7 +122,6 @@ export const useDirectionalHover = (options = {}) => {
     setOverlayStyle({});
   }, []);
   
-  // 컴포넌트 언마운트 시 타이머 정리
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
@@ -132,16 +131,13 @@ export const useDirectionalHover = (options = {}) => {
   }, []);
   
   return {
-    // ref와 이벤트 핸들러
     elementRef,
     handleMouseEnter,
     handleMouseLeave,
     
-    // 스타일과 유틸리티
     overlayStyle,
     resetOverlay,
     
-    // 편의 메서드 - 모든 props를 한번에 반환
     getHoverProps: () => ({
       ref: elementRef,
       onMouseEnter: handleMouseEnter,

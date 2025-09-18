@@ -1,7 +1,8 @@
 import { useState } from "react";
+
 import style from "./bubbleBox.module.scss"
 
-const BubbleBox = ({ urls, text, className, gif }) => {
+const BubbleBox = ({ urls, text, gif }) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (

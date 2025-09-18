@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { useLenis } from "lenis/react";
+import { useEffect } from "react";
 import UIkit from "uikit";
 
 let lightboxState = false;

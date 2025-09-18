@@ -1,6 +1,6 @@
+import BubbleBox from "./BubbleBox";
 import {projectsData} from "../../data/resumeData";
 import style from "../../pages/resume/resume.module.scss";
-import BubbleBox from "./BubbleBox";
 
 const ProjectsSection = ({isKorean}) => {
   return (

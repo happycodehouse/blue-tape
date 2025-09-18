@@ -1,5 +1,6 @@
-import React, {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
+import {useEffect, useRef} from "react";
+
 import style from "./bearAnimation.module.scss";
 import figure from "/src/assets/images/main/bear-motorcycle.png";
 import mass01 from "/src/assets/images/main/mass-01.png";

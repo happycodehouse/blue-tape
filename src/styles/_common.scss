@@ -16,7 +16,7 @@ html {
   --window-w: 100vw;
   --window-h: 100vh;
   background: $background-color-pc;
-  font-size: 16px;
+  font-size: 18px;
 
   @include media(false, tablet) {
     background: $background-color-mo;
@@ -39,7 +39,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-jetbrains;
+  font-family: $font-suit;
 }
 
 .flex {

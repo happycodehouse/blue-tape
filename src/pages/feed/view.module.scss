@@ -27,10 +27,6 @@
     color: $view-text-secondary;
     margin-bottom: $view-text-gap;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
     &.subText {
       position: relative;
       padding-left: 1rem;
@@ -44,6 +40,10 @@
         top: 0;
         left: 0;
       }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -173,17 +173,13 @@
 
 .itemList {
   li {
+    @include view-responsive-font($view-font-size-body);
     position: relative;
     padding-left: 1rem;
     margin-bottom: 0.5rem;
-    @include view-responsive-font($view-font-size-body);
     font-weight: 500;
     line-height: $view-common-lh;
     color: $view-text-secondary;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
 
     &::before {
       content: "·";
@@ -191,6 +187,10 @@
       top: 0;
       left: 0;
       font-weight: 900;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
