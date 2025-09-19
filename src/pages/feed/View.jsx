@@ -8,7 +8,6 @@ import style from './view.module.scss';
 import { feedData } from '../../data/feedData';
 import { useLightboxLenis } from '../../hooks/useLightboxLenis';
 
-// Styles
 import 'uikit/dist/css/uikit.min.css';
 
 UIkit.use(Icons);

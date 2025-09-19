@@ -193,6 +193,10 @@
       margin-bottom: 0;
     }
   }
+
+  & + p {
+    margin-top: $view-text-gap;
+  }
 }
 
 .contentArea {

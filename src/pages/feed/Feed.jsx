@@ -52,7 +52,7 @@ const Feed = () => {
           <div className="grid-box-right">
             <div className={style.feedArea}>
               <div className={style.sectionTitle}>
-                <span className={style.date}>/ DATE</span>
+                <span className={style.date}>/ DD.MM.YY</span>
                 <span className={style.title}>/ TITLE</span>
               </div>
               {noResults ? (
