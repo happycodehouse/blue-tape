@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
 
@@ -5,39 +6,55 @@ import style from "./feed.module.scss";
 import FilterButtonGroup from "../../components/common/FilterButtonGroup";
 import { feedData } from "../../data/feedData";
 
-const Feed = () => {
-  const FILTER_OPTIONS = ["LAB", "DEV", "LIFE"];
-  const [selectedFilter, setSelectedFilter] = useState("ALL");
-  
-  const handleFilterClick = useCallback((filter) => {
+interface FeedItem {
+  id: string | number;
+  category: string;
+  date: string;
+  title: string;
+}
+
+interface ButtonData {
+  key: string;
+  value: string;
+  label: string;
+}
+
+type FilterOption = "LAB" | "DEV" | "LIFE";
+type SelectedFilter = "ALL" | FilterOption;
+
+const Feed: React.FC = () => {
+  const FILTER_OPTIONS: FilterOption[] = ["LAB", "DEV", "LIFE"];
+  const [selectedFilter, setSelectedFilter] = useState<SelectedFilter>("ALL");
+
+  const handleFilterClick = useCallback((filter: SelectedFilter) => {
     setSelectedFilter(filter);
   }, []);
-  
-  const filteredData = useMemo(() => {
+
+  const filteredData = useMemo<FeedItem[]>(() => {
     return selectedFilter === "ALL"
       ? feedData
-      : feedData.filter(item => item.category === selectedFilter);
+      : feedData.filter((item: FeedItem) => item.category === selectedFilter);
   }, [selectedFilter]);
-  
-  const buttonData = useMemo(() => [
+
+  const buttonData = useMemo<ButtonData[]>(() => [
     {
       key: "all",
       value: "ALL",
       label: selectedFilter === "ALL" ? "ALL" : "CLEAR FILTER"
     },
-    ...FILTER_OPTIONS.map(filter => ({
+    ...FILTER_OPTIONS.map((filter: FilterOption) => ({
       key: filter.toLowerCase(),
       value: filter,
       label: filter
     }))
   ], [selectedFilter]);
-  
+
   if (!feedData?.length) {
     return <div className="container">No feed data available</div>;
   }
-  
+
   const noResults = filteredData.length === 0;
-  
+
   return (
     <div id="container">
       <div className={style.feedWrapper}>
@@ -61,7 +78,7 @@ const Feed = () => {
                 </div>
               ) : (
                 <ul className={style.feedList}>
-                  {filteredData.map((item) => (
+                  {filteredData.map((item: FeedItem) => (
                     <li key={item.id}>
                       <Link to={`/feed/${item.id}`}>
                         <span className={style.date}>{item.date}</span>

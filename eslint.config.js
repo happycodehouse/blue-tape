@@ -54,7 +54,9 @@ export default [
         "ignorePackages",
         {
           "js": "never",
-          "jsx": "never"
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
         }
       ],
       "import/order": [

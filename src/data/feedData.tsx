@@ -1,7 +1,5 @@
 import classNames from "classnames";
-import { useEffect } from "react";
 
-// intellij-scss Images
 import intellij_scss_img_01 from "../assets/images/feed/intellij-scss/img-01.png"
 import intellij_scss_img_02 from "../assets/images/feed/intellij-scss/img-02.png"
 import style from "../pages/feed/view.module.scss"

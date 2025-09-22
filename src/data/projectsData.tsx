@@ -1,7 +1,53 @@
+import React from 'react';
 import samickthkGif_En from "../assets/images/resume/en/samickthk.gif";
 import samickthkGif from "../assets/images/resume/samickthk.gif";
 
-export const projectsData = [
+interface CompanyInfo {
+  name: string;
+  url?: string;
+  team?: string;
+  period?: string;
+}
+
+interface MultiLanguageText {
+  kr: string | React.ReactNode;
+  en: string | React.ReactNode;
+}
+
+interface MultiLanguageUrl {
+  kr: string;
+  en: string;
+}
+
+interface ProjectTitle {
+  kr: string | React.ReactNode;
+  en: string | React.ReactNode;
+  url?: MultiLanguageUrl;
+}
+
+interface ProjectDetail {
+  text: string | React.ReactNode;
+  url?: string | string[];
+  gif?: string;
+}
+
+interface Project {
+  title: ProjectTitle;
+  period: string | React.ReactNode;
+  details: {
+    kr: ProjectDetail[];
+    en: ProjectDetail[];
+  };
+  tags?: string[];
+}
+
+interface CompanyProject {
+  company: CompanyInfo;
+  brief: MultiLanguageText;
+  projects: Project[];
+}
+
+export const projectsData: CompanyProject[] = [
   {
     company: {
       name: "Freelance Contract"

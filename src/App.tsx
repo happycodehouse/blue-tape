@@ -1,3 +1,4 @@
+import React from 'react';
 import { ReactLenis } from "lenis/react"
 import { HelmetProvider } from "react-helmet-async";
 

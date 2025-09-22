@@ -1,5 +1,6 @@
-import {gsap} from "gsap";
-import {useEffect, useRef} from "react";
+import React from "react";
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 
 import style from "./bearAnimation.module.scss";
 import figure from "/src/assets/images/main/bear-motorcycle.png";
@@ -14,18 +15,22 @@ import mass08 from "/src/assets/images/main/mass-08.png";
 import mass09 from "/src/assets/images/main/mass-09.png";
 import mass10 from "/src/assets/images/main/mass-10.png";
 
-const BearAnimation = () => {
+const BearAnimation: React.FC = () => {
   const images = [mass01, mass02, mass03, mass04, mass05, mass06, mass07, mass08, mass09, mass10];
-  const massesRef = useRef([]);
-  const animationsRef = useRef([]);
-  
+
+  // 타입 지정: HTML 이미지 요소들의 배열
+  const massesRef = useRef<(HTMLImageElement | null)[]>([]);
+
+  // 타입 지정: GSAP 애니메이션들의 배열
+  const animationsRef = useRef<any[]>([]);
+
   useEffect(() => {
     const animateIndices = [1, 2, 4, 5, 6, 7, 8, 9];
-    
+
     animateIndices.forEach((idx) => {
       const element = massesRef.current[idx];
       if (element) {
-        const animation = gsap.to(element, {
+        animationsRef.current[idx] = gsap.to(element, {
           x: "-=25",
           y: "+=50",
           duration: 4 + Math.random() * 2,
@@ -34,36 +39,36 @@ const BearAnimation = () => {
           yoyo: true,
           delay: idx * 0.3,
         });
-        
-        animationsRef.current[idx] = animation;
       }
     });
-    
+
     return () => {
       animationsRef.current.forEach(animation => {
         if (animation) animation.kill();
       });
     };
   }, []);
-  
+
   return (
     <div className={style.wrap}>
       <div className={style.figure}>
-        <img src={figure} alt=""/>
+        <img src={figure} alt="Bear on motorcycle"/>
       </div>
       <div className={style.massWrap}>
         {images.map((img, index) => (
           <img
             key={index}
             src={img}
-            alt=""
+            alt={`Mass element ${index + 1}`}
             className={style[`massItem${String(index + 1).padStart(2, "0")}`]}
-            ref={el => massesRef.current[index] = el}
+            ref={(el) => {
+              massesRef.current[index] = el;
+            }}
           />
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default BearAnimation;

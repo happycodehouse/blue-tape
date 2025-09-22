@@ -49,6 +49,13 @@
       }
     }
 
+    .iconWrap {
+      display: flex;
+      align-items: center;
+      gap: to_vw($space-100);
+      margin-top: to_vw($space-100);
+    }
+
     @include media(false, tablet) {
       grid-template-columns: repeat(2, 1fr);
       gap: to_vw($space-100) to_vw($space-400);
