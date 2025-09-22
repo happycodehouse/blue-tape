@@ -36,7 +36,7 @@
         @include fontSize(32);
         font-weight: 500;
         line-height: 1.5;
-        color: $color-neutral-100;
+        color: $color-neutral-200;
         transition: color .4s cubic-bezier(.25, .46, .45, .94);
 
         @include media($from: tablet) {

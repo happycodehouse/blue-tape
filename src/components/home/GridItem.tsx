@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import style from "./gridItem.module.scss";
 import { useDirectionalHover } from "../../hooks/useDirectionalHover";
-import { useLightboxLenis } from "../../hooks/useLightboxLenis";
 import { useResponsive } from "../../hooks/useResponsive";
 
 // GridItem 컴포넌트의 props 타입 정의
@@ -24,7 +23,6 @@ const GridItem: React.FC<GridItemProps> = ({
   subtitle,
   year
 }) => {
-  useLightboxLenis();
   const { isDesktop } = useResponsive();
 
   const { overlayStyle, getHoverProps } = useDirectionalHover();

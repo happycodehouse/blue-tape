@@ -6,7 +6,6 @@ import Icons from 'uikit/dist/js/uikit-icons';
 
 import style from './view.module.scss';
 import { feedData } from '../../data/feedData';
-import { useLightboxLenis } from '../../hooks/useLightboxLenis';
 
 import 'uikit/dist/css/uikit.min.css';
 
@@ -15,9 +14,6 @@ UIkit.use(Icons);
 const View = () => {
   const {id} = useParams();
   const post = feedData.find(item => item.id === id);
-  
-  // 커스텀 훅 사용
-  useLightboxLenis();
   
   if (!post) {
     return <div>Post not found.</div>;

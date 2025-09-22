@@ -186,6 +186,7 @@
       display: flex;
       align-items: center;
       gap: to_vw(4);
+      padding-left: to_vw($space-200);
 
       span {
         padding: to_vw(2) to_vw(4);

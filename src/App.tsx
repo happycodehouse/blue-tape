@@ -1,5 +1,4 @@
 import React from 'react';
-import { ReactLenis } from "lenis/react"
 import { HelmetProvider } from "react-helmet-async";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -13,20 +12,18 @@ import "./App.scss"
 
 function App() {
   return (
-    <ReactLenis root>
-      <HelmetProvider>
-        <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Welcome/>}/>
-              <Route path="/resume" element={<Resume/>}/>
-              <Route path="/feed" element={<Feed/>}/>
-              <Route path="/feed/:id" element={<View/>}/>
-            </Routes>
-          </Layout>
-        </BrowserRouter>
-      </HelmetProvider>
-    </ReactLenis>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Welcome/>}/>
+            <Route path="/resume" element={<Resume/>}/>
+            <Route path="/feed" element={<Feed/>}/>
+            <Route path="/feed/:id" element={<View/>}/>
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 
