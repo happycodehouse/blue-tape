@@ -249,11 +249,11 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
         
         <article>
           <header>
-            <h2 className={style.sectionTitle}>어떻게 해결했나?</h2>
+            <h2 className={style.sectionTitle}>How I Solved It</h2>
           </header>
           
           <section>
-            <h3 className={style.subTitle}>1. 반복 로직 제거</h3>
+            <h3 className={style.subTitle}>1. Eliminated Repetitive Logic</h3>
             <pre>
               <code>
 {`function activeTimeline(idx) {
@@ -268,7 +268,7 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
           </section>
           
           <section>
-            <h3 className={style.subTitle}>2. 반응형 로직 분리</h3>
+            <h3 className={style.subTitle}>2. Separated Responsive Logic</h3>
             <pre>
               <code>
 {`ScrollTrigger.matchMedia({
@@ -285,7 +285,7 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
           </section>
           
           <section>
-            <h3 className={style.subTitle}>3. 애니메이션 시스템 개선</h3>
+            <h3 className={style.subTitle}>3. Separated Responsive Logic</h3>
             <pre>
               <code>
 {`ScrollTrigger.matchMedia({
@@ -306,7 +306,7 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
         
         <article>
           <header>
-            <h2 className={style.sectionTitle}>마치는 글</h2>
+            <h2 className={style.sectionTitle}>Results</h2>
           </header>
           
           <section>
