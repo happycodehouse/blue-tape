@@ -49,21 +49,12 @@ const Resume = () => {
                     {personalInfo.email}
                   </a>
                   <div className={style.iconWrap}>
-                    <a
-                      href={personalInfo.linkedin}
-                      title="LinkedIn"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <a href={personalInfo.linkedin} title="LinkedIn" target="_blank" rel="noopener noreferrer"
                     >
-                      <FaLinkedin size={28} />
+                      <FaLinkedin size={24} />
                     </a>
-                    <a
-                      href={personalInfo.github}
-                      title="Github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaGithub size={28} />
+                    <a href={personalInfo.github} title="Github" target="_blank" rel="noopener noreferrer">
+                      <FaGithub size={24} />
                     </a>
                   </div>
                 </p>

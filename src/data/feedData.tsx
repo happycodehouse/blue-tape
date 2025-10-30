@@ -72,7 +72,9 @@ export const feedData = [
             <h3 className={style.subTitle}>So I Flipped It Around</h3>
             <p>
               After some brainstorming, I decided to completely change the approach.
+              <br/>
               <b>Traditional way: Know who you're giving to → Figure out their preferences → Prepare gift</b>
+              <br/>
               <b>New approach: Share what you want to receive → Guess who you're preparing a gift for</b>
             </p>
           </section>
@@ -210,37 +212,37 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
       <>
         <article>
           <header>
-            <h2 className={style.sectionTitle}>들어가는 글</h2>
+            <h2 className={style.sectionTitle}>Overview</h2>
           </header>
           <p>
-            기존 코드를 검토해보니 중복된 로직과 복잡한 구조로 인해 가독성이 떨어지는 문제가 있었습니다.
-            이를 개선하기 위해 페이지 모션 스크립트를 처음부터 다시 정리하여 간결하고 명확한 코드로 재작성했습니다.
+            Upon reviewing the existing code, I identified issues with readability due to duplicated logic and complex structure.
+            To address this, I rewrote the page motion script from scratch, creating cleaner and more maintainable code.
           </p>
         </article>
-  
+
         <article>
           <header>
-            <h2 className={style.sectionTitle}>무엇이 문제였나?</h2>
-            <h3 className={style.subTitle}>기존 코드의 문제점</h3>
-            <p>기존 Heritage 페이지는 다음과 같은 문제들을 가지고 있었습니다:</p>
+            <h2 className={style.sectionTitle}>What Were the Issues?</h2>
+            <h3 className={style.subTitle}>Problems with the Original Code</h3>
+            <p>The existing Heritage page had several critical issues:</p>
           </header>
-    
+
           <section>
-            <h4 className={style.itemTitle}>코드 구조 문제</h4>
+            <h4 className={style.itemTitle}>Code Structure Issues</h4>
             <ul className={style.itemList}>
-              <li>200줄이 넘는 복잡한 코드로 가독성 저하</li>
-              <li>반복적인 하드코딩으로 인한 패턴 부재</li>
-              <li>PC/모바일 로직이 명확히 분리되지 않고 하나의 스크립트에 혼재</li>
-              <li>개별 요소마다 중복된 이벤트 핸들러</li>
+              <li>Over 200 lines of complex code resulting in poor readability</li>
+              <li>Lack of patterns due to repetitive hardcoding</li>
+              <li>PC/mobile logic mixed together in a single script without clear separation</li>
+              <li>Duplicated event handlers for individual elements</li>
             </ul>
           </section>
-    
+
           <section>
-            <h4 className={style.itemTitle}>유지보수성 문제</h4>
+            <h4 className={style.itemTitle}>Maintainability Issues</h4>
             <ul className={style.itemList}>
-              <li>하드코딩된 애니메이션 값으로 수정 시 전체 코드 수정 필요</li>
-              <li>분산된 로직으로 인한 디버깅 어려움</li>
-              <li>기능별 모듈화 부재로 코드 파악 시간 증가</li>
+              <li>Hardcoded animation values requiring modifications throughout the entire codebase</li>
+              <li>Scattered logic making debugging difficult</li>
+              <li>Lack of modular organization increasing code comprehension time</li>
             </ul>
           </section>
         </article>
@@ -254,20 +256,7 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
             <h3 className={style.subTitle}>1. 반복 로직 제거</h3>
             <pre>
               <code>
-    {`// 기존: 하드코딩된 개별 조건문들
-if (targetIdx === 0) {
-  gsap.to(window, { scrollTo: fullOffset });
-}
-if (targetIdx === 1) {
-  gsap.to(window, { scrollTo: fullOffset + (fullHeight * 1) });
-}
-if (targetIdx === 2) {
-  gsap.to(window, { scrollTo: fullOffset + (fullHeight * 2) });
-}
-// ... 각 아이템마다 반복
-
-// 개선: 공식 기반 계산
-function activeTimeline(idx) {
+{`function activeTimeline(idx) {
   gsap.to(window, {
       scrollTo: $desc.eq(idx).offset().top,
       ease: "none",
@@ -284,10 +273,10 @@ function activeTimeline(idx) {
               <code>
 {`ScrollTrigger.matchMedia({
     "(min-width: 1025px)": function() {
-        // PC 전용 스크롤 트리거
+        // PC-specific scroll triggers
     },
     "(max-width: 1024px)": function() {
-        // 모바일 최적화 터치 인터랙션
+        // Mobile-optimized touch interactions
     }
 });
 `}
@@ -299,36 +288,16 @@ function activeTimeline(idx) {
             <h3 className={style.subTitle}>3. 애니메이션 시스템 개선</h3>
             <pre>
               <code>
-  {`// 기존: 수동 플래그 관리로 애니메이션 중복 실행 방지
-    let chapterMotionFlag_0 = true,
-        chapterMotionFlag_1 = true,
-        chapterMotionFlag_2 = true,
-        chapterMotionFlag_3 = true;
-    
-    if (progress >= 0 && progress < 24) {
-      if(chapterMotionFlag_0){
-        chapterMotion(0);
-        chapterMotionFlag_0 = false;
-      }
-      chapterMotionFlag_1 = true;
-    } else if (progress >= 24 && progress < 49) {
-      if (chapterMotionFlag_1) {
-        chapterMotion(1);
-        chapterMotionFlag_1 = false;
-      }
-    }
-
-// 개선: ScrollTrigger 내장 상태 관리 활용
-    ScrollTrigger.matchMedia({
-      "(min-width: 1025px)": function() {
-        $timelineItem.each(function(idx) {
-          pcSecHeritageTl.to({}, {
-            onStart: () => activeTimeline(idx),
-            onReverseComplete: () => activeTimeline(idx - 1)
-          });
-        });
-      }
+{`ScrollTrigger.matchMedia({
+  "(min-width: 1025px)": function() {
+    $timelineItem.each(function(idx) {
+      pcSecHeritageTl.to({}, {
+        onStart: () => activeTimeline(idx),
+        onReverseComplete: () => activeTimeline(idx - 1)
+      });
     });
+  }
+});
 `}
               </code>
             </pre>
@@ -348,14 +317,14 @@ function activeTimeline(idx) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  🌐 라이브 데모 보기
+                  🌐 Live Demo
                 </a>
                 <a
                   href="https://github.com/happycodehouse/circular-heritage"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  📂 소스 코드 보기
+                  📂 Source Code
                 </a>
               </div>
             </div>
@@ -363,12 +332,12 @@ function activeTimeline(idx) {
           
           <section>
             <p>
-              복잡했던 JSP 코드를 간결한 JavaScript로 바꾸면서 코드량은 60% 줄이고 성능은 향상시킬 수 있었습니다.
-              하드코딩된 반복 로직을 `activeTimeline(idx)` 같은 재사용 가능한 함수로 만들어 새로운 타임라인 아이템 추가 시에도
-              코드 수정 없이 자동으로 동작하도록 했고, PC/모바일 로직을 명확히 분리했습니다.
-              또한 복잡했던 수동 플래그 관리를 ScrollTrigger의 콜백 함수를 활용해 자동화한 것도 큰 개선점이었습니다.
-              결과적으로 유지보수하기 쉽고 확장 가능한 코드 구조를 만들 수 있었고,
-              복잡한 기존 코드를 분석하고 최적화하는 능력을 기를 수 있었습니다.
+              By converting complex JSP code into clean JavaScript, I reduced the codebase by 60% while improving performance.
+              Hardcoded repetitive logic was transformed into reusable functions like `activeTimeline(idx)`, enabling automatic handling
+              of new timeline items without code modifications. PC and mobile logic were clearly separated for better maintainability.
+              Additionally, replacing complex manual flag management with ScrollTrigger's callback functions significantly streamlined
+              the animation system. The result is a codebase that's easier to maintain and extend, and this process strengthened
+              my ability to analyze and optimize complex legacy code.
             </p>
           </section>
         </article>
