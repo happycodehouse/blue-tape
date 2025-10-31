@@ -10,7 +10,7 @@ export const feedData = [
     id: "soul",
     category: "LIFE",
     date: "19.09.25",
-    title: "물고기 이야기",
+    title: "I heard this story about a fish.",
     content:
       <>
         <article>
@@ -35,47 +35,35 @@ export const feedData = [
     id: "secret-santa",
     category: "LIFE",
     date: "18.09.25",
-    title: "Planning a Secret Santa Event for Our Year-End Party",
+    title: "Flipping Secret Santa on Its Head",
     content:
       <>
         <article>
           <header>
-            <h2 className={style.sectionTitle}>My First Year-End Party: Planning a Secret Santa Event</h2>
+            <h2 className={style.sectionTitle}>Flipping Secret Santa on Its Head</h2>
           </header>
-          
+
           <section>
-            <h3 className={style.subTitle}>Joining the Year-End Party Planning Team</h3>
+            <h3 className={style.subTitle}>The Problem from 2022</h3>
             <p>
-              I joined the company in September 2023, and as expected, I was assigned to the year-end party planning committee. Our company has this tradition where they pick one new employee from each team to plan the year-end gathering together.
-              <br/><br/>
-              Starting in November, we had weekly meetings to brainstorm ideas, divide roles, and share progress updates. Among all the activities, there was one thing that never gets skipped: Secret Santa.
+              I was put in charge of Secret Santa for our December 2023 year-end party.
+              I heard the <b>2022 event</b> didn't go well—the main issue was gift satisfaction.
+              Since it's hard to really know your coworkers' preferences, people often received
+              unwanted items that ended up unused and forgotten.
             </p>
           </section>
-        </article>
-        
-        <article>
+
           <section>
-            <h3 className={style.subTitle}>Last Year Wasn't Quite Right?</h3>
-            <p>I was excited to volunteer for the Secret Santa event since it reminded me of elementary school days. But then I heard that last year's response wasn't great, which made me a bit nervous. After asking around, I found out the main issue was gift satisfaction.</p>
-            <h4 className={style.itemTitle}>The problems were:</h4>
-            <ul className={style.itemList}>
-              <li>People received gifts they didn't really need</li>
-              <li>Items ended up unused and forgotten</li>
-              <li>Even though it's about receiving gifts, people weren't excited</li>
-            </ul>
-            <p>The traditional Secret Santa works by secretly observing your assigned person and guessing what they'd like. But honestly, it's pretty hard to know your coworkers' preferences that well, right?</p>
-          </section>
-        </article>
-        
-        <article>
-          <section>
-            <h3 className={style.subTitle}>So I Flipped It Around</h3>
+            <h3 className={style.subTitle}>A New Approach for 2023</h3>
             <p>
-              After some brainstorming, I decided to completely change the approach.
+              So I completely flipped the format.
+              <br/><br/>
+              <b>Old way:</b> Know who you're giving to → Guess their preferences → Prepare gift
               <br/>
-              <b>Traditional way: Know who you're giving to → Figure out their preferences → Prepare gift</b>
-              <br/>
-              <b>New approach: Share what you want to receive → Guess who you're preparing a gift for</b>
+              <b>New way:</b> Share what you want to receive → Guess who you're preparing for
+              <br/><br/>
+              This way, everyone gets something they actually want, while still keeping
+              the fun of guessing who their Secret Santa is.
             </p>
           </section>
         </article>
