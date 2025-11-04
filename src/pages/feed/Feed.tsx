@@ -60,7 +60,7 @@ const Feed: React.FC = () => {
       <div className={style.feedWrapper}>
         <div className="grid-box">
           <div className="grid-box-left">
-            <FilterButtonGroup
+            <FilterButtonGroup<string> // <-- 타입 파라미터 추가
               buttons={buttonData}
               selectedValue={selectedFilter}
               onButtonClick={handleFilterClick}

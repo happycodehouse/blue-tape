@@ -7,10 +7,8 @@ import ProjectsSection from "../../components/resume/ProjectsSection";
 import { languageData, personalInfo } from "../../data/commonData";
 
 const Resume = () => {
-  // boolean 타입 명시
   const [isKorean, setIsKorean] = useState<boolean>(false);
 
-  // value 타입을 명시
   const handleLanguageChange = useCallback((value: boolean) => {
     setIsKorean(value);
   }, []);
@@ -20,7 +18,7 @@ const Resume = () => {
       <div className={style.resumeWrapper}>
         <div className="grid-box">
           <div className="grid-box-left">
-            <FilterButtonGroup
+            <FilterButtonGroup<boolean> // <-- 타입 파라미터 추가
               buttons={languageData}
               selectedValue={isKorean}
               onButtonClick={handleLanguageChange}
@@ -49,12 +47,11 @@ const Resume = () => {
                     {personalInfo.email}
                   </a>
                   <div className={style.iconWrap}>
-                    <a href={personalInfo.linkedin} title="LinkedIn" target="_blank" rel="noopener noreferrer"
-                    >
-                      <FaLinkedin size={24} />
+                    <a href={personalInfo.linkedin} title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin size={24}/>
                     </a>
                     <a href={personalInfo.github} title="Github" target="_blank" rel="noopener noreferrer">
-                      <FaGithub size={24} />
+                      <FaGithub size={24}/>
                     </a>
                   </div>
                 </p>
@@ -63,7 +60,7 @@ const Resume = () => {
           </div>
         </div>
         <div className={style.section}>
-          <ProjectsSection isKorean={isKorean} />
+          <ProjectsSection isKorean={isKorean}/>
         </div>
       </div>
     </div>
