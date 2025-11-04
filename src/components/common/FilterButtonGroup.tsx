@@ -3,14 +3,14 @@ import style from "./filterButtonGroup.module.scss";
 
 interface ButtonType {
   key?: string;
-  value: boolean;
+  value: string;
   label: string;
 }
 
 interface FilterButtonGroupProps {
   buttons: ButtonType[];
-  selectedValue: boolean;
-  onButtonClick: (value: boolean) => void;
+  selectedValue: string;
+  onButtonClick: (value: string) => void;
   className?: string;
 }
 
