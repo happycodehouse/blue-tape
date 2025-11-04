@@ -7,7 +7,7 @@
   &_wrap {
     position: relative;
 
-    &.gif {
+    &.video {
       .bubbleContent {
         top: unset;
         right: to_vw($space-200);
@@ -16,6 +16,12 @@
         position: fixed;
         transform: unset;
         transform-origin: right bottom;
+
+        video {
+          width: to_vw(500);
+          height: auto;
+          object-fit: cover;
+        }
       }
     }
   }

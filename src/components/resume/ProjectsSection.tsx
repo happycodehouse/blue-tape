@@ -25,9 +25,9 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({ href, children, className }
 );
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ isKorean }) => {
-  const renderDetailItem = (detail: any, detailIndex: number) => {
-    if (detail.gif) {
-      return <BubbleBox gif={detail.gif} text={detail.text} />;
+  const renderDetailItem = (detail: any) => {
+    if (detail.video) {
+      return <BubbleBox video={detail.video} text={detail.text} />;
     }
 
     if (detail.url) {
@@ -93,7 +93,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ isKorean }) => {
                   <ul>
                     {(isKorean ? project.details.kr : project.details.en).map((detail, detailIndex) => (
                       <li key={detailIndex}>
-                        {renderDetailItem(detail, detailIndex)}
+                        {renderDetailItem(detail)}
                       </li>
                     ))}
                   </ul>

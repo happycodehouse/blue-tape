@@ -73,9 +73,7 @@ strong {
 
 .gradient-animation {
   animation: gradient-animation 3s linear infinite;
-  background: #1D2B64; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #F8CDDA, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
   background-clip: text;
   background-size: 200% auto;
   font-weight: 900;

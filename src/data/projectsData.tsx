@@ -1,6 +1,7 @@
 import React from 'react';
-import samickthkGif_En from "../assets/images/resume/en/samickthk.gif";
-import samickthkGif from "../assets/images/resume/samickthk.gif";
+import samickthkMp4 from "../assets/videos/resume/samickthk.mp4";
+import hanatourcompanyMp4 from "../assets/videos/resume/hanatourcompany.mp4";
+import samsungMp4 from "../assets/videos/resume/samsung.mp4";
 
 interface CompanyInfo {
   name: string;
@@ -28,7 +29,7 @@ interface ProjectTitle {
 interface ProjectDetail {
   text: string | React.ReactNode;
   url?: string | string[];
-  gif?: string;
+  video?: string;
 }
 
 interface Project {
@@ -128,14 +129,14 @@ export const projectsData: CompanyProject[] = [
               url: "https://www.samsungsem.com/kr/product/module/camera-module/automotive-camera-modules.do"
             },
             {
-              text: "웹 접근성 WCAG 2.1 AA 인증 획득 (WebWatch 심사 통과)"
+              text: "매년 웹 접근성 WCAG 2.1 AA 인증 갱신 (WebWatch 심사 통과)"
             },
             {
               text: "뉴스레터 연간 리뉴얼 (멀티 플랫폼 호환성 95% 향상)"
             },
             {
               text: "지속가능경영 카테고리 개편 및 인터랙티브 요소 구현",
-              url: "https://www.samsungsem.com/kr/sustainability/sustainability.do"
+              video: samsungMp4
             },
             {
               text: "푸른코끼리 갤러리 AJAX 기반 동적 로딩 시스템 구축 (페이지 로딩 속도 30% 개선)",
@@ -144,30 +145,29 @@ export const projectsData: CompanyProject[] = [
           ],
           en: [
             {
-              text: <>SEM <a href="https://product.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">PS</a>/<a href="https://weblib.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">CL</a> Technical Resources
-                Platform Development & Operations</>,
+              text: <>SEM <a href="https://product.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">PS</a>/<a href="https://weblib.samsungsem.com/index.do" target="_blank" rel="noopener noreferrer">CL</a> Platform Development & Operations</>,
             },
             {
-              text: "Product Category Restructuring & User Experience Enhancement",
+              text: "Product Category Restructuring & UX Enhancement",
               url: "https://www.samsungsem.com/global/product/module/camera-module/automotive-camera-modules.do"
             },
             {
-              text: "Achieved WCAG 2.1 AA web accessibility certification through comprehensive WebWatch audit"
+              text: "Maintain WCAG 2.1 AA certification through annual WebWatch audits"
             },
             {
-              text: "Annual Newsletter Redesign with Multi-platform Compatibility Improvement"
+              text: "Redesigned Annual Newsletter for multi-platform compatibility"
             },
             {
-              text: "Sustainability Category Development with Interactive Data Visualization",
-              url: "https://www.samsungsem.com/global/sustainability/sustainability.do"
+              text: "Developed Sustainability Category with interactive data visualizations",
+              video: samsungMp4
             },
             {
-              text: "Blue Elephant Gallery AJAX-based Dynamic Loading System Implementation (30% loading speed improvement)",
+              text: "Implemented AJAX-based dynamic loading (30% speed improvement)",
               url: "https://samsungsem.com/kr/bepuco/contest.do"
             }
           ]
         },
-        tags: ["#A11y", "#AdaptiveDesign", "#PerformanceOptimization", "#AJAX", "#ResponsiveDesign"]
+        tags: ["#AJAX", "#WCAG", "#WebPerformance", "#AdaptiveDesign"]
       },
       {
         title: {
@@ -196,8 +196,8 @@ export const projectsData: CompanyProject[] = [
       },
       {
         title: {
-          kr: "DB HiTek 웹사이트 리뉴얼",
-          en: "DB HiTek Website Development",
+          kr: "DB HiTek 리뉴얼",
+          en: "DB HiTek Website",
           url: {
             kr: "https://dbhitek.com/kr",
             en: "https://dbhitek.com/en/"
@@ -236,12 +236,42 @@ export const projectsData: CompanyProject[] = [
             }
           ]
         },
-        tags: ["#DesignSystem", "#CSS", "#ResponsiveDesign", "#Animation", "#A11y"]
+        tags: ["#GSAP","#SCSS", "#ResponsiveDesign"]
       },
       {
         title: {
-          kr: "DAESANG Wellife 웹사이트 구축",
-          en: "DAESANG Wellife Website Development",
+          kr: "자이엘리베이터 사이트 리뉴얼",
+          en: "XI Elevator",
+          url: {
+            kr: "https://www.xielevator.com/kr",
+            en: "https://www.xielevator.com/en"
+          }
+        },
+        period: <>2025.03 - 2025.04 <br/> 2023.09 - 2023.12</>,
+        details: {
+          kr: [
+            {
+              text: ""
+              // video: samickthkGif
+            },
+            {
+              text: ""
+            }
+          ],
+          en: [
+            {
+              text: ""
+            },
+            {
+              text: ""
+            }
+          ]
+        }
+      },
+      {
+        title: {
+          kr: "대상웰라이프",
+          en: "DAESANG Wellife",
           url: {
             kr: "https://daesangwellife.com/kr/index",
             en: "https://daesangwellife.com/en/index"
@@ -251,30 +281,38 @@ export const projectsData: CompanyProject[] = [
         details: {
           kr: [
             {
-              text: ""
-              // gif: samickthkGif
+              text: "GSAP ScrollTrigger 활용한 뷰포트 인식 비디오/애니메이션 제어로 성능 최적화",
+              url: "https://daesangwellife.com/kr/about-us/company/overview"
             },
             {
-              text: ""
+              text: "재사용 가능한 디자인 시스템 및 컴포넌트 라이브러리 구축"
+            },
+            {
+              text: "반응형 디자인 및 크로스 브라우징 구현"
             }
           ],
           en: [
             {
-              text: ""
+              text: "Optimized performance with GSAP ScrollTrigger for viewport-aware video/animation control",
+              url: "https://daesangwellife.com/en/about-us/company/overview"
             },
             {
-              text: ""
+              text: "Established design system and reusable component library for scalability"
+            },
+            {
+              text: "Responsive design with cross-browser compatibility"
             }
           ]
-        }
+        },
+        tags: ["#GSAP","#SCSS", "#ResponsiveDesign"]
       },
       {
         title: {
           kr: "삼양그룹 전사 CI 변경",
           en: "Samyang Group Corporate Identity Renewal",
           url: {
-            kr: "https://www.samyang.com/kr/index",
-            en: "https://www.samyang.com/en/index"
+            kr: "https://www.samyang.com/kr",
+            en: "https://www.samyang.com/en"
           }
         },
         period: "2024.07 - 2024.10",
@@ -282,7 +320,6 @@ export const projectsData: CompanyProject[] = [
           kr: [
             {
               text: ""
-              // gif: samickthkGif
             },
             {
               text: ""
@@ -300,8 +337,8 @@ export const projectsData: CompanyProject[] = [
       },
       {
         title: {
-          kr: "하나투어 기업PR 사이트 구축",
-          en: "Hanatour Corporate PR Website Development",
+          kr: "하나투어 기업 웹사이트",
+          en: "Hanatour Corporate",
           url: {
             kr: "https://www.hanatourcompany.com/kr",
             en: "https://www.hanatourcompany.com/en"
@@ -311,30 +348,26 @@ export const projectsData: CompanyProject[] = [
         details: {
           kr: [
             {
-              text: ""
-              // gif: samickthkGif
-            },
-            {
-              text: ""
+              text: "GSAP ScrollTrigger 연동 및 외부 컨트롤러 기반 커스텀 스와이퍼 구현",
+              video: hanatourcompanyMp4
             }
           ],
           en: [
             {
-              text: ""
-            },
-            {
-              text: ""
+              text: "Custom Swiper with GSAP ScrollTrigger integration and external content controller",
+              video: hanatourcompanyMp4
             }
           ]
-        }
+        },
+        tags: ["#GSAP", "#SCSS", "#Swiper"]
       },
       {
         title: {
           kr: "삼익THK 통합 사이트 리뉴얼",
-          en: "Samik THK Integrated Website Renewal",
+          en: "Samik THK Integrated",
           url: {
-            kr: "https://www.samickthk.co.kr/kr/",
-            en: "https://www.samickthk.co.kr/en/"
+            kr: "https://www.samickthk.co.kr/kr",
+            en: "https://www.samickthk.co.kr/en"
           }
         },
         period: "2023.12 - 2024.05",
@@ -342,52 +375,17 @@ export const projectsData: CompanyProject[] = [
           kr: [
             {
               text: "GSAP ScrollTrigger를 활용한 타임라인 인터랙션 애니메이션",
-              gif: samickthkGif
-            },
-            {
-              text: "실제 업무 내용 2"
+              video: samickthkMp4
             }
           ],
           en: [
             {
               text: "Timeline interaction animation with GSAP ScrollTrigger",
-              gif: samickthkGif_En
-            },
-            {
-              text: "Real work content 2"
+              video: samickthkMp4
             }
           ]
-        }
-      },
-      {
-        title: {
-          kr: "자이엘리베이터 사이트 리뉴얼",
-          en: "XI Elevator Website Redesign",
-          url: {
-            kr: "https://www.xielevator.com/kr/index",
-            en: "https://www.xielevator.com/en/index"
-          }
         },
-        period: <>2025.03 - 2025.04 <br/> 2023.09 - 2023.12</>,
-        details: {
-          kr: [
-            {
-              text: ""
-              // gif: samickthkGif
-            },
-            {
-              text: ""
-            }
-          ],
-          en: [
-            {
-              text: ""
-            },
-            {
-              text: ""
-            }
-          ]
-        }
+        tags: ["#GSAP", "#SCSS"]
       }
     ]
   },
@@ -427,7 +425,7 @@ export const projectsData: CompanyProject[] = [
             }
           ]
         },
-        tags: ["#A11y"]
+        tags: ["#WCAG"]
       },
       {
         title: {
@@ -453,7 +451,7 @@ export const projectsData: CompanyProject[] = [
             }
           ]
         },
-        tags: ["#A11y"]
+        tags: ["#WCAG"]
       },
       {
         title: {
