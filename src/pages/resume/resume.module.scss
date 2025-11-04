@@ -78,8 +78,7 @@
     }
 
     @include media(false, tablet) {
-      grid-template-columns: unset;
-      grid-template-rows: 1fr;
+      display: block;
       padding: to_vw($space-300) to_vw($space-200);
 
       & + .gridOneThree {
@@ -98,8 +97,7 @@
     }
 
     @include media(false, tablet) {
-      grid-template-columns: unset;
-      grid-template-rows: 1fr;
+      display: block;
       padding: to_vw($space-400) 0;
     }
   }
@@ -133,8 +131,16 @@
     }
 
     @include media(false, tablet) {
+      a, span {
+        @include fontSize(18);
+      }
+
       ul {
         margin-bottom: to_vw($space-400);
+      }
+
+      li {
+        @include fontSize(13);
       }
     }
   }
@@ -184,6 +190,7 @@
 
     .tagWrap {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: to_vw(4);
       padding-left: to_vw($space-200);
@@ -199,6 +206,13 @@
     @include media(false, tablet) {
       .brief {
         padding-bottom: to_vw($space-400);
+        @include fontSize(15);
+      }
+
+      ul {
+        li {
+          @include fontSize(15);
+        }
       }
 
       dl {
@@ -209,6 +223,7 @@
         }
 
         dd {
+          @include fontSize(13);
           line-height: 1.5;
         }
       }
