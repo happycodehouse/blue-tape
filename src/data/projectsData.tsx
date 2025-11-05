@@ -2,6 +2,7 @@ import React from 'react';
 import samickthkMp4 from "../assets/videos/resume/samickthk.mp4";
 import hanatourcompanyMp4 from "../assets/videos/resume/hanatourcompany.mp4";
 import samsungMp4 from "../assets/videos/resume/samsung.mp4";
+import xiElevatorMp4 from "../assets/videos/resume/xi-elevator.mp4";
 
 interface CompanyInfo {
   name: string;
@@ -237,12 +238,12 @@ export const projectsData: CompanyProject[] = [
             }
           ]
         },
-        tags: ["#GSAP","#SCSS", "#ResponsiveDesign"]
+        tags: ["#GSAP","#SCSS", "#DesignSystem", "#ResponsiveDesign"]
       },
       {
         title: {
-          kr: "자이엘리베이터 사이트 리뉴얼",
-          en: "XI Elevator",
+          kr: "자이엘리베이터 CI 리뉴얼",
+          en: "XI Elevator CI Renewal",
           url: {
             kr: "https://www.xielevator.com/kr",
             en: "https://www.xielevator.com/en"
@@ -252,19 +253,26 @@ export const projectsData: CompanyProject[] = [
         details: {
           kr: [
             {
-              text: ""
-              // video: samickthkGif
+              text: "CI 개편에 따른 웹사이트 전면 리뉴얼"
             },
             {
-              text: ""
+              text: "디바이스별 차별화된 GSAP ScrollTrigger 인터랙션 구현 (모바일/PC 분리 제어)",
+              video: xiElevatorMp4
+            },
+            {
+              text: "반응형 웹 디자인 및 크로스 브라우저 호환성 구현"
             }
           ],
           en: [
             {
-              text: ""
+              text: "Complete website redesign following CI renewal"
             },
             {
-              text: ""
+              text: "Device-specific GSAP ScrollTrigger interactions with separate mobile/PC control logic",
+              video: xiElevatorMp4
+            },
+            {
+              text: "Responsive web design with cross-browser compatibility"
             }
           ]
         },
@@ -306,7 +314,7 @@ export const projectsData: CompanyProject[] = [
             }
           ]
         },
-        tags: ["#GSAP","#SCSS", "#ResponsiveDesign"]
+        tags: ["#GSAP","#SCSS", "#DesignSystem", "#ResponsiveDesign"]
       },
       {
         title: {
