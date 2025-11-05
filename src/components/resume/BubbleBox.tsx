@@ -1,22 +1,37 @@
-import React, { useState } from "react";
-
+import React, { useState, useRef } from "react";
 import style from "./bubbleBox.module.scss";
 
-// BubbleBox props 타입 정의
 interface BubbleBoxProps {
-  urls?: string[];        // URL 배열 (선택사항)
-  text: string;          // 텍스트 (필수)
-  video?: string;        // Video URL (선택사항) - gif에서 video로 변경
+  urls?: string[];
+  text: string;
+  video?: string;
 }
 
 const BubbleBox: React.FC<BubbleBoxProps> = ({ urls, text, video }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0; // 처음부터 재생
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0; // 처음으로 리셋
+    }
+  };
 
   return (
     <div
       className={`${style.bubble_wrap} ${video ? style.video : ""}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <span className="gradient-animation">{text}</span>
       <div className={`${style.bubbleContent} ${isHovered ? style.on : ""}`}>
@@ -26,8 +41,8 @@ const BubbleBox: React.FC<BubbleBoxProps> = ({ urls, text, video }) => {
           ))}
           {video && (
             <video
+              ref={videoRef}
               src={video}
-              autoPlay
               loop
               muted
               playsInline

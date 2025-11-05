@@ -192,7 +192,8 @@ export const projectsData: CompanyProject[] = [
               text: "Regular content updates and technical maintenance"
             }
           ]
-        }
+        },
+        tags: ["#SCSS", "#AdaptiveDesign"]
       },
       {
         title: {
@@ -266,7 +267,8 @@ export const projectsData: CompanyProject[] = [
               text: ""
             }
           ]
-        }
+        },
+        tags: ["#GSAP", "#SCSS", "#ResponsiveDesign"]
       },
       {
         title: {
@@ -319,21 +321,28 @@ export const projectsData: CompanyProject[] = [
         details: {
           kr: [
             {
-              text: ""
+              text: "삼양그룹 12개 계열사 웹사이트 동시 CI 리뉴얼 (퍼블리싱 3인 협업)"
             },
             {
-              text: ""
+              text: "국영문 폰트 차별화를 위한 타이포그래피 시스템 설계"
+            },
+            {
+              text: "레거시 코드 기반 효율적 CSS 관리 및 멀티 사이트 배포 전략 수립"
             }
           ],
           en: [
             {
-              text: ""
+              text: "CI renewal across 12 Samyang Group subsidiary websites (3-person front-end team)"
             },
             {
-              text: ""
+              text: "Typography system design for Korean/English font differentiation"
+            },
+            {
+              text: "Efficient CSS management and multi-site deployment strategy with legacy codebase"
             }
           ]
-        }
+        },
+        tags: ["#MultiSiteManagement", "#ResponsiveDesign"]
       },
       {
         title: {
@@ -359,7 +368,7 @@ export const projectsData: CompanyProject[] = [
             }
           ]
         },
-        tags: ["#GSAP", "#SCSS", "#Swiper"]
+        tags: ["#GSAP", "#Swiper", "#SCSS", "#ResponsiveDesign"]
       },
       {
         title: {
@@ -385,7 +394,7 @@ export const projectsData: CompanyProject[] = [
             }
           ]
         },
-        tags: ["#GSAP", "#SCSS"]
+        tags: ["#GSAP", "#SCSS", "#ResponsiveDesign"]
       }
     ]
   },
@@ -425,7 +434,7 @@ export const projectsData: CompanyProject[] = [
             }
           ]
         },
-        tags: ["#WCAG"]
+        tags: ["#WCAG", "#ResponsiveDesign"]
       },
       {
         title: {
@@ -451,7 +460,7 @@ export const projectsData: CompanyProject[] = [
             }
           ]
         },
-        tags: ["#WCAG"]
+        tags: ["#WCAG", "#ResponsiveDesign"]
       },
       {
         title: {
@@ -477,7 +486,8 @@ export const projectsData: CompanyProject[] = [
               text: "Implemented responsive design architecture and provided ongoing technical support"
             }
           ]
-        }
+        },
+        tags: ["#ResponsiveDesign"]
       }
     ]
   }
