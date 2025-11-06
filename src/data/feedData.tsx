@@ -242,6 +242,26 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
           
           <section>
             <h3 className={style.subTitle}>1. Eliminated Repetitive Logic</h3>
+
+            <p>Before</p>
+            <pre>
+              <code>
+{`
+  if (targetIdx === 0) {
+  gsap.to(window, { scrollTo: fullOffset });
+}
+  if (targetIdx === 1) {
+  gsap.to(window, { scrollTo: fullOffset + (fullHeight * 1) });
+}
+  if (targetIdx === 2) {
+  gsap.to(window, { scrollTo: fullOffset + (fullHeight * 2) });
+}
+`}
+              </code>
+            </pre>
+
+            <p>After</p>
+
             <pre>
               <code>
 {`function activeTimeline(idx) {
