@@ -11,6 +11,7 @@ interface FeedItem {
   category: string;
   date: string;
   title: string;
+  externalUrl?: string;
 }
 
 interface ButtonData {
@@ -80,10 +81,21 @@ const Feed: React.FC = () => {
                 <ul className={style.feedList}>
                   {filteredData.map((item: FeedItem) => (
                     <li key={item.id}>
-                      <Link to={`/feed/${item.id}`}>
-                        <span className={style.date}>{item.date}</span>
-                        <span className={style.title}>{item.title}</span>
-                      </Link>
+                      {item.externalUrl ? (
+                        <a
+                          href={item.externalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className={style.date}>{item.date}</span>
+                          <span className={style.title}>{item.title}</span>
+                        </a>
+                      ) : (
+                        <Link to={`/feed/${item.id}`}>
+                          <span className={style.date}>{item.date}</span>
+                          <span className={style.title}>{item.title}</span>
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

@@ -74,7 +74,7 @@ export const feedData = [
     category: "LAB",
     date: "17.09.25",
     title: "Responsive Sticky Vertical Component | Live Demo",
-    content: ""
+    externalUrl: "https://sticky-vertical-slide.netlify.app/"
   },
   {
     id: "intellij-scss",

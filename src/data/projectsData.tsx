@@ -355,7 +355,7 @@ export const projectsData: CompanyProject[] = [
       {
         title: {
           kr: "하나투어 기업 웹사이트",
-          en: "Hanatour Corporate",
+          en: "Hanatour Company",
           url: {
             kr: "https://www.hanatourcompany.com/kr",
             en: "https://www.hanatourcompany.com/en"
