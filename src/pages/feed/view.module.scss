@@ -119,6 +119,7 @@
   strong {
     display: block;
     margin: to_vw($space-200) 0;
+    @include fontSize(14, 21);
   }
 
   .itemList {
