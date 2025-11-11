@@ -49,6 +49,10 @@
 
     p {
       @include fontSize(14, 21);
+
+      strong {
+        display: initial;
+      }
     }
   }
 
@@ -112,6 +116,11 @@
     }
   }
 
+  strong {
+    display: block;
+    margin: to_vw($space-200) 0;
+  }
+
   .itemList {
     margin: to_vw($space-100) 0;
 
@@ -130,10 +139,10 @@
   }
 
   pre {
-    margin: to_vw($space-200) auto;
+    margin: to_vw($space-200) auto to_vw($space-500);
     padding: to_vw($space-200);
     width: calc(100% - to_vw($space-400));
-    white-space: nowrap;
+    //white-space: nowrap;
   }
 }
 

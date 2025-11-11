@@ -242,11 +242,10 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
 
           <section>
             <h3>Eliminated Repetitive Logic</h3>
-            <p>Before</p>
+            <strong>Before</strong>
             <pre>
               <code>
-{`
-  if (targetIdx === 0) {
+{`if (targetIdx === 0) {
   gsap.to(window, { scrollTo: fullOffset });
 }
   if (targetIdx === 1) {
@@ -259,7 +258,7 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
               </code>
             </pre>
 
-            <p>After</p>
+            <strong>After</strong>
 
             <pre>
               <code>
@@ -319,9 +318,6 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
               By converting complex JSP code into clean JavaScript, I reduced the codebase by 60% while improving performance.
               Hardcoded repetitive logic was transformed into reusable functions like `activeTimeline(idx)`, enabling automatic handling
               of new timeline items without code modifications. PC and mobile logic were clearly separated for better maintainability.
-              Additionally, replacing complex manual flag management with ScrollTrigger's callback functions significantly streamlined
-              the animation system. The result is a codebase that's easier to maintain and extend, and this process strengthened
-              my ability to analyze and optimize complex legacy code.
             </p>
           </section>
         </article>
