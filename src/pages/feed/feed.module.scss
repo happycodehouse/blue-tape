@@ -95,6 +95,10 @@
 
       .title {
         @include fontSize(18, 24);
+
+        svg {
+          fill: $font-color-default;
+        }
       }
     }
   }
