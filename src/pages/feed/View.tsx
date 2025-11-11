@@ -26,7 +26,7 @@ const View = () => {
       </Helmet>
       <div className="container">
         <div className={style.viewWrapper}>
-          <div className={style.titleArea}>
+          <div className={style.viewHeader}>
             <div className={style.date}>
               <span>/</span>
               <Link to="/feed">Feed</Link>
@@ -34,7 +34,7 @@ const View = () => {
             </div>
             <h1>{post.title}</h1>
           </div>
-          <div className={style.contentArea}>
+          <div className={style.viewBody}>
             {post.content}
           </div>
         </div>

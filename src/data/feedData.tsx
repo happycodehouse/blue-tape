@@ -1,11 +1,28 @@
+import React from "react";
 import classNames from "classnames";
 
-import intellij_scss_img_01 from "../assets/images/feed/intellij-scss/img-01.png"
-import intellij_scss_img_02 from "../assets/images/feed/intellij-scss/img-02.png"
-import style from "../pages/feed/view.module.scss"
+import intellij_scss_img_01 from "../assets/images/feed/intellij-scss/img-01.png";
+import intellij_scss_img_02 from "../assets/images/feed/intellij-scss/img-02.png";
+import style from "../pages/feed/view.module.scss";
+
+export interface FeedItem {
+  id: string;
+  category: "LAB" | "DEV" | "LIFE";
+  date: string;
+  title: string;
+  externalUrl?: string;
+  content?: React.ReactNode;
+}
 
 //**category : LAB, DEV, LIFE
-export const feedData = [
+export const feedData: FeedItem[] = [
+  {
+    id: "draggable-product-grid",
+    category: "LAB",
+    date: "10.11.25",
+    title: "Draggable Product Grid | Live Demo",
+    externalUrl: "https://draggable-product-grid.netlify.app"
+  },
   {
     id: "soul",
     category: "LIFE",
@@ -26,7 +43,7 @@ export const feedData = [
               <br/>
               "This?" says the younger fish, "This is water. What I want is the ocean."
             </p>
-            <p className={style.subText}>Soul (2020), Disney Pixar</p>
+            <p>Soul (2020), Disney Pixar</p>
           </section>
         </article>
       </>
@@ -40,11 +57,11 @@ export const feedData = [
       <>
         <article>
           <header>
-            <h2 className={style.sectionTitle}>Flipping Secret Santa on Its Head</h2>
+            <h2>Flipping Secret Santa on Its Head</h2>
           </header>
 
           <section>
-            <h3 className={style.subTitle}>The Problem from 2022</h3>
+            <h3>The Problem from 2022</h3>
             <p>
               I was put in charge of Secret Santa for our December 2023 year-end party.
               I heard the <b>2022 event</b> didn't go well—the main issue was gift satisfaction.
@@ -54,7 +71,7 @@ export const feedData = [
           </section>
 
           <section>
-            <h3 className={style.subTitle}>A New Approach for 2023</h3>
+            <h3>A New Approach for 2023</h3>
             <p>
               So I completely flipped the format.
               <br/><br/>
@@ -85,51 +102,41 @@ export const feedData = [
       <>
         <article>
           <header>
-            <h2 className={style.sectionTitle}>When You Need This</h2>
+            <h2>When You Need This</h2>
             <p>To optimize website loading speed, here's how to set up automatic compilation from SCSS to minified CSS in IntelliJ IDEA.</p>
           </header>
-          
-          <section>
-            <h4 className={style.itemTitle}>This setup is useful for projects that don't have built-in CSS optimization, such as:</h4>
-            <ul className={style.itemList}>
-              <li>Pure HTML/CSS/JS projects</li>
-              <li>Legacy projects without modern build tools</li>
-              <li>Custom build tool configurations</li>
-              <li>WordPress theme development</li>
-              <li>Static websites</li>
-            </ul>
-            <p className={style.subText}>If you're using modern frameworks like React, Next.js, or Vue with their default build tools, this manual setup isn't necessary as they handle CSS minification automatically.</p>
-          </section>
         </article>
-        
+
         <article>
           <header>
-            <h2 className={style.sectionTitle}>1. Prerequisites</h2>
+            <h2>1. Prerequisites</h2>
           </header>
-          
+
           <section>
-            <h3 className={style.subTitle}>1-1. Install Sass Compiler</h3>
+            <h3>1-1. Install Sass Compiler</h3>
             <pre>
               <code>
                 npm install -g sass
               </code>
             </pre>
           </section>
-          
+
           <section>
-            <h3 className={style.subTitle}>1-2. Install IntelliJ Plugins</h3>
-            <p>Go to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Plugins</strong> and install the following plugins:</p>
+            <h3>1-2. Install IntelliJ Plugins</h3>
+            <p>Go to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Plugins</strong> and install the
+              following plugins:</p>
             <ul className={style.itemList}>
               <li><strong className={style.bk}>Sass</strong></li>
               <li><strong className={style.bk}>File Watchers</strong></li>
             </ul>
           </section>
         </article>
-        
+
         <article>
           <header>
-            <h2 className={style.sectionTitle}>2. Configure SCSS File Watcher</h2>
-            <p>Navigate to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Tools</strong> &gt; <strong>File Watchers</strong> and create a new watcher.</p>
+            <h2>2. Configure SCSS File Watcher</h2>
+            <p>Navigate to <strong>File</strong> &gt; <strong>Settings</strong> &gt; <strong>Tools</strong> &gt;
+              <strong>File Watchers</strong> and create a new watcher.</p>
             <div className={classNames(style.imgBox)} data-uk-lightbox="animation: fade">
               <a href={intellij_scss_img_01}>
                 <img src={intellij_scss_img_01} alt="IntelliJ SCSS Setup 1"/>
@@ -139,9 +146,9 @@ export const feedData = [
               </a>
             </div>
           </header>
-          
+
           <section>
-            <h3 className={style.subTitle}>2-1. Regular CSS Compilation Settings</h3>
+            <h3>2-1. Regular CSS Compilation Settings</h3>
             <p><strong>1) Arguments:</strong></p>
             <pre>
               <code>
@@ -155,9 +162,9 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
               </code>
             </pre>
           </section>
-          
+
           <section>
-            <h3 className={style.subTitle}>2-2. Minified CSS Compilation Settings</h3>
+            <h3>2-2. Minified CSS Compilation Settings</h3>
             <p><strong>1) Arguments:</strong></p>
             <pre>
               <code>
@@ -172,19 +179,8 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
             </pre>
           </section>
         </article>
-        
+
         <article>
-          <header>
-            <h2 className={style.sectionTitle}>3. Additional Settings</h2>
-          </header>
-          
-          <section>
-            <h4 className={style.itemTitle}>Check Track only root files option</h4>
-            <ul className={style.itemList}>
-              <li>Check <strong>Track only root files</strong> option to ensure compilation only triggers when root SCSS files are modified, not imported partials.</li>
-            </ul>
-          </section>
-          
           <section>
             <p>Now your SCSS files will automatically compile to minified CSS whenever you save them.</p>
           </section>
@@ -200,23 +196,27 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
       <>
         <article>
           <header>
-            <h2 className={style.sectionTitle}>Overview</h2>
+            <h2>Overview</h2>
           </header>
-          <p>
-            Upon reviewing the existing code, I identified issues with readability due to duplicated logic and complex structure.
-            To address this, I rewrote the page motion script from scratch, creating cleaner and more maintainable code.
-          </p>
+          <section>
+            <p>
+              Upon reviewing the existing code, I identified issues with readability due to duplicated logic and complex
+              structure.
+              To address this, I rewrote the page motion script from scratch, creating cleaner and more maintainable
+              code.
+            </p>
+          </section>
         </article>
 
         <article>
           <header>
-            <h2 className={style.sectionTitle}>What Were the Issues?</h2>
-            <h3 className={style.subTitle}>Problems with the Original Code</h3>
+            <h2>What Were the Issues?</h2>
+            <h3>Problems with the Original Code</h3>
             <p>The existing Heritage page had several critical issues:</p>
           </header>
 
           <section>
-            <h4 className={style.itemTitle}>Code Structure Issues</h4>
+            <h3>Code Structure Issues</h3>
             <ul className={style.itemList}>
               <li>Over 200 lines of complex code resulting in poor readability</li>
               <li>Lack of patterns due to repetitive hardcoding</li>
@@ -226,7 +226,7 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
           </section>
 
           <section>
-            <h4 className={style.itemTitle}>Maintainability Issues</h4>
+            <h3>Maintainability Issues</h3>
             <ul className={style.itemList}>
               <li>Hardcoded animation values requiring modifications throughout the entire codebase</li>
               <li>Scattered logic making debugging difficult</li>
@@ -234,15 +234,14 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
             </ul>
           </section>
         </article>
-        
+
         <article>
           <header>
-            <h2 className={style.sectionTitle}>How I Solved It</h2>
+            <h2>How I Solved It</h2>
           </header>
-          
-          <section>
-            <h3 className={style.subTitle}>1. Eliminated Repetitive Logic</h3>
 
+          <section>
+            <h3>Eliminated Repetitive Logic</h3>
             <p>Before</p>
             <pre>
               <code>
@@ -274,9 +273,9 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
               </code>
             </pre>
           </section>
-          
+
           <section>
-            <h3 className={style.subTitle}>2. Separated Responsive Logic</h3>
+            <h3>Separated Responsive Logic</h3>
             <pre>
               <code>
 {`ScrollTrigger.matchMedia({
@@ -291,53 +290,30 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
               </code>
             </pre>
           </section>
-          
-          <section>
-            <h3 className={style.subTitle}>3. Separated Responsive Logic</h3>
-            <pre>
-              <code>
-{`ScrollTrigger.matchMedia({
-  "(min-width: 1025px)": function() {
-    $timelineItem.each(function(idx) {
-      pcSecHeritageTl.to({}, {
-        onStart: () => activeTimeline(idx),
-        onReverseComplete: () => activeTimeline(idx - 1)
-      });
-    });
-  }
-});
-`}
-              </code>
-            </pre>
-          </section>
         </article>
-        
+
         <article>
           <header>
-            <h2 className={style.sectionTitle}>Results</h2>
+            <h2>Results</h2>
           </header>
-          
+
           <section>
-            <div className={style.demoBox}>
-              <div className={style.linkGroup}>
-                <a
-                  href="https://circular-heritage.netlify.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  🌐 Live Demo
-                </a>
-                <a
-                  href="https://github.com/happycodehouse/circular-heritage"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  📂 Source Code
-                </a>
-              </div>
-            </div>
+            <a
+              href="https://circular-heritage.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🌐 Live Demo
+            </a>
+            <a
+              href="https://github.com/happycodehouse/circular-heritage"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📂 Github
+            </a>
           </section>
-          
+
           <section>
             <p>
               By converting complex JSP code into clean JavaScript, I reduced the codebase by 60% while improving performance.

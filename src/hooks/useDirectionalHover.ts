@@ -51,7 +51,6 @@ export const useDirectionalHover = (options = {}) => {
 
     const direction = getDirection(e, elementRef.current);
 
-    // 초기 위치 설정 (트랜지션 없이)
     const initialTransform: any = {
       left: "translateX(-100%)",
       right: "translateX(100%)",
@@ -66,7 +65,6 @@ export const useDirectionalHover = (options = {}) => {
       transition: "none"
     });
 
-    // 애니메이션 시작
     timeoutRef.current = setTimeout(() => {
       setOverlayStyle((prev: any) => ({
         ...prev,
@@ -86,7 +84,6 @@ export const useDirectionalHover = (options = {}) => {
 
     if (!elementRef.current) return;
 
-    // 나가는 시점의 방향을 다시 계산
     const direction = getDirection(e, elementRef.current);
 
     const exitTransform: any = {
@@ -101,7 +98,6 @@ export const useDirectionalHover = (options = {}) => {
       transform: exitTransform[direction]
     }));
 
-    // 지정된 시간 후 opacity 0으로 변경
     timeoutRef.current = setTimeout(() => {
       setOverlayStyle({
         opacity: 0,
@@ -138,6 +134,6 @@ export const useDirectionalHover = (options = {}) => {
       ref: elementRef,
       onMouseEnter: handleMouseEnter,
       onMouseLeave: handleMouseLeave
-    })
+    }),
   };
 };

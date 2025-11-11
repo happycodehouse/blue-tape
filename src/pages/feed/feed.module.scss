@@ -32,39 +32,57 @@
         padding: to_vw($space-200) 0;
         text-align: right;
         text-decoration: unset;
-        transition: opacity .4s;
-
-        &::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          background: $border-100;
-        }
+        border-bottom: 1px solid $border-300;
 
         @include media($from: tablet) {
           &:hover {
-            opacity: .5;
+            .date,
+            .title {
+              color: $font-color-default;
+            }
           }
         }
       }
     }
 
+    .date,
+    .title {
+      transition: color .4s ease-in-out;
+    }
+
     .date {
       @include fontSize(10, 30);
-      //color:;
+      color: $color-neutral-500;
     }
 
     .title {
       font-family: $font-system;
       @include fontSize(20, 30);
       font-weight: 500;
+      color: $color-neutral-500;
+
+      svg {
+        margin-left: to_vw(4);
+        fill: $color-neutral-500;
+      }
     }
 
     @include media(false, tablet) {
+      li {
+        a {
+          &::before {
+            background: $border-300;
+          }
+        }
+      }
+
+      .date,
+      .title {
+        color: $font-color-default;
+      }
+
       .date {
+        text-align: left;
         @include fontSize(12, 24);
       }
 

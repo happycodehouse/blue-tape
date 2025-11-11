@@ -1,250 +1,161 @@
 @charset "UTF-8";
+
 @use "../../styles/base/font" as *;
 @use "../../styles/base/variable" as *;
 @use "../../styles/base/mixin" as *;
 
-@include media($from: tablet) {
-  .itemList {
-    padding-left: 1rem;
+.viewWrapper {
+  width: calc((100vw / 3) - to_vw(12));
+  padding: to_vw(8) 0 to_vw($space-2000);
+  margin: 0 auto;
+
+  @include media(false, tablet) {
+    width: 100%;
+    padding: 0 to_vw($space-200);
   }
 }
 
-.viewWrapper {
-  width: 100%;
-  max-width: 718px;
-  margin: 0 auto;
-  padding: 1.5rem 1rem;
+.viewHeader {
+  padding: to_vw($space-100) 0 to_vw($space-600);
+  margin-bottom: to_vw($space-600);
+  border-bottom: 1px solid $border-300;
 
-  section {
-    &:not(:first-child) {
-      @include view-responsive-margin($view-section-gap, $view-section-gap-mobile);
+  .date {
+    margin-bottom: to_vw($space-1000);
+    @include fontSize(14);
+
+    span {
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: underline;
+      font-weight: 700;
     }
   }
 
-  p {
-    @include view-responsive-font($view-font-size-body);
-    line-height: $view-common-lh;
-    color: $view-text-secondary;
-    margin-bottom: $view-text-gap;
+  h1 {
+    font-family: $font-system;
+    @include fontSize(20, 24);
+    font-weight: 500;
+  }
+}
 
-    &.subText {
+.viewBody {
+  article {
+    & + article {
+      margin-top: to_vw($space-1000);
+    }
+
+    p {
+      @include fontSize(14, 21);
+    }
+  }
+
+  header {
+    > * {
+      padding-left: to_vw(12);
+    }
+  }
+
+  section {
+    margin-top: to_vw($space-700);
+
+    > * {
+      padding-left: to_vw(12);
+    }
+
+    h3 {
       position: relative;
-      padding-left: 1rem;
-      margin: $view-sub-text-gap 0;
-      font-style: italic;
-      font-size: $view-font-size-sub-text;
 
       &::before {
-        content: "*";
+        content: '';
+        position: absolute;
+        top: to_vw(6);
+        left: 0;
+        width: to_vw(3);
+        height: 50%;
+        background: $color-neutral-400;
+        opacity: .2;
+      }
+    }
+
+  }
+
+  h2 {
+    position: relative;
+    padding-left: to_vw(12);
+    @include fontSize(18, 27);
+    font-weight: 700;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: to_vw(4);
+      height: 100%;
+      background: $color-neutral-200;
+    }
+
+    & + * {
+      margin: to_vw($space-200) 0;
+    }
+  }
+
+  h3 {
+    @include fontSize(16, 24);
+    font-weight: 600;
+
+    & + * {
+      margin: to_vw($space-200) 0;
+    }
+  }
+
+  .itemList {
+    margin: to_vw($space-100) 0;
+
+    li {
+      position: relative;
+      padding-left: to_vw(12);
+      @include fontSize(14, 21);
+
+      &::before {
+        content: '·';
         position: absolute;
         top: 0;
         left: 0;
       }
     }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  article {
-    @include view-responsive-spacing($view-section-gap, $view-section-gap-mobile);
-
-    header {
-      @include view-responsive-spacing($view-content-gap, $view-content-gap-mobile);
-    }
   }
 
   pre {
-    overflow-x: auto;
-    width: 100%;
-    margin: 0 0 $view-text-gap;
-    padding: 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: .25rem;
-    white-space: pre;
-
-    code {
-      padding: 0 0.25rem;
-      margin: 0 .1rem;
-      counter-reset: line;
-      background: transparent;
-      font-family: $font-jetbrains;
-      font-size: small;
-      font-weight: 400;
-      line-height: 1.5;
-      letter-spacing: 0.04rem;
-      color: $color-black;
-    }
+    margin: to_vw($space-200) auto;
+    padding: to_vw($space-200);
+    width: calc(100% - to_vw($space-400));
+    white-space: nowrap;
   }
-
-  strong {
-    font-weight: 700;
-    color: $view-text-strong;
-
-    &.bk {
-      color: $color-black;
-    }
-  }
-
-  @include media(false, tablet) {
-    max-width: unset;
-  }
-}
-
-.titleArea {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: to_vw(200);
-  padding: to_vw($space-600) 0 to_vw($space-200);
-  border-bottom: 1px solid $color-black;
-
-  .date {
-    margin-bottom: to_vw($space-100);
-    font-size: 16px;
-    font-weight: 500;
-
-    a {
-      font-weight: 700;
-      text-decoration: underline;
-    }
-  }
-
-  h1 {
-    margin: $view-text-gap 0 calc(#{$view-content-gap} + 0.5rem) 0;
-    @include view-responsive-font($view-font-size-page-title);
-    font-weight: 700;
-    line-height: $view-common-lh;
-    color: $view-text-primary;
-    letter-spacing: -0.02em;
-    word-break: keep-all;
-
-    @include media($until: mobile) {
-      margin: calc(#{$view-text-gap} * 0.75) 0 $view-content-gap-mobile 0;
-      font-size: 1.75rem;
-      line-height: 1.4;
-    }
-
-    @include media($until: 480px) {
-      margin: calc(#{$view-text-gap} * 0.5) 0 $view-text-gap 0;
-      font-size: 1.5rem;
-    }
-  }
-}
-
-.sectionTitle {
-  @include view-responsive-font($view-font-size-title, $view-font-size-title-mobile);
-  @include view-responsive-spacing($view-content-gap, $view-img-gap-mobile);
-  font-weight: 700;
-  line-height: $view-common-lh;
-  color: $view-text-primary;
-
-  &:not(:first-child) {
-    @include view-responsive-margin($view-section-gap, $view-section-gap-mobile);
-  }
-}
-
-.subTitle {
-  @include view-responsive-font($view-font-size-sub-title, $view-font-size-sub-title-mobile);
-  margin-bottom: $view-text-gap;
-  margin-top: $view-content-gap;
-  font-weight: 600;
-  line-height: $view-common-lh;
-  color: $view-text-primary;
-
-  @include media($until: mobile) {
-    margin-top: $view-content-gap-mobile;
-  }
-}
-
-.itemTitle {
-  @include view-responsive-font($view-font-size-item-title);
-  margin-bottom: calc(#{$view-text-gap} * 0.75);
-  margin-top: $view-content-gap;
-  font-weight: 600;
-  line-height: $view-common-lh;
-  color: $view-text-primary;
-
-  @include media($until: mobile) {
-    margin-top: $view-content-gap-mobile;
-  }
-}
-
-.itemList {
-  li {
-    @include view-responsive-font($view-font-size-body);
-    position: relative;
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: $view-common-lh;
-    color: $view-text-secondary;
-
-    &::before {
-      content: "·";
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-weight: 900;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  & + p {
-    margin-top: $view-text-gap;
-  }
-}
-
-.contentArea {
-  padding: to_vw($space-1000) 0;
 }
 
 .imgBox {
   display: flex;
-  gap: $view-img-gap;
-  width: 100%;
-
-  a {
-    cursor: zoom-in;
-  }
+  gap: to_vw($space-200);
 
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: to_vw(150);
     object-fit: cover;
   }
 
-  &.half {
-    a {
-      width: calc((100% - #{$view-img-gap}) / 2);
-    }
-  }
-
-  @include media(false, tablet) {
-    flex-direction: column;
-    gap: $view-img-gap-mobile;
-
-    a {
-      cursor: initial;
-      pointer-events: none;
-    }
-
-    &.half {
-      a {
-        width: 100%;
-      }
-    }
+  @include media(fasle, mobile) {
+    width: 100%;
+    height: auto;
   }
 }
 
-.demoBox {
-  .linkGroup {
-    display: flex;
-    flex-direction: column;
-    gap: $view-text-gap;
+.uk-lightbox-items-fit>*>:not(iframe) {
+  @include media(fasle, mobile) {
+    width: 100%;
+    height: auto;
   }
 }

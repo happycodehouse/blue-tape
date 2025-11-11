@@ -132,9 +132,9 @@ $breakpoints: (
   $minus: 0;
   $size: 0;
   $resultVw: 0;
+  $a: a;
 
   @if $px-size < 0 {
-    // 음수
     $px-size: $px-size * -1;
     $minus: 1;
   }
@@ -142,22 +142,12 @@ $breakpoints: (
   @if $minus > 0 {
     $size: string.unquote("calc(calc(#{$px-size}px * var(--base-ratio)) * -1)");
     $resultVw: string.unquote("calc(calc(calc(#{$px-size} / var(--base-size)) * var(--base-percent)) * -1)");
-    @return max(#{$resultVw});
+    @return m#{$a}x(#{$resultVw});
   } @else {
     $size: string.unquote("calc(#{$px-size}px * var(--base-ratio))");
     $resultVw: string.unquote("calc(calc(#{$px-size} / var(--base-size)) * var(--base-percent))");
-    @return max(#{$size}, #{$resultVw});
+    @return m#{$a}x(#{$size}, #{$resultVw});
   }
-}
-
-// ========================================
-// Flex
-// ========================================
-@mixin flex($mode: flex, $justify-content: start, $align-items: normal, $wrap: wrap) {
-  display: $mode;
-  flex-wrap: $wrap;
-  justify-content: $justify-content;
-  align-items: $align-items;
 }
 
 // ========================================
@@ -166,37 +156,4 @@ $breakpoints: (
 @mixin wordBreak {
   word-break: keep-all;
   word-wrap: break-word;
-}
-
-// ========================================
-// View Component Mixins (Feed detail page)
-// ========================================
-@mixin view-responsive-font($desktop, $mobile: null) {
-  font-size: $desktop;
-
-  @if $mobile {
-    @include media($until: mobile) {
-      font-size: $mobile;
-    }
-  }
-}
-
-@mixin view-responsive-spacing($desktop, $mobile: null) {
-  margin-bottom: $desktop;
-
-  @if $mobile {
-    @include media($until: mobile) {
-      margin-bottom: $mobile;
-    }
-  }
-}
-
-@mixin view-responsive-margin($desktop, $mobile: null) {
-  margin-top: $desktop;
-
-  @if $mobile {
-    @include media($until: mobile) {
-      margin-top: $mobile;
-    }
-  }
 }

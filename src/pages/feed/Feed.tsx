@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { PiArrowSquareOutBold } from "react-icons/pi";
 
 import style from "./feed.module.scss";
 import FilterButtonGroup from "../../components/common/FilterButtonGroup";
@@ -61,7 +62,7 @@ const Feed: React.FC = () => {
       <div className={style.feedWrapper}>
         <div className="grid-box">
           <div className="grid-box-left">
-            <FilterButtonGroup<string> // <-- 타입 파라미터 추가
+            <FilterButtonGroup<string>
               buttons={buttonData}
               selectedValue={selectedFilter}
               onButtonClick={handleFilterClick}
@@ -88,7 +89,7 @@ const Feed: React.FC = () => {
                           rel="noopener noreferrer"
                         >
                           <span className={style.date}>{item.date}</span>
-                          <span className={style.title}>{item.title}</span>
+                          <span className={style.title}>{item.title}<PiArrowSquareOutBold /></span>
                         </a>
                       ) : (
                         <Link to={`/feed/${item.id}`}>
