@@ -39,11 +39,11 @@ export const feedData: FeedItem[] = [
               <br/>
               "I'm trying to find this thing they call the ocean."
               <br/>
-              "The ocean?" says the older fish, "that's what you're in right now."
+              "The ocean?" says the older fish, <strong>"that's what you're in right now."</strong>
               <br/>
               "This?" says the younger fish, "This is water. What I want is the ocean."
             </p>
-            <p>Soul (2020), Disney Pixar</p>
+            <strong>Soul (2020), Disney Pixar</strong>
           </section>
         </article>
       </>
@@ -103,7 +103,8 @@ export const feedData: FeedItem[] = [
         <article>
           <header>
             <h2>When You Need This</h2>
-            <p>To optimize website loading speed, here's how to set up automatic compilation from SCSS to minified CSS in IntelliJ IDEA.</p>
+            <p>To optimize website loading speed, here's how to set up automatic compilation from SCSS to minified CSS
+              in IntelliJ IDEA.</p>
           </header>
         </article>
 
@@ -198,103 +199,6 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
           <header>
             <h2>Overview</h2>
           </header>
-          <section>
-            <p>
-              Upon reviewing the existing code, I identified issues with readability due to duplicated logic and complex
-              structure.
-              To address this, I rewrote the page motion script from scratch, creating cleaner and more maintainable
-              code.
-            </p>
-          </section>
-        </article>
-
-        <article>
-          <header>
-            <h2>What Were the Issues?</h2>
-            <h3>Problems with the Original Code</h3>
-            <p>The existing Heritage page had several critical issues:</p>
-          </header>
-
-          <section>
-            <h3>Code Structure Issues</h3>
-            <ul className={style.itemList}>
-              <li>Over 200 lines of complex code resulting in poor readability</li>
-              <li>Lack of patterns due to repetitive hardcoding</li>
-              <li>PC/mobile logic mixed together in a single script without clear separation</li>
-              <li>Duplicated event handlers for individual elements</li>
-            </ul>
-          </section>
-
-          <section>
-            <h3>Maintainability Issues</h3>
-            <ul className={style.itemList}>
-              <li>Hardcoded animation values requiring modifications throughout the entire codebase</li>
-              <li>Scattered logic making debugging difficult</li>
-              <li>Lack of modular organization increasing code comprehension time</li>
-            </ul>
-          </section>
-        </article>
-
-        <article>
-          <header>
-            <h2>How I Solved It</h2>
-          </header>
-
-          <section>
-            <h3>Eliminated Repetitive Logic</h3>
-            <strong>Before</strong>
-            <pre>
-              <code>
-{`if (targetIdx === 0) {
-  gsap.to(window, { scrollTo: fullOffset });
-}
-  if (targetIdx === 1) {
-  gsap.to(window, { scrollTo: fullOffset + (fullHeight * 1) });
-}
-  if (targetIdx === 2) {
-  gsap.to(window, { scrollTo: fullOffset + (fullHeight * 2) });
-}
-`}
-              </code>
-            </pre>
-
-            <strong>After</strong>
-
-            <pre>
-              <code>
-{`function activeTimeline(idx) {
-  gsap.to(window, {
-      scrollTo: $desc.eq(idx).offset().top,
-      ease: "none",
-      onComplete: () => scrollToItem(idx)
-  });
-}`}
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            <h3>Separated Responsive Logic</h3>
-            <pre>
-              <code>
-{`ScrollTrigger.matchMedia({
-    "(min-width: 1025px)": function() {
-        // PC-specific scroll triggers
-    },
-    "(max-width: 1024px)": function() {
-        // Mobile-optimized touch interactions
-    }
-});
-`}
-              </code>
-            </pre>
-          </section>
-        </article>
-
-        <article>
-          <header>
-            <h2>Results</h2>
-          </header>
 
           <section>
             <a
@@ -315,9 +219,243 @@ $ProjectFileDir$/css/$FileNameWithoutExtension$.min.css:$ProjectFileDir$/css/$Fi
 
           <section>
             <p>
-              By converting complex JSP code into clean JavaScript, I reduced the codebase by 60% while improving performance.
-              Hardcoded repetitive logic was transformed into reusable functions like `activeTimeline(idx)`, enabling automatic handling
-              of new timeline items without code modifications. PC and mobile logic were clearly separated for better maintainability.
+              The original codebase suffered from hardcoded repetitive logic and manual state
+              management that made it difficult to maintain. I rewrote the scroll animation
+              system from the ground up, reducing 200+ lines of imperative code down to 80
+              lines of clean, declarative JavaScript.
+            </p>
+          </section>
+        </article>
+
+        <article>
+          <header>
+            <h2>Problems with the Original Code</h2>
+          </header>
+
+          <section>
+            <h3>Repetitive Hardcoding</h3>
+            <ul className={style.itemList}>
+              <li>Four separate if statements handling each chapter's scroll position</li>
+              <li>Manual scroll offset calculations (fullOffset + fullHeight * N)</li>
+              <li>Every new chapter required code changes in multiple places</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Tangled Responsive Logic</h3>
+            <ul className={style.itemList}>
+              <li>PC and mobile behaviors crammed into a single breakPoint() function</li>
+              <li>Environment-specific bugs were hard to track down</li>
+              <li>No clear boundaries between device-specific animations</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Fragile State Management</h3>
+            <ul className={style.itemList}>
+              <li>Four boolean flags (chapterMotionFlag_0~3) tracking chapter transitions</li>
+              <li>Hardcoded progress thresholds (0-24%, 24-49%, etc.)</li>
+              <li>Prone to state synchronization bugs</li>
+            </ul>
+          </section>
+        </article>
+
+        <article>
+          <header>
+            <h2>How I Solved It</h2>
+          </header>
+
+          <section>
+            <h3>1. Eliminated Repetitive Logic</h3>
+            <p>
+              <strong>The Problem:</strong> Four hardcoded if statements for each chapter
+            </p>
+
+            <strong>Before: Manual calculations for every index</strong>
+            <pre>
+        <code>
+{`if (targetIdx === 0) {
+  gsap.to(window, { scrollTo: fullOffset });
+}
+if (targetIdx === 1) {
+  gsap.to(window, { scrollTo: fullOffset + (fullHeight * 1) });
+}
+if (targetIdx === 2) {
+  gsap.to(window, { scrollTo: fullOffset + (fullHeight * 2) });
+}
+if (targetIdx === 3) {
+  gsap.to(window, { scrollTo: fullOffset + (fullHeight * 3) });
+}
+// Every new chapter means more code to write`}
+        </code>
+      </pre>
+
+            <strong>After: One function handles everything</strong>
+            <pre>
+        <code>
+{`function activeTimeline(idx) {
+  gsap.to(window, {
+    scrollTo: $desc.eq(idx).offset().top,
+    ease: "none",
+    onComplete: () => scrollToItem(idx)
+  });
+}
+// Works for any number of chapters automatically`}
+        </code>
+      </pre>
+
+            <p>
+              <strong>Why it matters:</strong> New chapters can be added in the HTML without
+              touching the JavaScript. The function uses jQuery's .eq() and .offset() to
+              calculate positions dynamically.
+            </p>
+          </section>
+
+          <section>
+            <h3>2. Separated PC/Mobile Logic</h3>
+            <p>
+              <strong>The Problem:</strong> Device logic tangled together in one function
+            </p>
+
+            <strong>Before: Nested conditionals everywhere</strong>
+            <pre>
+        <code>
+{`function breakPoint() {
+  if (MEDIA_QUERY.matches) {
+    // PC stuff
+    $progress = $('#progress');
+  } else {
+    // Mobile stuff
+    $progress = $('#progressMo');
+    $timelineItem.on('click', function () {
+      let target = $(this).parent();
+      tlwCenter(target);
+    });
+  }
+}`}
+        </code>
+      </pre>
+
+            <strong>After: Clean separation with ScrollTrigger</strong>
+            <pre>
+        <code>
+{`ScrollTrigger.matchMedia({
+  "(min-width: 1025px)": function() {
+    // PC gets its own timeline
+    pcSecHeritageTl = gsap.timeline({
+      scrollTrigger: { /* PC config */ }
+    });
+  },
+  "(max-width: 1024px)": function() {
+    // Mobile gets its own timeline
+    moSecHeritageTl = gsap.timeline({
+      scrollTrigger: {
+        onEnter: () => $timelineWrap.addClass("fixed")
+      }
+    });
+  }
+});`}
+        </code>
+      </pre>
+
+            <p>
+              <strong>Why it matters:</strong> Each device has its own isolated ScrollTrigger.
+              GSAP handles cleanup and re-initialization on resize automatically.
+            </p>
+          </section>
+
+          <section>
+            <h3>3. Ditched Manual State Management</h3>
+            <p>
+              <strong>The Problem:</strong> Four boolean flags trying to track everything
+            </p>
+
+            <strong>Before: Flag juggling based on scroll progress</strong>
+            <pre>
+        <code>
+{`let chapterMotionFlag_0 = true,
+    chapterMotionFlag_1 = true,
+    chapterMotionFlag_2 = true,
+    chapterMotionFlag_3 = true;
+
+onUpdate: function (self) {
+  let progress = parseInt(self.progress * 100);
+  
+  if (progress >= 0 && progress < 24) {
+    chapterMotionFlag_3 = true;
+    if(chapterMotionFlag_0){
+      chapterMotion(0);
+      chapterMotionFlag_0 = false;
+    }
+    chapterMotionFlag_1 = true;
+  }
+  // ...and so on for each chapter
+}`}
+        </code>
+      </pre>
+
+            <strong>After: Let ScrollTrigger handle it</strong>
+            <pre>
+        <code>
+{`$timelineItem.each(function(idx) {
+  pcSecHeritageTl.to({}, {
+    onStart: () => activeTimeline(idx),
+    onReverseComplete: () => activeTimeline(idx - 1)
+  });
+});
+// No manual tracking needed`}
+        </code>
+      </pre>
+
+            <p>
+              <strong>Why it matters:</strong> Eliminated 4 flag variables and all the progress
+              calculation logic. ScrollTrigger handles forward and backward scrolling naturally.
+            </p>
+          </section>
+
+          <section>
+            <h3>4. Why GSAP ScrollTrigger?</h3>
+            <p>
+              I chose ScrollTrigger for its declarative timeline system and built-in matchMedia
+              support. Instead of calculating "how far the user has scrolled," I could just
+              define "what should happen when" and let GSAP orchestrate everything.
+            </p>
+          </section>
+        </article>
+
+        <article>
+          <header>
+            <h2>Results</h2>
+          </header>
+
+          <section>
+            <ul className={style.itemList}>
+              <li>
+                <strong>60% less code:</strong> Cut from 200+ lines to 80 by removing
+                repetitive conditionals and flag management
+              </li>
+              <li>
+                <strong>Future-proof:</strong> New chapters only need HTML updates—no
+                JavaScript changes required
+              </li>
+              <li>
+                <strong>Easier to debug:</strong> PC/mobile logic lives in separate,
+                isolated contexts
+              </li>
+              <li>
+                <strong>More reliable:</strong> No manual state tracking means no
+                synchronization bugs
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <p>
+              This refactor wasn't just about writing less code—it was about writing better code.
+              Instead of manually handling each chapter with separate if statements,
+              I used index-based loops to automate the process. This shifted the code
+              from telling the browser "how to scroll" step-by-step to simply declaring
+              "what to animate," making it simpler and more reliable.
             </p>
           </section>
         </article>

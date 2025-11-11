@@ -129,6 +129,10 @@
       padding-left: to_vw(12);
       @include fontSize(14, 21);
 
+      strong {
+        display: initial;
+      }
+
       &::before {
         content: '·';
         position: absolute;
@@ -142,7 +146,7 @@
     margin: to_vw($space-200) auto to_vw($space-500);
     padding: to_vw($space-200);
     width: calc(100% - to_vw($space-400));
-    //white-space: nowrap;
+    font-size: 14px;
   }
 }
 
