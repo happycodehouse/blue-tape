@@ -40,6 +40,12 @@
             .title {
               color: $font-color-default;
             }
+
+            .title {
+              svg {
+                fill: $font-color-default;
+              }
+            }
           }
         }
       }
@@ -64,6 +70,7 @@
       svg {
         margin-left: to_vw(4);
         fill: $color-neutral-500;
+        transition: fill .4s ease-in-out;
       }
     }
 
