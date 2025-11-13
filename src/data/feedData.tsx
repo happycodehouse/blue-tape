@@ -17,6 +17,13 @@ export interface FeedItem {
 //**category : LAB, DEV, LIFE
 export const feedData: FeedItem[] = [
   {
+    id: "3d-folding-effect",
+    category: "LAB",
+    date: "13.11.25",
+    title: "3D Folding Effect | Live Demo",
+    externalUrl: "https://3d-folding-effect.netlify.app"
+  },
+  {
     id: "draggable-product-grid",
     category: "LAB",
     date: "10.11.25",
