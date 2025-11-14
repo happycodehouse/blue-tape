@@ -6,6 +6,7 @@ import { PiArrowSquareOutBold } from "react-icons/pi";
 import style from "./feed.module.scss";
 import FilterButtonGroup from "../../components/common/FilterButtonGroup";
 import { feedData } from "../../data/feedData";
+import classNames from "classnames";
 
 interface FeedItem {
   id: string | number;
@@ -61,7 +62,7 @@ const Feed: React.FC = () => {
     <div id="container">
       <div className={style.feedWrapper}>
         <div className="grid-box">
-          <div className="grid-box-left">
+          <div className={`${style.gridBoxLeft} grid-box-left`}>
             <FilterButtonGroup<string>
               buttons={buttonData}
               selectedValue={selectedFilter}

@@ -10,6 +10,7 @@
   }
 
   .logo {
+    height: to_vw(100);
     padding: 0 to_vw($space-100);
     border-bottom: 1px solid $border-100;
     font-family: $font-system;
@@ -21,8 +22,9 @@
     border-left: 1px solid $border-100;
 
     li {
-      position: relative;
       overflow: hidden;
+      position: relative;
+      height: to_vw(50);
       border-bottom: 1px solid $border-100;
       text-align: right;
 
@@ -55,6 +57,7 @@
     }
 
     .logo {
+      height: auto;
       padding: 0;
       border-bottom: 0;
       @include fontSize(56);
@@ -68,6 +71,7 @@
       border-left: 0;
 
       li {
+        height: auto;
         border-bottom: 0;
 
         a {

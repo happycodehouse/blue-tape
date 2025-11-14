@@ -4,109 +4,143 @@
 @use "../../styles/base/mixin" as *;
 
 .feedWrapper {
-  .feedArea {
-    padding: to_vw($space-200);
+}
+
+.gridBoxLeft {
+  height: calc(100vh - to_vw(100));
+
+  @include media(false, tablet) {
+    height: auto;
+  }
+}
+
+.feedArea {
+  position: relative;
+  height: calc(100vh - to_vw(100));
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: to_vw($space-200);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: to_vw(28);
+  background: $background-color-pc;
+  padding: 0 to_vw($space-200) to_vw($space-100);
+  border-bottom: 1px solid $border-100;
+
+  span {
+    @include fontSize(10);
+    font-weight: 600;
+    line-height: 1;
   }
 
-  .sectionTitle {
-    display: flex;
-    justify-content: space-between;
-    gap: to_vw($space-200);
-    padding-bottom: to_vw($space-100);
-    border-bottom: 1px solid $border-300;
+  @include media(false, tablet) {
+    background: $background-color-mo;
+  }
+}
 
-    span {
-      @include fontSize(10);
-      font-weight: 600;
-      line-height: 1;
+.feedList {
+  padding-top: to_vw(28);
+  height: 100%;
+  overflow-y: auto;
+
+  li {
+    padding: 0 to_vw($space-200);
+
+    &:last-child {
+      padding-bottom: to_vw(28);
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      gap: to_vw($space-200);
+      position: relative;
+      padding: to_vw($space-200) 0;
+      text-align: right;
+      text-decoration: unset;
+      border-bottom: 1px solid $border-300;
+
+      @include media($from: tablet) {
+        &:hover {
+          .date,
+          .title {
+            color: $font-color-default;
+          }
+
+          .title {
+            svg {
+              fill: $font-color-default;
+            }
+          }
+        }
+      }
     }
   }
 
-  .feedList {
+  .date,
+  .title {
+    transition: color .4s ease-in-out;
+  }
+
+  .date {
+    @include fontSize(10, 30);
+    color: $color-neutral-500;
+  }
+
+  .title {
+    font-family: $font-system;
+    @include fontSize(20, 30);
+    font-weight: 500;
+    color: $color-neutral-500;
+
+    svg {
+      margin-left: to_vw(4);
+      fill: $color-neutral-500;
+      transition: fill .4s ease-in-out;
+    }
+  }
+
+  @include media(false, tablet) {
+    height: auto;
+
     li {
       a {
-        display: flex;
-        justify-content: space-between;
-        gap: to_vw($space-200);
-        position: relative;
-        padding: to_vw($space-200) 0;
-        text-align: right;
-        text-decoration: unset;
-        border-bottom: 1px solid $border-300;
-
-        @include media($from: tablet) {
-          &:hover {
-            .date,
-            .title {
-              color: $font-color-default;
-            }
-
-            .title {
-              svg {
-                fill: $font-color-default;
-              }
-            }
-          }
+        &::before {
+          background: $border-300;
         }
       }
     }
 
     .date,
     .title {
-      transition: color .4s ease-in-out;
+      color: $font-color-default;
     }
 
     .date {
-      @include fontSize(10, 30);
-      color: $color-neutral-500;
+      text-align: left;
+      @include fontSize(12, 24);
     }
 
     .title {
-      font-family: $font-system;
-      @include fontSize(20, 30);
-      font-weight: 500;
-      color: $color-neutral-500;
+      @include fontSize(18, 24);
 
       svg {
-        margin-left: to_vw(4);
-        fill: $color-neutral-500;
-        transition: fill .4s ease-in-out;
-      }
-    }
-
-    @include media(false, tablet) {
-      li {
-        a {
-          &::before {
-            background: $border-300;
-          }
-        }
-      }
-
-      .date,
-      .title {
-        color: $font-color-default;
-      }
-
-      .date {
-        text-align: left;
-        @include fontSize(12, 24);
-      }
-
-      .title {
-        @include fontSize(18, 24);
-
-        svg {
-          fill: $font-color-default;
-        }
+        fill: $font-color-default;
       }
     }
   }
+}
 
-  .noResults {
-    padding: to_vw($space-400);
-    text-align: center;
-    font-style: italic;
-    opacity: 0.7;
-  }
+.noResults {
+  padding: to_vw($space-400);
+  text-align: center;
+  font-style: italic;
+  opacity: 0.7;
 }

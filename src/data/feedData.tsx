@@ -20,14 +20,14 @@ export const feedData: FeedItem[] = [
     id: "3d-folding-effect",
     category: "LAB",
     date: "13.11.25",
-    title: "3D Folding Effect | Live Demo",
+    title: "3D Folding Effect",
     externalUrl: "https://3d-folding-effect.netlify.app"
   },
   {
     id: "draggable-product-grid",
     category: "LAB",
     date: "10.11.25",
-    title: "Draggable Product Grid | Live Demo",
+    title: "Draggable Product Grid",
     externalUrl: "https://draggable-product-grid.netlify.app"
   },
   {
@@ -97,7 +97,7 @@ export const feedData: FeedItem[] = [
     id: "sticky-vertical-slide",
     category: "LAB",
     date: "17.09.25",
-    title: "Responsive Sticky Vertical Component | Live Demo",
+    title: "Responsive Sticky Vertical Component",
     externalUrl: "https://sticky-vertical-slide.netlify.app/"
   },
   {
