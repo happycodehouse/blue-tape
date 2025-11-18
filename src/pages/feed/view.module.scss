@@ -11,6 +11,7 @@
 
   @include media(false, tablet) {
     width: 100%;
+    padding: to_vw(12) to_vw(12) to_vw($space-2000);
   }
 }
 
