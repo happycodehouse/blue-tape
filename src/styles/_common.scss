@@ -129,3 +129,31 @@ strong {
   padding: to_vw(8);
   backdrop-filter:blur(10px);
 }
+
+.scroll-to-top-button {
+  position: fixed;
+  right: to_vw(12);
+  bottom: to_vw(12);
+  width: to_vw(48);
+  opacity: .1;
+  transition: opacity .1s ease-in-out;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &--view {
+    right: calc(50% - to_vw(325));
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include media(false, tablet) {
+    &--view {
+      right: to_vw(12);
+    }
+  }
+}
