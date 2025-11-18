@@ -1,6 +1,5 @@
 import icTop from "../../assets/images/icon/ic_top.svg";
 import { useEffect, useState } from "react";
-import set = gsap.set;
 
 interface ScrollToTopButtonProps {
   className?: string;
@@ -36,7 +35,8 @@ const ScrollToTopButton = ({ className }: ScrollToTopButtonProps) => {
       type="button"
       onClick={handleScrollToTop}
       className={`scroll-to-top-button ${className || ''}`}
-    >      <img src={icTop} alt=""/>
+    >
+      <img src={icTop} alt=""/>
     </button>
   );
 };
